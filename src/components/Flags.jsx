@@ -3,35 +3,78 @@ import styled from 'styled-components';
 import InbodyMan from '../assets/inbodyman.png';
 
 const Flag = ({ country, population, image }) => {
+	const flagData = [
+		{ id: '1', country: 'China', population: '1,949,288', image: InbodyMan },
+		{ id: '2', country: 'Korea', population: '1,949,288', image: InbodyMan },
+		{ id: '3', country: 'Australia', population: '1,949,288', image: InbodyMan },
+		{ id: '4', country: 'Japan', population: '1,949,288', image: InbodyMan },
+		{ id: '5', country: 'USA', population: '1,949,288', image: InbodyMan },
+		{ id: '6', country: 'UK', population: '1,949,288', image: InbodyMan },
+		{ id: '7', country: 'EU', population: '1,949,288', image: InbodyMan },
+	];
+
+	const getPosition = (index, total) => {
+		const angle = 270 - (((360 / total) * index - 90) % 360); // 각 요소의 각도를 계산
+		const x = Math.sin((angle * Math.PI) / 180) * 15; // x 좌표
+		const y = Math.cos((angle * Math.PI) / 180) * 15; // y 좌표
+		const z = index * 1; // z-index 값
+
+		return {
+			gridColumn: 'auto / span 1',
+			gridRow: 'auto / span 1',
+			transform: `translate(${x}rem, ${y}rem)`,
+			zIndex: z,
+		};
+	};
+
 	return (
-		<Flagbox>
-			<FlagContent>
-				<p>{country}</p>
-				<div>{population}</div>
-			</FlagContent>
-			<RedLine>
-				<div />
-			</RedLine>
-			<Gps>
-				<img src={image} alt={`${country} Flag`} />
-			</Gps>
-		</Flagbox>
+		<FlagContainer>
+			{flagData.map((flag, index) => (
+				<Flagbox key={flag.id} style={getPosition(index, flagData.length)}>
+					<FlagContent key={flag.id}>
+						<p>{flag.country}</p>
+						<div>{flag.population}</div>
+					</FlagContent>
+
+					<RedLine>
+						<div />
+					</RedLine>
+					<Gps>
+						<img src={InbodyMan} alt='inbodyMan' />
+					</Gps>
+				</Flagbox>
+			))}
+		</FlagContainer>
 	);
 };
 
 const FlagContainer = styled.div`
-	color: white;
+	${
+		'' /* color: white;
 	display: flex;
-	gap: 60rem;
+	gap: 10rem; */
+	}
 	${'' /* height: 30rem; */}
-	flex-direction: row;
+	${
+		'' /* flex-direction: row;
 	justify-content: center;
 	align-items: flex-end;
 	width: 100%;
 
 	position: absolute;
 	top: 45rem;
+	z-index: 2; */
+	}
+
+	color: white;
+	display: grid;
+	grid-template-columns: repeat(7, 1fr);
+	justify-items: center;
+	position: absolute;
+	top: 50rem;
+	gap: 25rem;
 	z-index: 2;
+	${'' /* transform: rotate(-45deg); */}
 `;
 
 const RedLine = styled.div`
@@ -53,6 +96,7 @@ const RedLine = styled.div`
 const Flagbox = styled.div`
 	display: flex;
 	flex-direction: column;
+	${'' /* gap: 5rem; */}
 `;
 
 const FlagContent = styled.div`
@@ -97,29 +141,4 @@ const Gps = styled.div`
 	justify-content: center;
 `;
 
-// FlagContainer에 적용
-const FlagContainerbox = ({ flags }) => {
-	return (
-		<FlagContainer>
-			{flags.map((flagData) => (
-				<Flag
-					key={flagData.id}
-					country={flagData.country}
-					population={flagData.population}
-					image={flagData.image}
-				/>
-			))}
-		</FlagContainer>
-	);
-};
-
-const flagData = [
-	{ id: '1', country: 'China', population: '1,949,288', image: InbodyMan },
-	{ id: '2', country: 'Korea', population: '1,949,288', image: InbodyMan },
-	{ id: '3', country: 'Australia', population: '1,949,288', image: InbodyMan },
-	{ id: '4', country: 'USA', population: '1,949,288', image: InbodyMan },
-	{ id: '5', country: 'Japan', population: '1,949,288', image: InbodyMan },
-	{ id: '6', country: 'UK', population: '1,949,288', image: InbodyMan },
-];
-
-export default FlagContainer;
+export default Flag;
