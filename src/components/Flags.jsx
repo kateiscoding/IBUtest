@@ -1,6 +1,6 @@
 import React, { useRef, useState } from 'react';
 import styled from 'styled-components';
-import InbodyMan from '../assets/inbodyman.png';
+import InbodyMan from '../assets/pin-large.png';
 
 const Flag = ({ country, population, image }) => {
 	const flagData = [
@@ -35,10 +35,10 @@ const Flag = ({ country, population, image }) => {
 						<p>{flag.country}</p>
 						<div>{flag.population}</div>
 					</FlagContent>
-
+					{/* 
 					<RedLine>
 						<div />
-					</RedLine>
+					</RedLine> */}
 					<Gps>
 						<img src={InbodyMan} alt='inbodyMan' />
 					</Gps>
@@ -71,8 +71,8 @@ const FlagContainer = styled.div`
 	grid-template-columns: repeat(7, 1fr);
 	justify-items: center;
 	position: absolute;
-	top: 50rem;
-	gap: 25rem;
+	top: 60rem;
+	gap: 5rem;
 	z-index: 2;
 	${'' /* transform: rotate(-45deg); */}
 `;
@@ -102,19 +102,22 @@ const Flagbox = styled.div`
 const FlagContent = styled.div`
 	color: white;
 	display: flex;
-	width: 24rem;
+	width: 23.375rem;
 	height: auto;
-	padding: 2rem 3.5rem;
+	padding: 2rem 1.25rem 1.25rem 1.25rem;
 	flex-direction: column;
 	align-items: center;
-	${'' /* gap: 2.5rem; */}
+	gap: 1.5rem;
 	display: flex;
 	border-radius: 0.75rem;
-	background: rgba(255, 255, 255, 0.15);
+	border-radius: 1rem;
+	border: 2px solid var(--brand-ci-05, rgba(151, 27, 47, 0.5));
+	background: var(--bwb-07, rgba(63, 63, 63, 0.7));
 
+	/* Shadow/Black_blur */
 	box-shadow: 0px 4px 30px 0px rgba(0, 0, 0, 0.3);
-	backdrop-filter: blur(12px);
-	gap: 2.5rem;
+	backdrop-filter: blur(20px);
+
 	> p {
 		color: #fff;
 		text-align: center;
