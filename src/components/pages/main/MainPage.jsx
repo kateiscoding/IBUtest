@@ -15,7 +15,7 @@ function MainPage() {
 					<div>
 						<div>
 							<img src={LiveDot} alt='livedot' />
-							<span>LIVE</span>
+							<span>L I V E</span>
 						</div>
 						<b>TOTAL GLOBAL TESTS</b>
 					</div>
@@ -37,14 +37,14 @@ const Main = styled.main`
 	flex-direction: column;
 	height: 108rem;
 	align-items: center;
-	gap: 3rem;
+	gap: 8rem;
 `;
 
 const Counter = styled.div`
 	height: 60rem;
 	width: 100%;
 	display: flex;
-	margin-top: 12rem;
+	margin-top: 22rem;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
@@ -52,12 +52,13 @@ const Counter = styled.div`
 	> div {
 		display: flex;
 		flex-direction: column;
+		gap: 0.9rem;
 
 		> p {
 			color: #fff;
 
 			text-align: center;
-			font-size: 15rem;
+			font-size: 22.4rem;
 			font-style: normal;
 			font-weight: 600;
 			line-height: 1;
@@ -71,19 +72,22 @@ const Counter = styled.div`
 				color: #fff;
 				display: flex;
 				text-align: center;
-				font-size: 2.75rem;
-				font-style: normal;
+				font-size: 4.4rem;
+				${'' /* font-style: normal; */}
 				font-weight: 600;
-				line-height: normal;
-				letter-spacing: 0.66rem;
+				${'' /* line-height: normal; */}
+				letter-spacing: 1rem;
 				flex-direction: column;
 				align-items: flex-start;
+				lineheight: 44;
+				${'' /* letterspacing: 10.86; */}
+				wordwrap: 'break-word';
 			}
 
 			> div {
 				background: #971b2f;
-				width: 12.56rem;
-				height: 3.75rem;
+				width: 20rem;
+				height: 6rem;
 				font-size: 2.75rem;
 				display: flex;
 				padding: 0.5rem 1rem;
@@ -96,14 +100,13 @@ const Counter = styled.div`
 				gap: 0.5rem;
 
 				> span {
-					color: #000;
-					text-align: center;
-					/* Title_44px */
-					font-size: 2.75rem;
-					font-style: normal;
-					font-weight: 600;
-					line-height: 100%; /* 2.75rem */
-					letter-spacing: 0.66rem;
+					// LIVE
+					color: 'black';
+					fontsize: 44;
+					fontweight: '600';
+					lineheight: 44;
+					letterspacing: 10.56;
+					wordwrap: 'break-word';
 				}
 			}
 		}
@@ -111,7 +114,7 @@ const Counter = styled.div`
 `;
 
 const EarthContainer = styled.div`
-	width: 120%;
+	width: 150%;
 	${'' /* display: flex; */}
 	overflow: hidden;
 	${

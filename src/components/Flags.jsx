@@ -4,7 +4,13 @@ import InbodyMan from '../assets/pin-large-2.png';
 
 const Flag = ({ country, population, image }) => {
 	const flagData = [
-		{ id: '1', country: 'China', population: '1,949,288', image: InbodyMan },
+		{
+			id: '1',
+			country: 'China',
+			population: '1,949,288',
+			image: InbodyMan,
+			gps: { top: '10em', left: '-255rem' },
+		},
 		{ id: '2', country: 'Korea', population: '1,949,288', image: InbodyMan },
 		{ id: '3', country: 'Australia', population: '1,949,288', image: InbodyMan },
 		{ id: '4', country: 'Japan', population: '1,949,288', image: InbodyMan },
@@ -36,9 +42,6 @@ const Flag = ({ country, population, image }) => {
 					<RedLine>
 						<div />
 					</RedLine> */}
-					<Gps>
-						<img src={InbodyMan} alt='inbodyMan' />
-					</Gps>
 				</Flagbox>
 			))}
 		</FlagContainer>
@@ -97,32 +100,32 @@ const Flagbox = styled.div`
 	position: absolute;
 
 	&.flag-1 {
-		top: -10rem;
-		left: -160rem;
+		top: 10em;
+		left: -255rem;
 	}
 	&.flag-2 {
-		top: -25rem;
-		left: -135rem;
+		top: -10rem;
+		left: -224rem;
 	}
 	&.flag-3 {
 		top: -20rem;
-		left: -105rem;
+		left: -180rem;
 	}
 	&.flag-4 {
-		top: -35rem;
-		left: -75rem;
+		top: -30rem;
+		left: -136rem;
 	}
 	&.flag-5 {
-		top: -34rem;
-		left: 75rem;
-	}
-	&.flag-6 {
-		top: -28rem;
+		top: -30rem;
 		left: 110rem;
 	}
+	&.flag-6 {
+		top: -5rem;
+		left: 170rem;
+	}
 	&.flag-7 {
-		top: -15rem;
-		left: 140rem;
+		top: 20rem;
+		left: 215rem;
 	}
 
 	${'' /* gap: 5rem; */}
@@ -131,9 +134,9 @@ const Flagbox = styled.div`
 const FlagContent = styled.div`
 	color: white;
 	display: flex;
-	width: 23.375rem;
-	height: auto;
-	padding: 2rem 1.25rem 1.25rem 1.25rem;
+	width: 37.4rem;
+	height: 21.2rem;
+	padding: 3.2rem 2rem 2rem 2rem;
 	flex-direction: column;
 	align-items: center;
 	gap: 1.5rem;
@@ -149,12 +152,13 @@ const FlagContent = styled.div`
 
 	&.flag-5 {
 		display: flex;
-		width: 29.75rem;
-		padding: 2.5rem 1.5rem 1.5rem 1.5rem;
+		width: 47.6rem;
+		height: 28.4rem;
+		padding: 4rem 2.4rem 2.4rem 2.4rem;
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
-		gap: 2.5rem;
+		gap: 4rem;
 		border-radius: 1rem;
 		border: 2px solid var(--brand-ci-05, rgba(151, 27, 47, 0.5));
 		background: var(--bwb-07, rgba(63, 63, 63, 0.7));
@@ -167,20 +171,23 @@ const FlagContent = styled.div`
 			text-align: center;
 			/* H2_80px */
 			font-family: Lexend;
-			font-size: 5rem;
+			font-size: 8rem;
 			font-style: normal;
 			font-weight: 700;
 			line-height: 100%; /* 5rem */
 		}
 
 		> div {
+			width: 42.8rem;
+			height: 10rem;
 			color: var(--bw-white, #fff);
 			text-align: center;
 			/* Body1_60px */
 			font-family: Lexend;
-			font-size: 3.75rem;
+			font-size: 6rem;
 			font-style: normal;
 			font-weight: 400;
+			border-radius: 0.8rem;
 			line-height: 100%; /* 3.75rem */
 		}
 	}
@@ -188,22 +195,24 @@ const FlagContent = styled.div`
 	> p {
 		color: #fff;
 		text-align: center;
-		font-size: 4rem;
+		font-size: 5.6rem;
 		font-style: normal;
 		font-weight: 700;
 		line-height: normal;
 	}
 
 	> div {
+		width: 33.4rem;
+		height: 8rem;
 		display: flex;
 		padding: 0.5rem 0.25rem;
 		justify-content: center;
 		align-items: center;
-		gap: 0.5rem;
+		gap: 2.4rem;
 		align-self: stretch;
 		border-radius: 0.25rem;
 		background: rgba(255, 255, 255, 0.1);
-		font-size: 2.5rem;
+		font-size: 4rem;
 		font-weight: 400;
 		line-height: 100%;
 	}
