@@ -1,6 +1,6 @@
 import React, { useRef, useState } from 'react';
 import styled from 'styled-components';
-import InbodyMan from '../assets/pin-large.png';
+import InbodyMan from '../assets/pin-large-2.png';
 
 const Flag = ({ country, population, image }) => {
 	const flagData = [
@@ -14,24 +14,21 @@ const Flag = ({ country, population, image }) => {
 	];
 
 	const getPosition = (index, total) => {
-		const angle = 270 - (((360 / total) * index - 90) % 360); // 각 요소의 각도를 계산
-		const x = Math.sin((angle * Math.PI) / 180) * 15; // x 좌표
-		const y = Math.cos((angle * Math.PI) / 180) * 15; // y 좌표
-		const z = index * 1; // z-index 값
+		const distanceBetween = 20; // Flagbox 간의 간격 설정
+		const left = index * distanceBetween; // 각 Flagbox의 가로 위치 계산
 
 		return {
-			gridColumn: 'auto / span 1',
-			gridRow: 'auto / span 1',
-			transform: `translate(${x}rem, ${y}rem)`,
-			zIndex: z,
+			left: `${left}rem`, // Flagbox의 가로 위치
+			top: '0', // Flagbox의 세로 위치, 필요한 경우 조정 가능
+			zIndex: total - index, // zIndex 역순으로 배치
 		};
 	};
 
 	return (
 		<FlagContainer>
 			{flagData.map((flag, index) => (
-				<Flagbox key={flag.id} style={getPosition(index, flagData.length)}>
-					<FlagContent key={flag.id}>
+				<Flagbox key={flag.id} className={`flag-${index + 1}`}>
+					<FlagContent key={flag.id} className={`flag-${index + 1}`}>
 						<p>{flag.country}</p>
 						<div>{flag.population}</div>
 					</FlagContent>
@@ -67,8 +64,8 @@ const FlagContainer = styled.div`
 	}
 
 	color: white;
-	display: grid;
-	grid-template-columns: repeat(7, 1fr);
+	display: flex;
+	${'' /* grid-template-columns: repeat(7, 1fr); */}
 	justify-items: center;
 	position: absolute;
 	top: 60rem;
@@ -96,6 +93,38 @@ const RedLine = styled.div`
 const Flagbox = styled.div`
 	display: flex;
 	flex-direction: column;
+
+	position: absolute;
+
+	&.flag-1 {
+		top: -10rem;
+		left: -160rem;
+	}
+	&.flag-2 {
+		top: -25rem;
+		left: -135rem;
+	}
+	&.flag-3 {
+		top: -20rem;
+		left: -105rem;
+	}
+	&.flag-4 {
+		top: -35rem;
+		left: -75rem;
+	}
+	&.flag-5 {
+		top: -34rem;
+		left: 75rem;
+	}
+	&.flag-6 {
+		top: -28rem;
+		left: 110rem;
+	}
+	&.flag-7 {
+		top: -15rem;
+		left: 140rem;
+	}
+
 	${'' /* gap: 5rem; */}
 `;
 
@@ -118,6 +147,44 @@ const FlagContent = styled.div`
 	box-shadow: 0px 4px 30px 0px rgba(0, 0, 0, 0.3);
 	backdrop-filter: blur(20px);
 
+	&.flag-5 {
+		display: flex;
+		width: 29.75rem;
+		padding: 2.5rem 1.5rem 1.5rem 1.5rem;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		gap: 2.5rem;
+		border-radius: 1rem;
+		border: 2px solid var(--brand-ci-05, rgba(151, 27, 47, 0.5));
+		background: var(--bwb-07, rgba(63, 63, 63, 0.7));
+		/* Shadow/Red_blur */
+		box-shadow: 0px 4px 50px 0px rgba(151, 27, 47, 0.5);
+		backdrop-filter: blur(20px);
+
+		> p {
+			color: var(--bw-white, #fff);
+			text-align: center;
+			/* H2_80px */
+			font-family: Lexend;
+			font-size: 5rem;
+			font-style: normal;
+			font-weight: 700;
+			line-height: 100%; /* 5rem */
+		}
+
+		> div {
+			color: var(--bw-white, #fff);
+			text-align: center;
+			/* Body1_60px */
+			font-family: Lexend;
+			font-size: 3.75rem;
+			font-style: normal;
+			font-weight: 400;
+			line-height: 100%; /* 3.75rem */
+		}
+	}
+
 	> p {
 		color: #fff;
 		text-align: center;
@@ -136,6 +203,9 @@ const FlagContent = styled.div`
 		align-self: stretch;
 		border-radius: 0.25rem;
 		background: rgba(255, 255, 255, 0.1);
+		font-size: 2.5rem;
+		font-weight: 400;
+		line-height: 100%;
 	}
 `;
 

@@ -44,7 +44,7 @@ const Counter = styled.div`
 	height: 60rem;
 	width: 100%;
 	display: flex;
-	margin-top: 16rem;
+	margin-top: 12rem;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
@@ -57,10 +57,10 @@ const Counter = styled.div`
 			color: #fff;
 
 			text-align: center;
-			font-size: 16rem;
+			font-size: 15rem;
 			font-style: normal;
 			font-weight: 600;
-			line-height: normal;
+			line-height: 1;
 		}
 
 		> div {
@@ -111,7 +111,7 @@ const Counter = styled.div`
 `;
 
 const EarthContainer = styled.div`
-	width: 130%;
+	width: 120%;
 	${'' /* display: flex; */}
 	overflow: hidden;
 	${
@@ -136,7 +136,7 @@ const EarthImageComponent = styled.img`
 
 	position: relative; */
 	}
-	width: 120%;
+	width: 110%;
 	${'' /* height: 100%; */}
 	${'' /* max-width: 100vw; */}
 	display: flex;
