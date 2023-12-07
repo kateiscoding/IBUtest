@@ -66,7 +66,7 @@ const Counter = styled.div`
 
 		> div {
 			display: flex;
-			gap: 12.1rem;
+			gap: 11rem;
 
 			> b {
 				color: #fff;
@@ -82,31 +82,31 @@ const Counter = styled.div`
 				lineheight: 44;
 				${'' /* letterspacing: 10.86; */}
 				wordwrap: 'break-word';
+				justify-content: center;
 			}
 
 			> div {
 				background: #971b2f;
-				width: 20rem;
+				width: 20.1rem;
 				height: 6rem;
-				font-size: 2.75rem;
+				${'' /* font-size: 4.4rem; */}
 				display: flex;
-				padding: 0.5rem 1rem;
-
-				display: inline-flex;
-				border-radius: 0.5rem;
-				justify-content: center;
+				padding: 0.8rem 1.6rem;
+				font-weight: bold;
+				line-height: 4rem;
+				display: flex;
+				border-radius: 0.8rem;
+				justify-content: space-around;
 				align-items: center;
+				${'' /* letterspacing: 10.56; */}
 				border-radius: 0.5rem;
-				gap: 0.5rem;
+				gap: 0.6rem;
 
 				> span {
-					// LIVE
+					display: flex;
 					color: 'black';
-					fontsize: 44;
-					fontweight: '600';
-					lineheight: 44;
-					letterspacing: 10.56;
-					wordwrap: 'break-word';
+					font-size: 4.1rem;
+					font-weight: '700';
 				}
 			}
 		}
