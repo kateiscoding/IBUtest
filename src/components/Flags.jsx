@@ -97,31 +97,31 @@ const Flagbox = styled.div`
 	position: absolute;
 
 	&.flag-1 {
-		top: -10rem;
-		left: -160rem;
+		top: -0rem;
+		left: -180rem;
 	}
 	&.flag-2 {
-		top: -25rem;
-		left: -135rem;
+		top: -12rem;
+		left: -155rem;
 	}
 	&.flag-3 {
-		top: -20rem;
-		left: -105rem;
+		top: -22rem;
+		left: -126rem;
 	}
 	&.flag-4 {
 		top: -35rem;
-		left: -75rem;
+		left: -98rem;
 	}
 	&.flag-5 {
 		top: -34rem;
 		left: 75rem;
 	}
 	&.flag-6 {
-		top: -28rem;
+		top: -20rem;
 		left: 110rem;
 	}
 	&.flag-7 {
-		top: -15rem;
+		top: -5rem;
 		left: 140rem;
 	}
 
