@@ -139,16 +139,22 @@ const EarthImageComponent = styled.img`
 
 	position: relative; */
 	}
-	width: 110%;
-	${'' /* height: 100%; */}
-	${'' /* max-width: 100vw; */}
-	display: flex;
+ /* 이미지의 최대 너비 */
+	max-width: 100%; /* 부모 요소의 너비에 맞게 조정 */
+	display: block; /* 이미지 간격과 레이아웃을 조정하기 위해 사용 */
 	overflow: hidden;
 
 	${'' /* background-image: url(${EarthImage}); */}
 	background-size: cover;
 	${'' /* position: relative; */}
 	${'' /* top: -60rem; */}
+	width: 900rem; /* 이미지의 최대 너비 */
+	max-width: 100%; /* 화면에 맞게 조정 */
+	display: block;
+	overflow: hidden;
+	/* 중앙 정렬을 위한 마진 수정 */
+	${'' /* transform: scale(0.64);  */}
+	transform-origin: top; /* 확대/축소 기준 설정 */
 
 	> img {
 	}

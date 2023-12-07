@@ -99,6 +99,7 @@ const Flagbox = styled.div`
 
 	position: absolute;
 
+	
 	&.flag-1 {
 		top: 10em;
 		left: -255rem;
