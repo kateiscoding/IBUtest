@@ -1,5 +1,7 @@
 import React, { useRef, useState } from 'react';
 import styled from 'styled-components';
+import CountUp from 'react-countup';
+
 import InbodyMan from '../assets/pin-large-2.png';
 
 const Flag = ({ country, population, image }) => {
@@ -10,12 +12,12 @@ const Flag = ({ country, population, image }) => {
 			population: '1,949,288',
 			image: InbodyMan,
 		},
-		{ id: '2', country: 'Korea', population: '1,949,288', image: InbodyMan },
-		{ id: '3', country: 'Australia', population: '1,949,288', image: InbodyMan },
-		{ id: '4', country: 'Japan', population: '1,949,288', image: InbodyMan },
-		{ id: '5', country: 'USA', population: '1,949,288', image: InbodyMan },
-		{ id: '6', country: 'UK', population: '1,949,288', image: InbodyMan },
-		{ id: '7', country: 'EU', population: '1,949,288', image: InbodyMan },
+		{ id: '2', country: 'Korea', population: '1949288', image: InbodyMan },
+		{ id: '3', country: 'Australia', population: '1949288', image: InbodyMan },
+		{ id: '4', country: 'Japan', population: '1949288', image: InbodyMan },
+		{ id: '5', country: 'USA', population: '1949288', image: InbodyMan },
+		{ id: '6', country: 'UK', population: '1949288', image: InbodyMan },
+		{ id: '7', country: 'EU', population: '1949288', image: InbodyMan },
 	];
 
 	const gpsData = [
@@ -45,7 +47,9 @@ const Flag = ({ country, population, image }) => {
 				<Flagbox key={flag.id} className={`flag-${index + 1}`}>
 					<FlagContent key={flag.id} className={`flag-${index + 1}`}>
 						<p>{flag.country}</p>
-						<div>{flag.population}</div>
+						<div>
+							<CountUp start={9999000} end={10000000} />
+						</div>
 					</FlagContent>
 					{/* 
 					<RedLine>
