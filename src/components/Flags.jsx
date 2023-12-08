@@ -9,7 +9,6 @@ const Flag = ({ country, population, image }) => {
 			country: 'China',
 			population: '1,949,288',
 			image: InbodyMan,
-			gps: { top: '10em', left: '-255rem' },
 		},
 		{ id: '2', country: 'Korea', population: '1,949,288', image: InbodyMan },
 		{ id: '3', country: 'Australia', population: '1,949,288', image: InbodyMan },
@@ -17,6 +16,16 @@ const Flag = ({ country, population, image }) => {
 		{ id: '5', country: 'USA', population: '1,949,288', image: InbodyMan },
 		{ id: '6', country: 'UK', population: '1,949,288', image: InbodyMan },
 		{ id: '7', country: 'EU', population: '1,949,288', image: InbodyMan },
+	];
+
+	const gpsData = [
+		{ id: '1', top: '10em', left: '-215rem' },
+		{ id: '2', top: '10em', left: '-225rem' },
+		{ id: '3', top: '10em', left: '-245rem' },
+		{ id: '4', top: '10em', left: '-255rem' },
+		{ id: '5', top: '10em', left: '-275rem' },
+		{ id: '6', top: '10em', left: '-295rem' },
+		{ id: '7', top: '10em', left: '-255rem' },
 	];
 
 	const getPosition = (index, total) => {
@@ -42,6 +51,9 @@ const Flag = ({ country, population, image }) => {
 					<RedLine>
 						<div />
 					</RedLine> */}
+					<Gps className={`gps-${index + 1}`}>
+						<img src={flag.image} alt={`gps-${flag.country}`} />
+					</Gps>
 				</Flagbox>
 			))}
 		</FlagContainer>
@@ -99,34 +111,33 @@ const Flagbox = styled.div`
 
 	position: absolute;
 
-	
 	&.flag-1 {
-		top: 10em;
-		left: -255rem;
+		top: 12em;
+		left: -265rem;
 	}
 	&.flag-2 {
-		top: -10rem;
-		left: -224rem;
+		top: -8rem;
+		left: -232rem;
 	}
 	&.flag-3 {
-		top: -20rem;
-		left: -180rem;
+		top: -17.8rem;
+		left: -187rem;
 	}
 	&.flag-4 {
-		top: -30rem;
-		left: -136rem;
+		top: -26.8rem;
+		left: -140rem;
 	}
 	&.flag-5 {
-		top: -30rem;
-		left: 110rem;
+		top: -33rem;
+		left: 108rem;
 	}
 	&.flag-6 {
-		top: -5rem;
-		left: 170rem;
+		top: -10rem;
+		left: 168rem;
 	}
 	&.flag-7 {
 		top: 20rem;
-		left: 215rem;
+		left: 218rem;
 	}
 
 	${'' /* gap: 5rem; */}
@@ -220,8 +231,40 @@ const FlagContent = styled.div`
 `;
 
 const Gps = styled.div`
+	position: absolute;
 	display: flex;
 	justify-content: center;
+	align-items: center;
+	z-index: 3; /* Ensure it's above the flags */
+
+	&.gps-1 {
+		top: 10em;
+		left: 68rem;
+	}
+	&.gps-2 {
+		top: 30rem;
+		left: 60rem;
+	}
+	&.gps-3 {
+		top: 46rem;
+		left: 37rem;
+	}
+	&.gps-4 {
+		top: 43rem;
+		left: 11rem;
+	}
+	&.gps-5 {
+		top: 48rem;
+		left: 16rem;
+	}
+	&.gps-6 {
+		top: 38rem;
+		left: 13rem;
+	}
+	&.gps-7 {
+		top: 16rem;
+		left: -18rem;
+	}
 `;
 
 export default Flag;
