@@ -1,10 +1,12 @@
 import React, { useRef, useState } from 'react';
 import styled from 'styled-components';
 import { Image } from '@react-three/drei';
+import CountUp from 'react-countup';
 import EarthImage from '../../../assets/earth-image-2.png';
 import InbodyMan from '../../../assets/inbodyman.png';
 import FlagContainer from '../../Flags';
 import MyThreeJSComponent from '../../MyThreeJSComponent';
+
 import LiveDot from '../../../assets/icon-rec.png';
 
 function MainPage() {
@@ -19,9 +21,11 @@ function MainPage() {
 						</div>
 						<b>TOTAL GLOBAL TESTS</b>
 					</div>
-					<p>110,000,378</p>
+					{/* <p>110,000,378</p> */}
+					<CountUp start={10999999} end={110000365} />
 				</div>
 			</Counter>
+
 			<FlagContainer />
 			<EarthContainer>
 				<EarthImageComponent src={EarthImage} alt='earth-image' />
@@ -55,6 +59,16 @@ const Counter = styled.div`
 		gap: 0.9rem;
 
 		> p {
+			color: #fff;
+
+			text-align: center;
+			font-size: 22.4rem;
+			font-style: normal;
+			font-weight: 600;
+			line-height: 1;
+		}
+
+		> span {
 			color: #fff;
 
 			text-align: center;
@@ -111,6 +125,16 @@ const Counter = styled.div`
 			}
 		}
 	}
+`;
+
+const CountUpStyled = styled.div`
+	color: #fff;
+
+	text-align: center;
+	font-size: 22.4rem;
+	font-style: normal;
+	font-weight: 600;
+	line-height: 1;
 `;
 
 const EarthContainer = styled.div`
