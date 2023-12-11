@@ -48,7 +48,7 @@ const Flag = ({ country, population, image }) => {
 					<FlagContent key={flag.id} className={`flag-${index + 1}`}>
 						<p>{flag.country}</p>
 						<div>
-							<CountUp start={9999000} end={10000000} />
+							<CountUp start={15000050} end={15000100} />
 						</div>
 					</FlagContent>
 					{/* 
