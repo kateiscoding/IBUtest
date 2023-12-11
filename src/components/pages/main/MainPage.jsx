@@ -1,8 +1,11 @@
 import React, { useRef, useState } from 'react';
+
 import styled from 'styled-components';
 import { Image } from '@react-three/drei';
 import CountUp from 'react-countup';
-import EarthImage from '../../../assets/earth-image-2.png';
+import StarfieldAnimation from 'react-starfield-animation';
+// import EarthImage from '../../../assets/earth-image-2.png';
+import EarthImage from '../../../assets/svgs/earth.svg';
 import InbodyMan from '../../../assets/inbodyman.png';
 import FlagContainer from '../../Flags';
 import MyThreeJSComponent from '../../MyThreeJSComponent';
@@ -11,29 +14,46 @@ import LiveDot from '../../../assets/icon-rec.png';
 
 function MainPage() {
 	return (
-		<Main>
-			<Counter>
-				<div>
+		<Background>
+			<Main>
+				<Counter>
 					<div>
 						<div>
-							<img src={LiveDot} alt='livedot' />
-							<span>L I V E</span>
+							<div>
+								<img src={LiveDot} alt='livedot' />
+								<span>L I V E</span>
+							</div>
+							<b>TOTAL GLOBAL TESTS</b>
 						</div>
-						<b>TOTAL GLOBAL TESTS</b>
+						{/* <p>110,000,378</p> */}
 					</div>
-					{/* <p>110,000,378</p> */}
-					<CountUp start={10999999} end={110000365} />
-				</div>
-			</Counter>
+					<CountUp start={105000500} end={105000800} />
+				</Counter>
 
-			<FlagContainer />
-			<EarthContainer>
-				<EarthImageComponent src={EarthImage} alt='earth-image' />
-			</EarthContainer>
-			{/* <MyThreeJSComponent /> */}
-		</Main>
+				<FlagContainer />
+				<EarthContainer>
+					<EarthImageComponent src={EarthImage} alt='earth-image' />
+				</EarthContainer>
+				<StarfieldAnimation
+					style={{ position: 'absolute', width: '100%', height: '108rem', zIndex: 1 }}
+					numParticles={100}
+					particleSpeed={0}
+					dx={0.000000001} // x speed of stars in px/frame, default 0.05
+					dy={0.000000001}
+				/>
+				{/* <MyThreeJSComponent /> */}
+			</Main>
+		</Background>
 	);
 }
+const Background = styled.main`
+	position: relative;
+	width: 100%;
+	overflow-x: hidden;
+	overflow-y: hidden;
+	height: 108rem;
+	overflow: hidden;
+`;
 
 const Main = styled.main`
 	background-color: black;
@@ -41,24 +61,38 @@ const Main = styled.main`
 	flex-direction: column;
 	height: 108rem;
 	align-items: center;
-	gap: 8rem;
+	${'' /* gap: 8rem; */}
+	gap: 5rem;
 `;
 
 const Counter = styled.div`
-	height: 60rem;
+	${
+		'' /* height: 60rem;
 	width: 100%;
 	display: flex;
 	margin-top: 22rem;
 	flex-direction: column;
 	justify-content: center;
+	align-items: center; */
+	}
+
+	height: 30rem;
+
+	width: 100%;
+	display: flex;
+	margin-top: 22rem;
+	flex-direction: column;
+	justify-content: flex-start;
 	align-items: center;
 
 	> div {
 		display: flex;
 		flex-direction: column;
+		width: 135rem;
 		gap: 0.9rem;
 
-		> p {
+		${
+			'' /* > p {
 			color: #fff;
 
 			text-align: center;
@@ -66,9 +100,11 @@ const Counter = styled.div`
 			font-style: normal;
 			font-weight: 600;
 			line-height: 1;
+		} */
 		}
 
-		> span {
+		${
+			'' /* > span {
 			color: #fff;
 
 			text-align: center;
@@ -76,6 +112,7 @@ const Counter = styled.div`
 			font-style: normal;
 			font-weight: 600;
 			line-height: 1;
+		} */
 		}
 
 		> div {
@@ -125,6 +162,16 @@ const Counter = styled.div`
 			}
 		}
 	}
+	${'' /* Count UP */}
+	> span {
+		color: #fff;
+		display: flex;
+		text-align: center;
+		font-size: 22.4rem;
+		font-style: normal;
+		font-weight: 600;
+		line-height: 1;
+	}
 `;
 
 const CountUpStyled = styled.div`
@@ -138,44 +185,26 @@ const CountUpStyled = styled.div`
 `;
 
 const EarthContainer = styled.div`
-	${'' /* width: 150%; */}
-	${'' /* display: flex; */}
 	overflow: hidden;
-	${
-		'' /* display: flex;
-	overflow: hidden;
-	flex-direction: column;
-	align-items: center; */
-	}
-	width: 200%;
+	max-width: 100%;
+	width: 100%;
+	max-height: 100%;
+
 	display: flex;
 	justify-content: center;
 	align-items: flex-start;
 `;
 
 const EarthImageComponent = styled.img`
-	${'' /* object-fit: cover; */}
-	${'' /* clip-path: inset(0 0 50% 0); */}
-	${
-		'' /* transform: rotate(45deg);
-	flex-shrink: 0;
-	width: 100%;
-
-	position: relative; */
-	}
- /* 이미지의 최대 너비 */
-	max-width: 120%; /* 부모 요소의 너비에 맞게 조정 */
-	display: block; /* 이미지 간격과 레이아웃을 조정하기 위해 사용 */
+	display: flex;
 	overflow: hidden;
+	max-width: 100%;
 
-	${'' /* background-image: url(${EarthImage}); */}
 	background-size: cover;
-	width: 964rem;
-	display: block;
-	overflow: hidden;
-	/* 중앙 정렬을 위한 마진 수정 */
-	${'' /* transform: scale(0.64);  */}
-	transform-origin: top; /* 확대/축소 기준 설정 */
+
+	transform: scaleX(1.7) scaleY(1.9);
+	${'' /* margin-top: -0.4%; */}
+	transform-origin: top;
 
 	> img {
 	}
