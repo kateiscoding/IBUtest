@@ -1,11 +1,12 @@
-import React, { useRef, useState } from 'react';
-
+import React, { useRef, useState, useEffect } from 'react';
+import * as THREE from 'three';
 import styled from 'styled-components';
+import { Canvas } from '@react-three/fiber';
 import { Image } from '@react-three/drei';
 import CountUp from 'react-countup';
-import StarfieldAnimation from 'react-starfield-animation';
+// import StarfieldAnimation from 'react-starfield-animation';
 // import EarthImage from '../../../assets/earth-image-2.png';
-import EarthImage from '../../../assets/svgs/earth.svg';
+import EarthImage from '../../../assets/earth-image-3.jpg';
 import InbodyMan from '../../../assets/inbodyman.png';
 import FlagContainer from '../../Flags';
 import MyThreeJSComponent from '../../MyThreeJSComponent';
@@ -13,56 +14,124 @@ import MyThreeJSComponent from '../../MyThreeJSComponent';
 import LiveDot from '../../../assets/icon-rec.png';
 
 function MainPage() {
+	// useEffect(() => {
+	// 	let camera;
+	// 	let scene;
+	// 	let renderer;
+	// 	const stars = [];
+
+	// 	function init() {
+	// 		// camera
+	// 		camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 1, 1000);
+	// 		camera.position.z = 5;
+
+	// 		scene = new THREE.Scene();
+
+	// 		renderer = new THREE.WebGLRenderer();
+
+	// 		renderer.setSize(window.innerWidth, window.innerHeight);
+
+	// 		document.body.appendChild(renderer.domElement);
+	// 	}
+
+	// 	function addSphere() {
+	// 		for (let z = -1000; z < 1000; z += 20) {
+	// 			const geometry = new THREE.SphereGeometry(0.5, 32, 32);
+	// 			const material = new THREE.MeshBasicMaterial({ color: 0xffffff });
+	// 			const sphere = new THREE.Mesh(geometry, material);
+
+	// 			sphere.position.x = Math.random() * 1000 - 500;
+	// 			sphere.position.y = Math.random() * 1000 - 500;
+	// 			sphere.position.z = z;
+
+	// 			sphere.scale.x = 2;
+	// 			sphere.scale.y = 2;
+
+	// 			scene.add(sphere);
+	// 			stars.push(sphere);
+	// 		}
+	// 	}
+	// 	function animateStars() {
+	// 		for (let i = 0; i < stars.length; i += 1) {
+	// 			const star = stars[i];
+	// 			star.position.z += i / 10;
+	// 			if (star.position.z > 1000) star.position.z -= 2000;
+	// 		}
+	// 	}
+
+	// 	function render() {
+	// 		requestAnimationFrame(render);
+	// 		animateStars();
+	// 		renderer.render(scene, camera);
+	// 	}
+
+	// 	init();
+	// 	addSphere();
+	// 	render();
+	// }, []);
+
 	return (
-		<Background>
-			<Main>
-				<Counter>
+		<Main id='canvas-container'>
+			<Counter>
+				<div>
 					<div>
 						<div>
-							<div>
-								<img src={LiveDot} alt='livedot' />
-								<span>L I V E</span>
-							</div>
-							<b>TOTAL GLOBAL TESTS</b>
+							<img src={LiveDot} alt='livedot' />
+							<span>L I V E</span>
 						</div>
-						{/* <p>110,000,378</p> */}
+						<b>TOTAL GLOBAL TESTS</b>
 					</div>
-					<CountUp start={105000500} end={105000800} />
-				</Counter>
+					{/* <p>110,000,378</p> */}
+				</div>
+				<CountUp start={100000000} end={109999900} />
+			</Counter>
 
-				<FlagContainer />
-				<EarthContainer>
-					<EarthImageComponent src={EarthImage} alt='earth-image' />
-				</EarthContainer>
-				<StarfieldAnimation
-					style={{ position: 'absolute', width: '100%', height: '108rem', zIndex: 0 }}
-					numParticles={100}
-					particleSpeed={-1}
-					dx={0.000000001} // x speed of stars in px/frame, default 0.05
-					dy={0.000000001}
-				/>
-				{/* <MyThreeJSComponent /> */}
-			</Main>
-		</Background>
+			<FlagContainer />
+			<EarthContainer>
+				<EarthImageComponent src={EarthImage} alt='earth-image' />
+			</EarthContainer>
+
+			{/* <MyThreeJSComponent /> */}
+			{/* <ThreeCanvas id='canvas-container' /> */}
+		</Main>
 	);
 }
-const Background = styled.main`
-	position: relative;
-	width: 100%;
-	overflow-x: hidden;
-	overflow-y: hidden;
-	height: 108rem;
-	overflow: hidden;
-`;
+// const Background = styled.main`
+// 	position: relative;
+// 	width: 100%;
+// 	overflow-x: hidden;
+// 	overflow-y: hidden;
+// 	height: 108rem;
+// 	overflow: hidden;
+// `;
 
 const Main = styled.main`
+	${
+		'' /* background-color: black;
+	display: flex;
+	flex-direction: column;
+	height: 108rem;
+	align-items: center;
+	${'' /* gap: 8rem; */
+	}
+	${'' /* gap: 5rem; */} 
+
+	position: relative; /* 추가 */
 	background-color: black;
 	display: flex;
 	flex-direction: column;
 	height: 108rem;
 	align-items: center;
-	${'' /* gap: 8rem; */}
-	gap: 5rem;
+	${'' /* gap: 5rem; */}
+
+	canvas {
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: -1; /* 추가 */
+		width: 100%;
+		height: 100%;
+	}
 `;
 
 const Counter = styled.div`
@@ -77,7 +146,7 @@ const Counter = styled.div`
 	}
 
 	height: 30rem;
-
+	z-index: 2;
 	width: 100%;
 	display: flex;
 	margin-top: 22rem;
@@ -88,7 +157,7 @@ const Counter = styled.div`
 	> div {
 		display: flex;
 		flex-direction: column;
-		width: 135rem;
+		width: 130rem;
 		gap: 0.9rem;
 
 		${
@@ -202,7 +271,9 @@ const EarthImageComponent = styled.img`
 
 	background-size: cover;
 
-	transform: scaleX(1.7) scaleY(1.9);
+	transform: scaleX(1) scaleY(0.5);
+	top: 46rem;
+	${'' /* position: absolute; */}
 	${'' /* margin-top: -0.4%; */}
 	transform-origin: top;
 
