@@ -6,7 +6,7 @@ import { Image } from '@react-three/drei';
 import CountUp from 'react-countup';
 // import StarfieldAnimation from 'react-starfield-animation';
 // import EarthImage from '../../../assets/earth-image-2.png';
-import EarthImage from '../../../assets/earth-image-3.jpg';
+import EarthImage from '../../../assets/earth-image-3.png';
 import InbodyMan from '../../../assets/inbodyman.png';
 import FlagContainer from '../../Flags';
 import MyThreeJSComponent from '../../MyThreeJSComponent';
@@ -122,7 +122,7 @@ const Main = styled.main`
 	flex-direction: column;
 	height: 108rem;
 	align-items: center;
-	${'' /* gap: 5rem; */}
+	gap: 5rem;
 
 	canvas {
 		position: absolute;
@@ -271,7 +271,7 @@ const EarthImageComponent = styled.img`
 
 	background-size: cover;
 
-	transform: scaleX(1) scaleY(0.5);
+	transform: scaleX(1.7) scaleY(1);
 	top: 46rem;
 	${'' /* position: absolute; */}
 	${'' /* margin-top: -0.4%; */}
