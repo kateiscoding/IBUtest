@@ -6,7 +6,7 @@ import { Image } from '@react-three/drei';
 import CountUp from 'react-countup';
 // import StarfieldAnimation from 'react-starfield-animation';
 // import EarthImage from '../../../assets/earth-image-2.png';
-import EarthImage from '../../../assets/earth-image-3.jpg';
+import EarthImage from '../../../assets/earth-image-4.png';
 import InbodyMan from '../../../assets/inbodyman.png';
 import FlagContainer from '../../Flags';
 import MyThreeJSComponent from '../../MyThreeJSComponent';
@@ -114,7 +114,7 @@ const Main = styled.main`
 	align-items: center;
 	${'' /* gap: 8rem; */
 	}
-	${'' /* gap: 5rem; */} 
+	gap: 5rem;
 
 	position: relative; /* 추가 */
 	background-color: black;
@@ -271,11 +271,13 @@ const EarthImageComponent = styled.img`
 
 	background-size: cover;
 
-	transform: scaleX(1) scaleY(0.5);
-	top: 46rem;
-	${'' /* position: absolute; */}
+	transform: scaleX(1.65) scaleY(0.9);
 	${'' /* margin-top: -0.4%; */}
 	transform-origin: top;
+
+	${'' /* position: absolute; */}
+	${'' /* margin-top: -0.4%; */}
+
 
 	> img {
 	}
