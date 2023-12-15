@@ -83,7 +83,7 @@ function MainPage() {
 					</div>
 					{/* <p>110,000,378</p> */}
 				</div>
-				<CountUp start={100000000} end={109999900} />
+				<CountUp start={100000000} end={111152421} />
 			</Counter>
 
 			<FlagContainer />
