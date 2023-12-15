@@ -157,7 +157,7 @@ const Counter = styled.div`
 	> div {
 		display: flex;
 		flex-direction: column;
-		width: 130rem;
+		width: 120rem;
 		gap: 0.9rem;
 
 		${
