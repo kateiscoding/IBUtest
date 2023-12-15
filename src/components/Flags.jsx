@@ -9,15 +9,15 @@ const Flag = ({ country, population, image }) => {
 		{
 			id: '1',
 			country: 'China',
-			population: '1,949,288',
+			population: '1960262',
 			image: InbodyMan,
 		},
-		{ id: '2', country: 'Korea', population: '1949288', image: InbodyMan },
-		{ id: '3', country: 'Australia', population: '1949288', image: InbodyMan },
-		{ id: '4', country: 'Japan', population: '1949288', image: InbodyMan },
-		{ id: '5', country: 'USA', population: '1949288', image: InbodyMan },
-		{ id: '6', country: 'UK', population: '1949288', image: InbodyMan },
-		{ id: '7', country: 'EU', population: '1949288', image: InbodyMan },
+		{ id: '2', country: 'Korea', population: '67964448', image: InbodyMan },
+		{ id: '3', country: 'Australia', population: '1538171', image: InbodyMan },
+		{ id: '4', country: 'Japan', population: '11574491', image: InbodyMan },
+		{ id: '5', country: 'USA', population: '19063537', image: InbodyMan },
+		{ id: '6', country: 'UK', population: '1483497', image: InbodyMan },
+		{ id: '7', country: 'EU', population: '2078396', image: InbodyMan },
 	];
 
 	const gpsData = [
@@ -48,7 +48,7 @@ const Flag = ({ country, population, image }) => {
 					<FlagContent key={flag.id} className={`flag-${index + 1}`}>
 						<p>{flag.country}</p>
 						<div>
-							<CountUp start={15000050} end={15700100} />
+							<CountUp start={1000000} end={flag.population} />
 						</div>
 					</FlagContent>
 					{/* 

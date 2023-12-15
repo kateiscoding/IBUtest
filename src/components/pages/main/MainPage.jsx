@@ -83,7 +83,7 @@ function MainPage() {
 					</div>
 					{/* <p>110,000,378</p> */}
 				</div>
-				<CountUp start={100000000} end={109999900} />
+				<CountUp start={100000000} end={111152421} />
 			</Counter>
 
 			<FlagContainer />
@@ -157,7 +157,7 @@ const Counter = styled.div`
 	> div {
 		display: flex;
 		flex-direction: column;
-		width: 130rem;
+		width: 120rem;
 		gap: 0.9rem;
 
 		${
