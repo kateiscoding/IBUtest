@@ -10,7 +10,7 @@ import EarthImage from '../../../assets/earth-image-4.png';
 import InbodyMan from '../../../assets/inbodyman.png';
 import FlagContainer from '../../Flags';
 import MyThreeJSComponent from '../../MyThreeJSComponent';
-
+import InbodyMainLogo from '../../../assets/img-logo.png';
 import LiveDot from '../../../assets/icon-rec.png';
 
 function MainPage() {
@@ -69,6 +69,21 @@ function MainPage() {
 	// 	addSphere();
 	// 	render();
 	// }, []);
+	const [count, setCount] = useState(100000000); // 초기 값
+
+	useEffect(() => {
+		const endValue = 111152421; // 최종 값
+
+		const interval = setInterval(() => {
+			setCount(endValue); // 최종 값으로 설정
+
+			setTimeout(() => {
+				setCount(100000000); // 10초 후에 초기 값으로 재설정
+			}, 10000); // 10초 후에 초기 값으로 재설정
+		}, 20000); // 20초마다 최종 값으로 설정하고 10초 후에 초기 값으로 재설정
+
+		return () => clearInterval(interval); // 언마운트 시 인터벌 클리어
+	}, []); // 의존성 배열 비움]); // count가 변할 때마다 useEffect 재실행
 
 	return (
 		<Main id='canvas-container'>
@@ -91,11 +106,23 @@ function MainPage() {
 				<EarthImageComponent src={EarthImage} alt='earth-image' />
 			</EarthContainer>
 
+			<InbodyLogo>
+				<img src={InbodyMainLogo} alt='inbody-logo' />
+			</InbodyLogo>
 			{/* <MyThreeJSComponent /> */}
 			{/* <ThreeCanvas id='canvas-container' /> */}
 		</Main>
 	);
 }
+
+const InbodyLogo = styled.div`
+	${'' /* width: 100%; */}
+	position: absolute;
+	display: flex;
+	top: 10rem;
+	left: 10rem;
+`;
+
 // const Background = styled.main`
 // 	position: relative;
 // 	width: 100%;
