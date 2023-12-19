@@ -163,7 +163,7 @@ const Main = styled.main`
 	align-items: center;
 	${'' /* gap: 8rem; */
 	}
-	gap: 8rem;
+	gap: 6rem;
 
 	position: relative; /* 추가 */
 	background-color: black;
