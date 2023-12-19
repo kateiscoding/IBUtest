@@ -9,15 +9,15 @@ const Flag = ({ country, population, image }) => {
 		{
 			id: '1',
 			country: 'China',
-			population: '1960262',
+			population: '1962355',
 			image: InbodyMan,
 		},
-		{ id: '2', country: 'Korea', population: '67964448', image: InbodyMan },
-		{ id: '3', country: 'Australia', population: '1538171', image: InbodyMan },
-		{ id: '4', country: 'Japan', population: '11574491', image: InbodyMan },
-		{ id: '5', country: 'USA', population: '19063537', image: InbodyMan },
-		{ id: '6', country: 'UK', population: '1483497', image: InbodyMan },
-		{ id: '7', country: 'EU', population: '2078396', image: InbodyMan },
+		{ id: '2', country: 'Korea', population: '68081996', image: InbodyMan },
+		{ id: '3', country: 'Australia', population: '1540030', image: InbodyMan },
+		{ id: '4', country: 'Japan', population: '11625485', image: InbodyMan },
+		{ id: '5', country: 'USA', population: '19091064', image: InbodyMan },
+		{ id: '6', country: 'UK', population: '1490181', image: InbodyMan },
+		{ id: '7', country: 'EU', population: '2080764', image: InbodyMan },
 	];
 
 	const gpsData = [
@@ -37,18 +37,16 @@ const Flag = ({ country, population, image }) => {
 			height: '3.5rem',
 			top: '5rem',
 			left: '-15rem',
-
 			borderTopRightRadius: '2.4rem',
 			borderBottomRightRadius: '2.4rem',
 			borderBottomLeftRadius: '2.4rem',
 		},
 		{
 			id: '2',
-			width: '44.6rem',
+			width: '37.4rem',
 			height: '18.4rem',
 			top: '8rem',
 			left: '-25rem',
-
 			borderTopRightRadius: '2.4rem',
 			borderBottomRightRadius: '2.4rem',
 			borderBottomLeftRadius: '2.4rem',
@@ -379,7 +377,7 @@ const Gps = styled.div`
 	}
 	&.gps-2 {
 		top: 33rem;
-		left: 57rem;
+		left: 49rem;
 	}
 	&.gps-3 {
 		top: 51rem;
