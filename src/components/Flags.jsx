@@ -30,6 +30,89 @@ const Flag = ({ country, population, image }) => {
 		{ id: '7', top: '10em', left: '-255rem' },
 	];
 
+	const line = [
+		{
+			id: '1',
+			width: '53rem',
+			height: '3.5rem',
+			top: '5rem',
+			left: '-15rem',
+
+			borderTopRightRadius: '2.4rem',
+			borderBottomRightRadius: '2.4rem',
+			borderBottomLeftRadius: '2.4rem',
+		},
+		{
+			id: '2',
+			width: '44.6rem',
+			height: '18.4rem',
+			top: '8rem',
+			left: '-25rem',
+
+			borderTopRightRadius: '2.4rem',
+			borderBottomRightRadius: '2.4rem',
+			borderBottomLeftRadius: '2.4rem',
+		},
+		{
+			id: '3',
+			width: '22.3rem',
+			height: '37.1rem',
+			top: '10rem',
+			left: '-20rem',
+
+			borderTopRightRadius: '2.4rem',
+			borderBottomRightRadius: '2.4rem',
+			borderBottomLeftRadius: '2.4rem',
+		},
+		{
+			id: '4',
+			width: '0rem',
+			height: '34.7rem',
+			top: '10rem',
+			left: '-20rem',
+
+			borderTopRightRadius: '2.4rem',
+			borderBottomRightRadius: '2.4rem',
+			borderBottomLeftRadius: '2.4rem',
+		},
+		{
+			id: '5',
+			width: '0rem',
+			height: '30rem',
+			marginLeft: '23.5rem',
+			top: '10rem',
+			left: '-20rem',
+		},
+		{
+			id: '6',
+			width: '0rem',
+			height: '28rem',
+			top: '10rem',
+			left: '-20rem',
+
+			borderTopRightRadius: '2.4rem',
+			borderBottomRightRadius: '2.4rem',
+			borderBottomLeftRadius: '2.4rem',
+			borderLeft: '4px #6c1624 dotted',
+			borderBottom: '4px #6c1624 dotted',
+		},
+		{
+			id: '7',
+			width: '30rem',
+			height: '3.6rem',
+			marginLeft: '-14rem',
+			top: '10rem',
+			left: '-20rem',
+			borderTopLeftRadius: '2.4rem',
+			borderTopRightRadius: '2.4rem',
+			borderBottomRightRadius: '2.4rem',
+			borderBottomLeftRadius: '2.4rem',
+			borderRight: '4px #6c1624 dotted',
+			borderLeft: '4px #6c1624 dotted',
+			borderBottom: '4px #6c1624 dotted',
+		},
+	];
+
 	const getPosition = (index, total) => {
 		const distanceBetween = 20; // Flagbox 간의 간격 설정
 		const left = index * distanceBetween; // 각 Flagbox의 가로 위치 계산
@@ -58,11 +141,52 @@ const Flag = ({ country, population, image }) => {
 					<Gps className={`gps-${index + 1}`}>
 						<img src={flag.image} alt={`gps-${flag.country}`} />
 					</Gps>
+					<Line
+						key={line[index].id}
+						style={{
+							width: line[index].width,
+							height: line[index].height,
+							marginLeft: line[index].marginLeft,
+							top: line[index].top,
+							left: line[index].left,
+							borderLeft: line[index].borderLeft,
+							borderRight: line[index].borderRight,
+						}}
+					/>
 				</Flagbox>
 			))}
 		</FlagContainer>
 	);
 };
+const Line = styled.div`
+	width: 53rem;
+	height: 3.6rem;
+	margin-left: 19rem;
+
+	${'' /* transform: rotate(180deg); */}
+	${'' /* transform-origin: 0 0; */}
+	${'' /* border-top-left-radius: 2.4rem; */}
+	border-top-right-radius: 2.4rem;
+	border-bottom-right-radius: 2.4rem;
+	border-bottom-left-radius: 2.4rem;
+	border-left: 4px #6c1624 dotted;
+	border-bottom: 4px #6c1624 dotted;
+`;
+
+const Line2 = styled.div`
+	width: 53rem;
+	height: 3.6rem;
+	margin-left: 19rem;
+
+	${'' /* transform: rotate(180deg); */}
+	${'' /* transform-origin: 0 0; */}
+	${'' /* border-top-left-radius: 2.4rem; */}
+	border-top-right-radius: 2.4rem;
+	border-bottom-right-radius: 2.4rem;
+	border-bottom-left-radius: 2.4rem;
+	border-left: 4px #6c1624 dotted;
+	border-bottom: 4px #6c1624 dotted;
+`;
 
 const FlagContainer = styled.div`
 	${
@@ -87,8 +211,8 @@ const FlagContainer = styled.div`
 	${'' /* grid-template-columns: repeat(7, 1fr); */}
 	justify-items: center;
 	position: absolute;
-	top: 60rem;
-	gap: 5rem;
+	${'' /* top: 60rem; */}
+	${'' /* gap: 5rem; */}
 	z-index: 2;
 	${'' /* transform: rotate(-45deg); */}
 `;
@@ -116,32 +240,39 @@ const Flagbox = styled.div`
 	position: absolute;
 
 	&.flag-1 {
-		top: 12em;
-		left: -265rem;
+		${'' /* top: 12em; */}
+		top: 76.8rem;
+		left: -263rem;
 	}
 	&.flag-2 {
-		top: -8rem;
-		left: -232rem;
+		${'' /* top: -8rem; */}
+		top: 48.7rem;
+		left: -229rem;
 	}
 	&.flag-3 {
-		top: -17.8rem;
-		left: -187rem;
+		${'' /* top: -17.8rem; */}
+		top: 36.9rem;
+		left: -185rem;
 	}
 	&.flag-4 {
-		top: -26.8rem;
+		${'' /* top: -26.8rem; */}
+		top: 27.3rem;
 		left: -140rem;
 	}
 	&.flag-5 {
-		top: -33rem;
-		left: 108rem;
+		${'' /* top: -33rem; */}
+		top: 27.3rem;
+		left: 109rem;
 	}
 	&.flag-6 {
-		top: -10rem;
-		left: 168rem;
+		${'' /* top: -10rem; */}
+		top: 51rem;
+		left: 169rem;
 	}
 	&.flag-7 {
-		top: 20rem;
-		left: 218rem;
+		${'' /* top: 20rem; */}
+		top: 76.8rem;
+		left: 219rem;
 	}
 
 	${'' /* gap: 5rem; */}
@@ -242,31 +373,31 @@ const Gps = styled.div`
 	z-index: 3; /* Ensure it's above the flags */
 
 	&.gps-1 {
-		top: 10em;
-		left: 68rem;
+		top: 18rem;
+		left: 66rem;
 	}
 	&.gps-2 {
-		top: 30rem;
-		left: 60rem;
+		top: 33rem;
+		left: 57rem;
 	}
 	&.gps-3 {
-		top: 46rem;
-		left: 37rem;
+		top: 51rem;
+		left: 35rem;
 	}
 	&.gps-4 {
-		top: 43rem;
-		left: 11rem;
+		top: 50rem;
+		left: 12.7rem;
 	}
 	&.gps-5 {
-		top: 48rem;
-		left: 16rem;
+		top: 50rem;
+		left: 17.5rem;
 	}
 	&.gps-6 {
 		top: 38rem;
-		left: 13rem;
+		left: 12.5rem;
 	}
 	&.gps-7 {
-		top: 16rem;
+		top: 18rem;
 		left: -18rem;
 	}
 `;
