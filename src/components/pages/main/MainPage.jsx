@@ -12,7 +12,7 @@ import FlagContainer from '../../Flags';
 import MyThreeJSComponent from '../../MyThreeJSComponent';
 import InbodyMainLogo from '../../../assets/img-logo.png';
 import LiveDot from '../../../assets/icon-rec.png';
-// import Final from '../../../assets/final.png';
+import Final from '../../../assets/final.png';
 
 function MainPage() {
 	// useEffect(() => {
@@ -73,13 +73,11 @@ function MainPage() {
 
 	return (
 		<Main id='canvas-container'>
+			{/* 비교용 이미지  */}
 			{/* <ImageContainer>
 				<FinalImage src={Final} alt='final-image' />
-			</ImageContainer> */}
-			{/* <img src={FinalImage} alt='final-image' className='ImageContainer' /> */}
-
-			{/* <img src={FinalImage} alt='final-image' />
-			</ImageContainer> */}
+			</ImageContainer>
+			 */}
 			<Counter>
 				<div>
 					<div>
@@ -93,12 +91,10 @@ function MainPage() {
 				</div>
 				<CountUp start={100000000} end={111152421} />
 			</Counter>
-
 			<FlagContainer />
 			<EarthContainer>
 				<EarthImageComponent src={EarthImage} alt='earth-image' />
 			</EarthContainer>
-
 			<InbodyLogo>
 				<img src={InbodyMainLogo} alt='inbody-logo' />
 			</InbodyLogo>
