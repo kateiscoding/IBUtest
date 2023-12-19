@@ -1,8 +1,33 @@
 import React, { useRef, useState } from 'react';
-import styled from 'styled-components';
+
+import styled, { keyframes } from 'styled-components';
 import CountUp from 'react-countup';
 
 import InbodyMan from '../assets/pin-large-2.png';
+
+const animateRedLine = keyframes`
+   0% {
+    
+	opacity: 0;
+  }
+  100% {
+    
+	opacity: 1;
+  }
+`;
+
+// 가이드라인 애니메이션
+const AnimatedRedLine = styled.div`
+	width: 53rem;
+	height: 3.6rem;
+	margin-left: 19rem;
+	border-top-right-radius: 2.4rem;
+	border-bottom-right-radius: 2.4rem;
+	border-bottom-left-radius: 2.4rem;
+	border-left: 4px #6c1624 dotted;
+	border-bottom: 4px #6c1624 dotted;
+	animation: ${animateRedLine} 1s ease-in-out forwards; /* 애니메이션 적용 */
+`;
 
 const Flag = ({ country, population, image }) => {
 	const flagData = [
@@ -139,7 +164,21 @@ const Flag = ({ country, population, image }) => {
 					<Gps className={`gps-${index + 1}`}>
 						<img src={flag.image} alt={`gps-${flag.country}`} />
 					</Gps>
-					<Line
+					{/* <Line
+						key={line[index].id}
+						style={{
+							width: line[index].width,
+							height: line[index].height,
+							marginLeft: line[index].marginLeft,
+							top: line[index].top,
+							left: line[index].left,
+							borderLeft: line[index].borderLeft,
+							borderRight: line[index].borderRight,
+							borderTopRightRadius: line[index].borderTopRightRadius,
+						}}
+					/> */}
+
+					<AnimatedRedLine
 						key={line[index].id}
 						style={{
 							width: line[index].width,
@@ -214,6 +253,7 @@ const FlagContainer = styled.div`
 	${'' /* gap: 5rem; */}
 	z-index: 2;
 	${'' /* transform: rotate(-45deg); */}
+	animation: ${animateRedLine} 1s ease-in-out forwards; /* 애니메이션 적용 */
 `;
 
 const RedLine = styled.div`
