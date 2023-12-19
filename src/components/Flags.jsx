@@ -69,8 +69,8 @@ const Flag = ({ country, population, image }) => {
 			width: '0rem',
 			height: '34.7rem',
 			top: '10rem',
-			left: '-20rem',
-
+			left: '-19rem',
+			marginLeft: '18rem',
 			borderTopRightRadius: '2.4rem',
 			borderBottomRightRadius: '2.4rem',
 			borderBottomLeftRadius: '2.4rem',
@@ -100,13 +100,13 @@ const Flag = ({ country, population, image }) => {
 			id: '7',
 			width: '30rem',
 			height: '3.6rem',
-			marginLeft: '-14rem',
+			marginLeft: '-11rem',
 			top: '10rem',
 			left: '-20rem',
-			borderTopLeftRadius: '2.4rem',
-			borderTopRightRadius: '2.4rem',
-			borderBottomRightRadius: '2.4rem',
-			borderBottomLeftRadius: '2.4rem',
+			borderTopLeftRadius: '0rem',
+			borderTopRightRadius: '0rem',
+			borderBottomRightRadius: '0rem',
+			borderBottomLeftRadius: '0rem',
 			borderRight: '4px #6c1624 dotted',
 			borderLeft: '4px #6c1624 dotted',
 			borderBottom: '4px #6c1624 dotted',
@@ -151,6 +151,7 @@ const Flag = ({ country, population, image }) => {
 							left: line[index].left,
 							borderLeft: line[index].borderLeft,
 							borderRight: line[index].borderRight,
+							borderTopRightRadius: line[index].borderTopRightRadius,
 						}}
 					/>
 				</Flagbox>
@@ -386,7 +387,7 @@ const Gps = styled.div`
 	}
 	&.gps-4 {
 		top: 50rem;
-		left: 12.7rem;
+		left: 12.3rem;
 	}
 	&.gps-5 {
 		top: 50rem;
