@@ -86,10 +86,10 @@ const Flag = ({ country, population, image }) => {
 		{
 			id: '6',
 			width: '0rem',
-			height: '28rem',
+			height: '26rem',
 			top: '10rem',
 			left: '-20rem',
-
+			marginLeft: '18.8rem',
 			borderTopRightRadius: '2.4rem',
 			borderBottomRightRadius: '2.4rem',
 			borderBottomLeftRadius: '2.4rem',
@@ -387,7 +387,7 @@ const Gps = styled.div`
 	}
 	&.gps-4 {
 		top: 50rem;
-		left: 12.3rem;
+		left: 11.8rem;
 	}
 	&.gps-5 {
 		top: 50rem;
