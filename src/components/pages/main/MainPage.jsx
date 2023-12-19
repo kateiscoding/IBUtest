@@ -12,6 +12,7 @@ import FlagContainer from '../../Flags';
 import MyThreeJSComponent from '../../MyThreeJSComponent';
 import InbodyMainLogo from '../../../assets/img-logo.png';
 import LiveDot from '../../../assets/icon-rec.png';
+// import Final from '../../../assets/final.png';
 
 function MainPage() {
 	// useEffect(() => {
@@ -69,24 +70,16 @@ function MainPage() {
 	// 	addSphere();
 	// 	render();
 	// }, []);
-	const [count, setCount] = useState(100000000); // 초기 값
-
-	useEffect(() => {
-		const endValue = 111152421; // 최종 값
-
-		const interval = setInterval(() => {
-			setCount(endValue); // 최종 값으로 설정
-
-			setTimeout(() => {
-				setCount(100000000); // 10초 후에 초기 값으로 재설정
-			}, 10000); // 10초 후에 초기 값으로 재설정
-		}, 20000); // 20초마다 최종 값으로 설정하고 10초 후에 초기 값으로 재설정
-
-		return () => clearInterval(interval); // 언마운트 시 인터벌 클리어
-	}, []); // 의존성 배열 비움]); // count가 변할 때마다 useEffect 재실행
 
 	return (
 		<Main id='canvas-container'>
+			{/* <ImageContainer>
+				<FinalImage src={Final} alt='final-image' />
+			</ImageContainer> */}
+			{/* <img src={FinalImage} alt='final-image' className='ImageContainer' /> */}
+
+			{/* <img src={FinalImage} alt='final-image' />
+			</ImageContainer> */}
 			<Counter>
 				<div>
 					<div>
@@ -115,6 +108,68 @@ function MainPage() {
 	);
 }
 
+const FlagPositioner = styled.div`
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+`;
+
+// const Flag = styled.div`
+// 	width: 100px;
+// 	height: 100px;
+// 	transform: rotate(180deg);
+// 	transform-origin: 0 0;
+// 	border-top-left-radius: 24px;
+// 	border-top-right-radius: 24px;
+// 	border-bottom-right-radius: 24px;
+// 	border: 4px #6c1624 dotted;
+// 	margin: 5px; /* Adjust this value for spacing between flags */
+// `;
+
+const ImageContainer = styled.div`
+	width: 100%;
+	display: flex;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 15;
+	opacity: 0.95;
+	width: 100%;
+	overflow: hidden;
+	max-width: 100%;
+	width: 100%;
+	max-height: 100%;
+
+	display: flex;
+	justify-content: center;
+	align-items: flex-start;
+
+	> img {
+	}
+`;
+
+const FinalImage = styled.img`
+	display: flex;
+	z-index: 15;
+	opacity: 0.8;
+	display: flex;
+	overflow: hidden;
+	max-width: 100%;
+
+	background-size: cover;
+
+	${'' /* margin-top: -0.4%; */}
+	transform-origin: top;
+
+	${'' /* position: absolute; */}
+	${'' /* margin-top: -0.4%; */}
+
+
+	> img {
+	}
+`;
+
 const InbodyLogo = styled.div`
 	${'' /* width: 100%; */}
 	position: absolute;
@@ -122,15 +177,6 @@ const InbodyLogo = styled.div`
 	top: 10rem;
 	left: 10rem;
 `;
-
-// const Background = styled.main`
-// 	position: relative;
-// 	width: 100%;
-// 	overflow-x: hidden;
-// 	overflow-y: hidden;
-// 	height: 108rem;
-// 	overflow: hidden;
-// `;
 
 const Main = styled.main`
 	${
@@ -141,7 +187,7 @@ const Main = styled.main`
 	align-items: center;
 	${'' /* gap: 8rem; */
 	}
-	gap: 5rem;
+	gap: 8rem;
 
 	position: relative; /* 추가 */
 	background-color: black;
@@ -176,7 +222,7 @@ const Counter = styled.div`
 	z-index: 2;
 	width: 100%;
 	display: flex;
-	margin-top: 22rem;
+	margin-top: 19rem;
 	flex-direction: column;
 	justify-content: flex-start;
 	align-items: center;
@@ -184,7 +230,7 @@ const Counter = styled.div`
 	> div {
 		display: flex;
 		flex-direction: column;
-		width: 120rem;
+		width: 129rem;
 		gap: 0.9rem;
 
 		${
@@ -267,6 +313,7 @@ const Counter = styled.div`
 		font-style: normal;
 		font-weight: 600;
 		line-height: 1;
+		width: 129rem;
 	}
 `;
 
