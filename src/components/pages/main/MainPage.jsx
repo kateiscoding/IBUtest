@@ -13,85 +13,17 @@ import MyThreeJSComponent from '../../MyThreeJSComponent';
 import InbodyMainLogo from '../../../assets/img-logo.png';
 import LiveDot from '../../../assets/icon-rec.png';
 import Final from '../../../assets/final.png';
+import FirstComponent from '../../Component1';
 
 function MainPage() {
-	// useEffect(() => {
-	// 	let camera;
-	// 	let scene;
-	// 	let renderer;
-	// 	const stars = [];
-
-	// 	function init() {
-	// 		// camera
-	// 		camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 1, 1000);
-	// 		camera.position.z = 5;
-
-	// 		scene = new THREE.Scene();
-
-	// 		renderer = new THREE.WebGLRenderer();
-
-	// 		renderer.setSize(window.innerWidth, window.innerHeight);
-
-	// 		document.body.appendChild(renderer.domElement);
-	// 	}
-
-	// 	function addSphere() {
-	// 		for (let z = -1000; z < 1000; z += 20) {
-	// 			const geometry = new THREE.SphereGeometry(0.5, 32, 32);
-	// 			const material = new THREE.MeshBasicMaterial({ color: 0xffffff });
-	// 			const sphere = new THREE.Mesh(geometry, material);
-
-	// 			sphere.position.x = Math.random() * 1000 - 500;
-	// 			sphere.position.y = Math.random() * 1000 - 500;
-	// 			sphere.position.z = z;
-
-	// 			sphere.scale.x = 2;
-	// 			sphere.scale.y = 2;
-
-	// 			scene.add(sphere);
-	// 			stars.push(sphere);
-	// 		}
-	// 	}
-	// 	function animateStars() {
-	// 		for (let i = 0; i < stars.length; i += 1) {
-	// 			const star = stars[i];
-	// 			star.position.z += i / 10;
-	// 			if (star.position.z > 1000) star.position.z -= 2000;
-	// 		}
-	// 	}
-
-	// 	function render() {
-	// 		requestAnimationFrame(render);
-	// 		animateStars();
-	// 		renderer.render(scene, camera);
-	// 	}
-
-	// 	init();
-	// 	addSphere();
-	// 	render();
-	// }, []);
-
 	return (
 		<Main id='canvas-container'>
 			{/* 비교용 이미지  */}
 			{/* <ImageContainer>
 				<FinalImage src={Final} alt='final-image' />
 			</ImageContainer> */}
+			<FirstComponent />
 
-			<Counter>
-				<div>
-					<div>
-						<div>
-							<img src={LiveDot} alt='livedot' />
-							<span>L I V E</span>
-						</div>
-						<b>TOTAL GLOBAL TESTS</b>
-					</div>
-					{/* <p>110,000,378</p> */}
-				</div>
-				<CountUp start={100000000} end={111385844} />
-			</Counter>
-			<FlagContainer />
 			<EarthContainer>
 				<EarthImageComponent src={EarthImage} alt='earth-image' />
 			</EarthContainer>
@@ -122,6 +54,54 @@ const FlagPositioner = styled.div`
 // 	border: 4px #6c1624 dotted;
 // 	margin: 5px; /* Adjust this value for spacing between flags */
 // `;
+
+const Component1 = styled.div`
+	gap: 8rem;
+
+	position: relative; /* 추가 */
+	background-color: black;
+	display: flex;
+	flex-direction: column;
+	height: 108rem;
+	align-items: center;
+	${'' /* gap: 5rem; */}
+`;
+
+const Component2 = styled.div`
+	gap: 8rem;
+
+	position: relative; /* 추가 */
+	background-color: black;
+	display: flex;
+	flex-direction: column;
+	height: 108rem;
+	align-items: center;
+	${'' /* gap: 5rem; */}
+`;
+
+const Component3 = styled.div`
+	gap: 8rem;
+
+	position: relative; /* 추가 */
+	background-color: black;
+	display: flex;
+	flex-direction: column;
+	height: 108rem;
+	align-items: center;
+	${'' /* gap: 5rem; */}
+`;
+
+const Component4 = styled.div`
+	gap: 8rem;
+
+	position: relative; /* 추가 */
+	background-color: black;
+	display: flex;
+	flex-direction: column;
+	height: 108rem;
+	align-items: center;
+	${'' /* gap: 5rem; */}
+`;
 
 const ImageContainer = styled.div`
 	width: 100%;
