@@ -76,8 +76,8 @@ function MainPage() {
 			{/* 비교용 이미지  */}
 			{/* <ImageContainer>
 				<FinalImage src={Final} alt='final-image' />
-			</ImageContainer>
-			 */}
+			</ImageContainer> */}
+
 			<Counter>
 				<div>
 					<div>
@@ -89,7 +89,7 @@ function MainPage() {
 					</div>
 					{/* <p>110,000,378</p> */}
 				</div>
-				<CountUp start={100000000} end={111152421} />
+				<CountUp start={100000000} end={111385844} />
 			</Counter>
 			<FlagContainer />
 			<EarthContainer>
