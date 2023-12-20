@@ -2,7 +2,6 @@ import React, { useRef, useState } from 'react';
 
 import styled, { keyframes } from 'styled-components';
 import CountUp from 'react-countup';
-
 import InbodyMan from '../assets/pin-large-2.png';
 
 const animateRedLine = keyframes`
