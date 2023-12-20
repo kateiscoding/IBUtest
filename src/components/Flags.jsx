@@ -25,7 +25,7 @@ const AnimatedRedLine = styled.div`
 	border-bottom-left-radius: 2.4rem;
 	border-left: 4px #6c1624 dotted;
 	border-bottom: 4px #6c1624 dotted;
-	animation: ${animateRedLine} 1s ease-in-out forwards; /* 애니메이션 적용 */
+	animation: ${animateRedLine} 2s ease-in-out forwards;
 `;
 
 const Flag = ({ country, population, image }) => {
