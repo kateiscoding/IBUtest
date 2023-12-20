@@ -25,7 +25,7 @@ function MainPage() {
 		const timer = setTimeout(() => {
 			// 시간이 지난 후에 다음 컴포넌트로 변경
 			setCurrentComponent((prevComponent) => (prevComponent % 2) + 1);
-		}, 10000); // 10초 후에 컴포넌트 변경
+		}, 20000); // 10초 후에 컴포넌트 변경
 
 		return () => clearTimeout(timer);
 	}, [currentComponent]);
@@ -36,13 +36,12 @@ function MainPage() {
 			{/* <ImageContainer>
 				<FinalImage src={Final} alt='final-image' />
 			</ImageContainer> */}
-			{/* <FirstComponent /> */}
-
+			<FirstComponent />
 			{/* <SecondComponent /> */}
 
 			{/* 컴포넌트 10초 단위로 돌리기 */}
-			{currentComponent === 1 && <FirstComponent />}
-			{currentComponent === 2 && <SecondComponent />}
+			{/* {currentComponent === 1 && <FirstComponent />}
+			{currentComponent === 2 && <SecondComponent />} */}
 			{/* {currentComponent === 3 && <ThirdComponent />}
 			{currentComponent === 4 && <FourthComponent />} */}
 			<EarthContainer>
@@ -198,7 +197,7 @@ const Main = styled.main`
 		position: absolute;
 		top: 0;
 		left: 0;
-		z-index: -1; /* 추가 */
+		z-index: -1;
 		width: 100%;
 		height: 100%;
 	}

@@ -108,7 +108,7 @@ const TextContainer = styled.div`
 `;
 
 const Component2 = styled.div`
-	position: relative; /* 추가 */
+	position: relative;
 	${'' /* background-color: black; */}
 	display: flex;
 	flex-direction: column;
