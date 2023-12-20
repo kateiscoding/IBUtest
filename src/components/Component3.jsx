@@ -15,7 +15,7 @@ function ThirdComponent() {
 const Component3 = styled.div`
 	gap: 8rem;
 
-	position: relative; /* 추가 */
+	position: relative;
 	background-color: black;
 	display: flex;
 	flex-direction: column;

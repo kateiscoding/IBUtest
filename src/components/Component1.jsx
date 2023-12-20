@@ -24,7 +24,7 @@ function FirstComponent() {
 					</div>
 					{/* <p>110,000,378</p> */}
 				</div>
-				<CountUp start={100000000} end={111385844} />
+				<CountUp start={100000000} end={111455853} duration={3} />
 			</Counter>
 			<FlagContainer />
 		</Component1>
@@ -65,27 +65,6 @@ const ImageContainer = styled.div`
 	display: flex;
 	justify-content: center;
 	align-items: flex-start;
-
-	> img {
-	}
-`;
-
-const FinalImage = styled.img`
-	display: flex;
-	z-index: 15;
-	opacity: 0.8;
-	display: flex;
-	overflow: hidden;
-	max-width: 100%;
-
-	background-size: cover;
-
-	${'' /* margin-top: -0.4%; */}
-	transform-origin: top;
-
-	${'' /* position: absolute; */}
-	${'' /* margin-top: -0.4%; */}
-
 
 	> img {
 	}
