@@ -33,15 +33,15 @@ const Flag = ({ country, population, image }) => {
 		{
 			id: '1',
 			country: 'China',
-			population: '1962355',
+			population: '1963052',
 			image: InbodyMan,
 		},
-		{ id: '2', country: 'Korea', population: '68081996', image: InbodyMan },
-		{ id: '3', country: 'Australia', population: '1540030', image: InbodyMan },
-		{ id: '4', country: 'Japan', population: '11625485', image: InbodyMan },
-		{ id: '5', country: 'USA', population: '19091064', image: InbodyMan },
-		{ id: '6', country: 'UK', population: '1490181', image: InbodyMan },
-		{ id: '7', country: 'EU', population: '2080764', image: InbodyMan },
+		{ id: '2', country: 'Korea', population: '68117894', image: InbodyMan },
+		{ id: '3', country: 'Australia', population: '1540633', image: InbodyMan },
+		{ id: '4', country: 'Japan', population: '11637731', image: InbodyMan },
+		{ id: '5', country: 'USA', population: '19101177', image: InbodyMan },
+		{ id: '6', country: 'UK', population: '1492330', image: InbodyMan },
+		{ id: '7', country: 'EU', population: '2081745', image: InbodyMan },
 	];
 
 	const gpsData = [
@@ -135,22 +135,11 @@ const Flag = ({ country, population, image }) => {
 		},
 	];
 
-	const getPosition = (index, total) => {
-		const distanceBetween = 20; // Flagbox 간의 간격 설정
-		const left = index * distanceBetween; // 각 Flagbox의 가로 위치 계산
-
-		return {
-			left: `${left}rem`, // Flagbox의 가로 위치
-			top: '0', // Flagbox의 세로 위치, 필요한 경우 조정 가능
-			zIndex: total - index, // zIndex 역순으로 배치
-		};
-	};
-
 	return (
 		<FlagContainer>
 			{flagData.map((flag, index) => (
-				<Flagbox key={flag.id} className={`flag-${index + 1}`}>
-					<FlagContent key={flag.id} className={`flag-${index + 1}`}>
+				<Flagbox key={`flag-${index + 1}`} className={`flag-${index + 1}`}>
+					<FlagContent key={`flag-content-${index + 1}`} className={`flag-${index + 1}`}>
 						<p>{flag.country}</p>
 						<div>
 							<CountUp start={1000000} end={flag.population} />
@@ -252,7 +241,7 @@ const FlagContainer = styled.div`
 	${'' /* gap: 5rem; */}
 	z-index: 2;
 	${'' /* transform: rotate(-45deg); */}
-	animation: ${animateRedLine} 1s ease-in-out forwards; /* 애니메이션 적용 */
+	animation: ${animateRedLine} 1s ease-in-out forwards;
 `;
 
 const RedLine = styled.div`
@@ -271,10 +260,11 @@ const RedLine = styled.div`
 	}
 `;
 
+// flag 박스 위치 지정
+
 const Flagbox = styled.div`
 	display: flex;
 	flex-direction: column;
-
 	position: absolute;
 
 	&.flag-1 {
@@ -315,6 +305,8 @@ const Flagbox = styled.div`
 
 	${'' /* gap: 5rem; */}
 `;
+
+// flag 스타일 지정
 
 const FlagContent = styled.div`
 	color: white;
@@ -403,12 +395,13 @@ const FlagContent = styled.div`
 	}
 `;
 
+// flag gps 핀 위치 지정
 const Gps = styled.div`
 	position: absolute;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	z-index: 3; /* Ensure it's above the flags */
+	z-index: 3;
 
 	&.gps-1 {
 		top: 18rem;
