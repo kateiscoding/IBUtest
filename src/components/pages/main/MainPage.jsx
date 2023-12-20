@@ -14,16 +14,37 @@ import InbodyMainLogo from '../../../assets/img-logo.png';
 import LiveDot from '../../../assets/icon-rec.png';
 import Final from '../../../assets/final.png';
 import FirstComponent from '../../Component1';
+import SecondComponent from '../../Component2';
+import ThirdComponent from '../../Component3';
+import FourthComponent from '../../Component4';
 
 function MainPage() {
+	const [currentComponent, setCurrentComponent] = useState(1);
+
+	useEffect(() => {
+		const timer = setTimeout(() => {
+			// 시간이 지난 후에 다음 컴포넌트로 변경
+			setCurrentComponent((prevComponent) => (prevComponent % 2) + 1);
+		}, 10000); // 10초 후에 컴포넌트 변경
+
+		return () => clearTimeout(timer);
+	}, [currentComponent]);
+
 	return (
 		<Main id='canvas-container'>
 			{/* 비교용 이미지  */}
 			{/* <ImageContainer>
 				<FinalImage src={Final} alt='final-image' />
 			</ImageContainer> */}
-			<FirstComponent />
+			{/* <FirstComponent /> */}
 
+			{/* <SecondComponent /> */}
+
+			{/* 컴포넌트 10초 단위로 돌리기 */}
+			{currentComponent === 1 && <FirstComponent />}
+			{currentComponent === 2 && <SecondComponent />}
+			{/* {currentComponent === 3 && <ThirdComponent />}
+			{currentComponent === 4 && <FourthComponent />} */}
 			<EarthContainer>
 				<EarthImageComponent src={EarthImage} alt='earth-image' />
 			</EarthContainer>
@@ -163,13 +184,13 @@ const Main = styled.main`
 	align-items: center;
 	${'' /* gap: 8rem; */
 	}
-	gap: 6rem;
-
+	gap: 7rem;
+	overflow: hidden;
 	position: relative; /* 추가 */
 	background-color: black;
 	display: flex;
 	flex-direction: column;
-	height: 108rem;
+	${'' /* height: 108rem; */}
 	align-items: center;
 	${'' /* gap: 5rem; */}
 
@@ -304,12 +325,24 @@ const CountUpStyled = styled.div`
 `;
 
 const EarthContainer = styled.div`
+	${
+		'' /* overflow: hidden;
+	max-width: 100%;
+	width: 100%;
+	max-height: 100%;
+	position: absolute;
+	display: flex;
+	justify-content: center;
+	align-items: flex-start;  */
+	}
+
 	overflow: hidden;
 	max-width: 100%;
 	width: 100%;
 	max-height: 100%;
-
 	display: flex;
+	top: 54rem;
+	position: absolute;
 	justify-content: center;
 	align-items: flex-start;
 `;
@@ -318,13 +351,14 @@ const EarthImageComponent = styled.img`
 	display: flex;
 	overflow: hidden;
 	max-width: 100%;
-
+	${'' /* position: absolute; */}
 	background-size: cover;
 
 	transform: scaleX(1.65) scaleY(0.9);
 	${'' /* margin-top: -0.4%; */}
 	transform-origin: top;
-
+	flex-direction: column;
+	align-items: center;
 	${'' /* position: absolute; */}
 	${'' /* margin-top: -0.4%; */}
 
