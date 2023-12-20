@@ -41,6 +41,11 @@ const Component1 = styled.div`
 	height: 108rem;
 	align-items: center;
 	${'' /* gap: 5rem; */}
+
+	> p {
+		font-size: 18rem;
+		color: white;
+	}
 `;
 
 const ImageContainer = styled.div`
