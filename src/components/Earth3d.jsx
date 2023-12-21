@@ -5,17 +5,18 @@ import { TextureLoader } from 'three';
 import * as THREE from 'three';
 import { OrbitControls, Stars } from '@react-three/drei';
 
-import EarthDayMap from '../../assets/img/8k_earth_daymap.jpg';
-import EarthNormalMap from '../../assets/img/8k_earth_normal_map.jpg';
-import EarthSpecularMap from '../../assets/img/8k_earth_specular_map.jpg';
-import EarthCloudsMap from '../../assets/img/8k_earth_clouds.jpg';
+import EarthDayMap from '../../assets/textures/8k_earth_daymap.jpg';
+import EarthNormalMap from '../../assets/textures/8k_earth_normal_map.jpg';
+import EarthSpecularMap from '../../assets/textures/8k_earth_specular_map.jpg';
+import EarthCloudMap from '../../assets/textures/8k_earth_clouds.jpg';
+import { TextureLoader } from 'three';
 
-export default function Earth() {
+export function Earth(props) {
 	const [colorMap, normalMap, specularMap, cloudsMap] = useLoader(TextureLoader, [
 		EarthDayMap,
 		EarthNormalMap,
 		EarthSpecularMap,
-		EarthCloudsMap,
+		EarthCloudMap,
 	]);
 
 	const earthRef = useRef();
@@ -30,6 +31,7 @@ export default function Earth() {
 
 	return (
 		<>
+			<ambientLight intensity={3} />
 			<pointLight color='#f6f3ea' position={[2, 0, 2]} intensity={1} />
 			<Stars radius={300} depth={60} count={20000} factor={7} saturation={0} fade={true} />
 
