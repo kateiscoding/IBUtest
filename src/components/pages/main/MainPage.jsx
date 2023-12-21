@@ -17,6 +17,7 @@ import FirstComponent from '../../Component1';
 import SecondComponent from '../../Component2';
 import ThirdComponent from '../../Component3';
 import FourthComponent from '../../Component4';
+import Earth from '../../EarthImage';
 
 function MainPage() {
 	const [currentComponent, setCurrentComponent] = useState(1);
@@ -25,7 +26,7 @@ function MainPage() {
 		const timer = setTimeout(() => {
 			// 시간이 지난 후에 다음 컴포넌트로 변경
 			setCurrentComponent((prevComponent) => (prevComponent % 2) + 1);
-		}, 20000); // 10초 후에 컴포넌트 변경
+		}, 20000); // 20초 후에 컴포넌트 변경
 
 		return () => clearTimeout(timer);
 	}, [currentComponent]);
@@ -44,9 +45,7 @@ function MainPage() {
 			{currentComponent === 2 && <SecondComponent />} */}
 			{/* {currentComponent === 3 && <ThirdComponent />}
 			{currentComponent === 4 && <FourthComponent />} */}
-			<EarthContainer>
-				<EarthImageComponent src={EarthImage} alt='earth-image' />
-			</EarthContainer>
+			<Earth />
 			<InbodyLogo>
 				<img src={InbodyMainLogo} alt='inbody-logo' />
 			</InbodyLogo>
@@ -56,12 +55,12 @@ function MainPage() {
 	);
 }
 
-const FlagPositioner = styled.div`
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-`;
+// const FlagPositioner = styled.div`
+// 	position: absolute;
+// 	top: 50%;
+// 	left: 50%;
+// 	transform: translate(-50%, -50%);
+// `;
 
 // const Flag = styled.div`
 // 	width: 100px;
@@ -75,53 +74,53 @@ const FlagPositioner = styled.div`
 // 	margin: 5px; /* Adjust this value for spacing between flags */
 // `;
 
-const Component1 = styled.div`
-	gap: 8rem;
+// const Component1 = styled.div`
+// 	gap: 8rem;
 
-	position: relative; /* 추가 */
-	background-color: black;
-	display: flex;
-	flex-direction: column;
-	height: 108rem;
-	align-items: center;
-	${'' /* gap: 5rem; */}
-`;
+// 	position: relative; /* 추가 */
+// 	background-color: black;
+// 	display: flex;
+// 	flex-direction: column;
+// 	height: 108rem;
+// 	align-items: center;
+// 	${'' /* gap: 5rem; */}
+// `;
 
-const Component2 = styled.div`
-	gap: 8rem;
+// const Component2 = styled.div`
+// 	gap: 8rem;
 
-	position: relative; /* 추가 */
-	background-color: black;
-	display: flex;
-	flex-direction: column;
-	height: 108rem;
-	align-items: center;
-	${'' /* gap: 5rem; */}
-`;
+// 	position: relative; /* 추가 */
+// 	background-color: black;
+// 	display: flex;
+// 	flex-direction: column;
+// 	height: 108rem;
+// 	align-items: center;
+// 	${'' /* gap: 5rem; */}
+// `;
 
-const Component3 = styled.div`
-	gap: 8rem;
+// const Component3 = styled.div`
+// 	gap: 8rem;
 
-	position: relative; /* 추가 */
-	background-color: black;
-	display: flex;
-	flex-direction: column;
-	height: 108rem;
-	align-items: center;
-	${'' /* gap: 5rem; */}
-`;
+// 	position: relative; /* 추가 */
+// 	background-color: black;
+// 	display: flex;
+// 	flex-direction: column;
+// 	height: 108rem;
+// 	align-items: center;
+// 	${'' /* gap: 5rem; */}
+// `;
 
-const Component4 = styled.div`
-	gap: 8rem;
+// const Component4 = styled.div`
+// 	gap: 8rem;
 
-	position: relative; /* 추가 */
-	background-color: black;
-	display: flex;
-	flex-direction: column;
-	height: 108rem;
-	align-items: center;
-	${'' /* gap: 5rem; */}
-`;
+// 	position: relative; /* 추가 */
+// 	background-color: black;
+// 	display: flex;
+// 	flex-direction: column;
+// 	height: 108rem;
+// 	align-items: center;
+// 	${'' /* gap: 5rem; */}
+// `;
 
 const ImageContainer = styled.div`
 	width: 100%;
@@ -323,46 +322,45 @@ const CountUpStyled = styled.div`
 	line-height: 1;
 `;
 
-const EarthContainer = styled.div`
-	${
-		'' /* overflow: hidden;
-	max-width: 100%;
-	width: 100%;
-	max-height: 100%;
-	position: absolute;
-	display: flex;
-	justify-content: center;
-	align-items: flex-start;  */
-	}
+// const EarthContainer = styled.div`
+// 	${
+// 		'' /* overflow: hidden;
+// 	max-width: 100%;
+// 	width: 100%;
+// 	max-height: 100%;
+// 	position: absolute;
+// 	display: flex;
+// 	justify-content: center;
+// 	align-items: flex-start;  */
+// 	}
 
-	overflow: hidden;
-	max-width: 100%;
-	width: 100%;
-	max-height: 100%;
-	display: flex;
-	top: 54rem;
-	position: absolute;
-	justify-content: center;
-	align-items: flex-start;
-`;
+// 	overflow: hidden;
+// 	max-width: 100%;
+// 	width: 100%;
+// 	max-height: 100%;
+// 	display: flex;
+// 	top: 54rem;
+// 	position: absolute;
+// 	justify-content: center;
+// 	align-items: flex-start;
+// `;
 
-const EarthImageComponent = styled.img`
-	display: flex;
-	overflow: hidden;
-	max-width: 100%;
-	${'' /* position: absolute; */}
-	background-size: cover;
+// const EarthImageComponent = styled.img`
+// 	display: flex;
+// 	overflow: hidden;
+// 	max-width: 100%;
+// 	${'' /* position: absolute; */}
+// 	background-size: cover;
 
-	transform: scaleX(1.65) scaleY(0.9);
-	${'' /* margin-top: -0.4%; */}
-	transform-origin: top;
-	flex-direction: column;
-	align-items: center;
-	${'' /* position: absolute; */}
-	${'' /* margin-top: -0.4%; */}
+// 	transform: scaleX(1.65) scaleY(0.9);
+// 	${'' /* margin-top: -0.4%; */}
+// 	transform-origin: top;
+// 	flex-direction: column;
+// 	align-items: center;
+// 	${'' /* position: absolute; */}
+// 	${'' /* margin-top: -0.4%; */}
 
-
-	> img {
-	}
-`;
+// 	> img {
+// 	}
+// `;
 export default MainPage;
