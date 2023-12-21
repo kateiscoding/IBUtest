@@ -183,7 +183,7 @@ const Main = styled.main`
 	align-items: center;
 	${'' /* gap: 8rem; */
 	}
-	gap: 7rem;
+	gap: 8rem;
 	overflow: hidden;
 	position: relative; /* 추가 */
 	background-color: black;

@@ -22,12 +22,14 @@ function SecondComponent() {
 				<FirstContainer>
 					<TextContainer>
 						<div>
-							<p>We are worldwide leader in body composition technology.</p>
+							<p>
+								We are worldwide leader <br /> in body composition technology.
+							</p>
 
 							<p>
-								CEO Dr.Kichul Cha, Recognized an opportunity improve on current BIA methods and set
-								out to innovate new BIA solutions that could provide accurate and precise body
-								composition measurements.
+								In the early 1990s, Dr. Kichul Cha, founder and CEO, identified limitations in
+								current composition analysis devices. Drawing on his mechanical engineering
+								expertise, he initiated the design of an improved product.
 							</p>
 						</div>
 					</TextContainer>
@@ -53,32 +55,35 @@ const HistoryLayout = styled.div`
 	width: 576rem;
 	display: flex;
 	height: 100%;
+	gap: 10rem;
 	flex-direction: row;
-	justify-content: center;
+	${'' /* justify-content: center; */}
+	justify-content: space-between;
 `;
 const FirstContainer = styled.div`
 	width: 192rem;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	margin-left: 17rem;
+	margin-left: 17.5rem;
 	align-items: flex-start;
 `;
 
 const SecondContainer = styled.div`
-	width: 192rem;
+	width: 300rem;
 	display: flex;
 `;
 
 const ThirdContainer = styled.div`
-	width: 192rem;
+	${'' /* width: 192rem; */}
+	width: 60rem;
 	display: flex;
 `;
 const TextContainer = styled.div`
 	color: white;
 	display: flex;
 	${'' /* margin: 33rem 17rem; */}
-	width: 134rem;
+	width: 150rem;
 	flex-direction: column;
 	align-items: flex-start;
 	gap: 5rem;
@@ -88,9 +93,9 @@ const TextContainer = styled.div`
 		${'' /* margin-top: 16rem; */}
 		display: flex;
 		flex-direction: column;
-		gap: 5rem;
+		gap: 2.2rem;
 		> p:first-child {
-			font-size: 8rem;
+			font-size: 9rem;
 			color: white;
 			display: flex;
 			font-weight: 700;
@@ -103,6 +108,7 @@ const TextContainer = styled.div`
 			display: flex;
 			font-weight: 400;
 			line-height: 130%;
+			width: 125rem;
 		}
 	}
 `;
