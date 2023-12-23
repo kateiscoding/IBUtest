@@ -1,8 +1,8 @@
-import React, { useRef, useState, useEffect } from 'react';
+import React, { useRef, useState, useEffect, Suspense } from 'react';
 import * as THREE from 'three';
 import styled from 'styled-components';
 import { Canvas } from '@react-three/fiber';
-import { Image } from '@react-three/drei';
+import { Sky } from '@react-three/drei';
 import CountUp from 'react-countup';
 // import StarfieldAnimation from 'react-starfield-animation';
 // import EarthImage from '../../../assets/earth-image-2.png';
@@ -51,76 +51,15 @@ function MainPage() {
 			</InbodyLogo>
 			{/* <MyThreeJSComponent /> */}
 			{/* <ThreeCanvas id='canvas-container' /> */}
+
+			{/* <Canvas>
+				<Suspense fallback={<div>Loading...</div>}>
+					<ThreeModel />
+				</Suspense>
+			</Canvas> */}
 		</Main>
 	);
 }
-
-// const FlagPositioner = styled.div`
-// 	position: absolute;
-// 	top: 50%;
-// 	left: 50%;
-// 	transform: translate(-50%, -50%);
-// `;
-
-// const Flag = styled.div`
-// 	width: 100px;
-// 	height: 100px;
-// 	transform: rotate(180deg);
-// 	transform-origin: 0 0;
-// 	border-top-left-radius: 24px;
-// 	border-top-right-radius: 24px;
-// 	border-bottom-right-radius: 24px;
-// 	border: 4px #6c1624 dotted;
-// 	margin: 5px; /* Adjust this value for spacing between flags */
-// `;
-
-// const Component1 = styled.div`
-// 	gap: 8rem;
-
-// 	position: relative; /* 추가 */
-// 	background-color: black;
-// 	display: flex;
-// 	flex-direction: column;
-// 	height: 108rem;
-// 	align-items: center;
-// 	${'' /* gap: 5rem; */}
-// `;
-
-// const Component2 = styled.div`
-// 	gap: 8rem;
-
-// 	position: relative; /* 추가 */
-// 	background-color: black;
-// 	display: flex;
-// 	flex-direction: column;
-// 	height: 108rem;
-// 	align-items: center;
-// 	${'' /* gap: 5rem; */}
-// `;
-
-// const Component3 = styled.div`
-// 	gap: 8rem;
-
-// 	position: relative; /* 추가 */
-// 	background-color: black;
-// 	display: flex;
-// 	flex-direction: column;
-// 	height: 108rem;
-// 	align-items: center;
-// 	${'' /* gap: 5rem; */}
-// `;
-
-// const Component4 = styled.div`
-// 	gap: 8rem;
-
-// 	position: relative; /* 추가 */
-// 	background-color: black;
-// 	display: flex;
-// 	flex-direction: column;
-// 	height: 108rem;
-// 	align-items: center;
-// 	${'' /* gap: 5rem; */}
-// `;
 
 const ImageContainer = styled.div`
 	width: 100%;
@@ -240,18 +179,6 @@ const Counter = styled.div`
 		} */
 		}
 
-		${
-			'' /* > span {
-			color: #fff;
-
-			text-align: center;
-			font-size: 22.4rem;
-			font-style: normal;
-			font-weight: 600;
-			line-height: 1;
-		} */
-		}
-
 		> div {
 			display: flex;
 			gap: 11rem;
@@ -292,9 +219,9 @@ const Counter = styled.div`
 
 				> span {
 					display: flex;
-					color: 'black';
+					color: black;
 					font-size: 4.1rem;
-					font-weight: '700';
+					font-weight: 700;
 				}
 			}
 		}
@@ -322,45 +249,4 @@ const CountUpStyled = styled.div`
 	line-height: 1;
 `;
 
-// const EarthContainer = styled.div`
-// 	${
-// 		'' /* overflow: hidden;
-// 	max-width: 100%;
-// 	width: 100%;
-// 	max-height: 100%;
-// 	position: absolute;
-// 	display: flex;
-// 	justify-content: center;
-// 	align-items: flex-start;  */
-// 	}
-
-// 	overflow: hidden;
-// 	max-width: 100%;
-// 	width: 100%;
-// 	max-height: 100%;
-// 	display: flex;
-// 	top: 54rem;
-// 	position: absolute;
-// 	justify-content: center;
-// 	align-items: flex-start;
-// `;
-
-// const EarthImageComponent = styled.img`
-// 	display: flex;
-// 	overflow: hidden;
-// 	max-width: 100%;
-// 	${'' /* position: absolute; */}
-// 	background-size: cover;
-
-// 	transform: scaleX(1.65) scaleY(0.9);
-// 	${'' /* margin-top: -0.4%; */}
-// 	transform-origin: top;
-// 	flex-direction: column;
-// 	align-items: center;
-// 	${'' /* position: absolute; */}
-// 	${'' /* margin-top: -0.4%; */}
-
-// 	> img {
-// 	}
-// `;
 export default MainPage;
