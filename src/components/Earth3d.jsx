@@ -1,17 +1,15 @@
 import React, { useRef } from 'react';
-import { useFrame, useLoader } from '@react-three/fiber';
+import { useFrame, useLoader, useThree } from '@react-three/fiber';
 import { TextureLoader } from 'three';
-
 import * as THREE from 'three';
-import { OrbitControls, Stars } from '@react-three/drei';
 
-import EarthDayMap from '../../assets/textures/8k_earth_daymap.jpg';
-import EarthNormalMap from '../../assets/textures/8k_earth_normal_map.jpg';
-import EarthSpecularMap from '../../assets/textures/8k_earth_specular_map.jpg';
-import EarthCloudMap from '../../assets/textures/8k_earth_clouds.jpg';
-import { TextureLoader } from 'three';
+import { Stars } from '@react-three/drei';
+import EarthDayMap from '../assets/textures/8k_earth_daymap.jpg';
+import EarthNormalMap from '../assets/textures/8k_earth_normal_map.jpg';
+import EarthSpecularMap from '../assets/textures/8k_earth_specular_map.jpg';
+import EarthCloudMap from '../assets/textures/8k_earth_clouds.jpg';
 
-export function Earth(props) {
+function Earth(props) {
 	const [colorMap, normalMap, specularMap, cloudsMap] = useLoader(TextureLoader, [
 		EarthDayMap,
 		EarthNormalMap,
@@ -21,6 +19,16 @@ export function Earth(props) {
 
 	const earthRef = useRef();
 	const cloudsRef = useRef();
+
+	const { camera, gl } = useThree(); // Three.js의 카메라와 렌더러 가져오기
+
+	useFrame(() => {
+		// 회전 애니메이션을 적용하려면 주석 해제하세요
+		// const elapsedTime = clock.getElapsedTime();
+		// earthRef.current.rotation.y = elapsedTime / 6;
+		// cloudsRef.current.rotation.y = elapsedTime / 6;
+	});
+
 	// //회전을 위해
 	// useFrame(({ clock }) => {
 	// 	const elapsedTime = clock.getElapsedTime();
@@ -35,15 +43,14 @@ export function Earth(props) {
 			<pointLight color='#f6f3ea' position={[2, 0, 2]} intensity={1} />
 			<Stars radius={300} depth={60} count={20000} factor={7} saturation={0} fade={true} />
 
-			<mesh ref={cloudsRef}>
-				{/* sphereGeometry의 인자는 순서대로 반지름, 너비, 높이 이다 */}
-				<sphereGeometry args={[1.005, 32, 32]} />
-				<meshPhongMaterial
-					map={cloudsMap}
-					opacity={0.3}
-					depthWrite={true}
-					transparent={true}
-					side={THREE.DoubleSide}
+			<mesh ref={earthRef}>
+				<sphereGeometry args={[1, 32, 32]} />
+				<meshPhongMaterial specularMap={specularMap} />
+				<meshStandardMaterial
+					map={colorMap}
+					normalMap={normalMap}
+					metalness={0.4}
+					roughness={0.7}
 				/>
 			</mesh>
 
@@ -57,15 +64,10 @@ export function Earth(props) {
 					roughness={0.7}
 				/>
 
-				<OrbitControls
-					enableZoom={true}
-					enablePan={true}
-					enableRotate={true}
-					zoomSpeed={0.6}
-					panSpeed={0.5}
-					rotateSpeed={0.4}
-				/>
+				<orbitControls args={[camera, gl.domElement]} />
 			</mesh>
 		</>
 	);
 }
+
+export default Earth;
