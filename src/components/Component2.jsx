@@ -33,7 +33,17 @@ function SecondComponent() {
 				</TextContainer>
 				<ImageContainer>
 					<YearContainer>
-						<p>third</p>
+						<div>1996</div>
+						<div>2000</div>
+						<div>2009</div>
+						<div>2013</div>
+						<div>2014</div>
+						<div>2015</div>
+						<div>2016</div>
+						<div>2017</div>
+						<div>2019</div>
+						<div>2020</div>
+						<div>2023</div>
 					</YearContainer>
 					<FirstContainer>
 						<p>third</p>
@@ -181,6 +191,15 @@ const YearContainer = styled.div`
 	flex-shrink: 0;
 	background: linear-gradient(270deg, #000 0%, rgba(0, 0, 0, 0) 5.8%),
 		linear-gradient(90deg, #000 -0.39%, rgba(0, 0, 0, 0) 8.89%), #6c1624;
+	display: flex;
+	gap: 20rem;
+	align-items: center;
+	> div {
+		color: white;
+		display: flex;
+		font-size: 4.2rem;
+		font-weight: 600;
+	}
 `;
 const TextContent = styled.div`
 	color: white;
