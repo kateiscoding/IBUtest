@@ -24,7 +24,7 @@ function FirstComponent() {
 					</div>
 					{/* <p>110,000,378</p> */}
 				</div>
-				<CountUp start={100000000} end={111521500} duration={3} />
+				<CountUp start={100000000} end={111894900} duration={3} />
 			</Counter>
 			<FlagContainer />
 		</Component1>
