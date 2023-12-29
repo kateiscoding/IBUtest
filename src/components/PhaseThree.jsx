@@ -4,15 +4,15 @@ import styled from 'styled-components';
 import { Canvas } from '@react-three/fiber';
 import { Image } from '@react-three/drei';
 
-function FourthComponent() {
+function ThirdComponent() {
 	return (
-		<Component4>
-			<p>Hello this is 4th</p>
-		</Component4>
+		<PhaseThree>
+			<p>Hello this is 3rd</p>
+		</PhaseThree>
 	);
 }
 
-const Component4 = styled.div`
+const PhaseThree = styled.div`
 	gap: 8rem;
 
 	position: relative;
@@ -30,4 +30,4 @@ const Component4 = styled.div`
 	}
 `;
 
-export default FourthComponent;
+export default ThirdComponent;

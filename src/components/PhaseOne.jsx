@@ -12,7 +12,7 @@ import LiveDot from '../assets/icon-rec.png';
 
 function FirstComponent() {
 	return (
-		<Component1>
+		<PhaseOne>
 			<Counter>
 				<div>
 					<div>
@@ -27,11 +27,11 @@ function FirstComponent() {
 				<CountUp start={100000000} end={111894900} duration={3} />
 			</Counter>
 			<FlagContainer />
-		</Component1>
+		</PhaseOne>
 	);
 }
 
-const Component1 = styled.div`
+const PhaseOne = styled.div`
 	gap: 8rem;
 
 	position: relative; /* 추가 */
