@@ -6,13 +6,13 @@ import { Image } from '@react-three/drei';
 
 function ThirdComponent() {
 	return (
-		<Component3>
+		<PhaseThree>
 			<p>Hello this is 3rd</p>
-		</Component3>
+		</PhaseThree>
 	);
 }
 
-const Component3 = styled.div`
+const PhaseThree = styled.div`
 	gap: 8rem;
 
 	position: relative;
