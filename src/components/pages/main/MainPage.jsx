@@ -13,10 +13,11 @@ import MyThreeJSComponent from '../../MyThreeJSComponent';
 import InbodyMainLogo from '../../../assets/img-logo.png';
 import LiveDot from '../../../assets/icon-rec.png';
 import Final from '../../../assets/final.png';
-import FirstComponent from '../../Component1';
-import SecondComponent from '../../Component2';
-import ThirdComponent from '../../Component3';
-import FourthComponent from '../../Component4';
+import FirstComponent from '../../PhaseOne';
+import SecondComponent from '../../PhaseTwo';
+import ThirdComponent from '../../PhaseThree';
+import FourthComponent from '../../PhaseFour';
+import HistoryComponentImage from '../../Components';
 import Earth from '../../EarthImage';
 
 function MainPage() {
@@ -26,7 +27,7 @@ function MainPage() {
 		const timer = setTimeout(() => {
 			// 시간이 지난 후에 다음 컴포넌트로 변경
 			setCurrentComponent((prevComponent) => (prevComponent % 2) + 1);
-		}, 20000); // 20초 후에 컴포넌트 변경
+		}, 10000); // 20초 후에 컴포넌트 변경
 
 		return () => clearTimeout(timer);
 	}, [currentComponent]);
@@ -37,9 +38,9 @@ function MainPage() {
 			{/* <ImageContainer>
 				<FinalImage src={Final} alt='final-image' />
 			</ImageContainer> */}
-			<FirstComponent />
-			{/* <SecondComponent /> */}
-
+			{/* <FirstComponent /> */}
+			<SecondComponent />
+			{/* <HistoryComponentImage /> */}
 			{/* 컴포넌트 10초 단위로 돌리기 */}
 			{/* {currentComponent === 1 && <FirstComponent />}
 			{currentComponent === 2 && <SecondComponent />} */}
@@ -51,7 +52,6 @@ function MainPage() {
 			</InbodyLogo>
 			{/* <MyThreeJSComponent /> */}
 			{/* <ThreeCanvas id='canvas-container' /> */}
-
 			{/* <Canvas>
 				<Suspense fallback={<div>Loading...</div>}>
 					<ThreeModel />
