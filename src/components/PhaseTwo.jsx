@@ -7,6 +7,10 @@ import { Image } from '@react-three/drei';
 import LaunchIcon from './LaunchIcon';
 import AwardIcon from './AwardIcon';
 import finalphase2 from '../assets/phase2-final.png';
+import HistoryLeftTopComponent from './HistoryLeftTop';
+import HistoryRightBottomComponent from './HistoryRightBottom';
+import HistoryLeftBottomComponent from './HistoryLeftBottom';
+import HistoryRightTopComponent from './HistoryRightTop';
 import HistoryCard from './Components';
 
 const fadeIn = keyframes`
@@ -51,14 +55,14 @@ function SecondComponent() {
 						<div>
 							<div>1996</div>
 							<div>2000</div>
-							<div>2009</div>
+							{/* <div>2009</div> */}
 							<div>2012</div>
-							<div>2014</div>
+							<div>2013</div>
 							<div>2015</div>
 							<div>2016</div>
 							<div>2017</div>
-							<div>2018</div>
-							<div>2019</div>
+							{/* <div>2018</div> */}
+							{/* <div>2019</div> */}
 							<div>2020</div>
 							<div>2022</div>
 							<div>2023</div>
@@ -68,18 +72,25 @@ function SecondComponent() {
 						<div>
 							<AwardIcon />
 							<LaunchIcon />
-							<HistoryCard />
+
+							<HistoryRightBottomComponent />
+
+							<HistoryLeftTopComponent />
 						</div>
 					</FirstContainer>
 					<SecondContainer>
 						<div>
-							<LaunchIcon />
-							<LaunchIcon />
-							<LaunchIcon />
-							<LaunchIcon />
 							<AwardIcon />
 							<AwardIcon />
-							<AwardIcon />
+							<LaunchIcon />
+							<LaunchIcon />
+							<LaunchIcon />
+							<LaunchIcon />
+
+							<HistoryRightBottomComponent />
+							<HistoryRightBottomComponent />
+							<HistoryLeftTopComponent />
+							<HistoryLeftTopComponent />
 						</div>
 					</SecondContainer>
 					<ThirdContainer>
@@ -88,7 +99,11 @@ function SecondComponent() {
 							<AwardIcon />
 							<LaunchIcon />
 							<LaunchIcon />
-							<LaunchIcon />
+
+							<HistoryLeftBottomComponent />
+							<HistoryRightBottomComponent />
+							<HistoryRightTopComponent />
+							<HistoryRightTopComponent />
 						</div>
 					</ThirdContainer>
 				</ImageContainer>
@@ -190,6 +205,7 @@ const ImageContainer = styled.div`
 	display: flex;
 `;
 
+// 첫번째 이미지 컨테이너
 const FirstContainer = styled.div`
 	width: 84rem;
 	display: flex;
@@ -203,15 +219,26 @@ const FirstContainer = styled.div`
 			top: 38.6rem;
 			left: 56.9rem;
 		}
-
-		> div:last-child {
+		> div:nth-child(2) {
 			top: 58.5rem;
-			left: 65rem;
+			left: 68rem;
+			position: absolute;
+		}
+
+		> div:nth-child(3) {
+			top: 14.5rem;
+			left: 10rem;
+			position: absolute;
+		}
+
+		> div:nth-child(4) {
+			top: 56.5rem;
+			left: 21rem;
 			position: absolute;
 		}
 	}
 `;
-
+// 두번쨰 이미지 컨테이너
 const SecondContainer = styled.div`
 	width: 190rem;
 	display: flex;
@@ -222,46 +249,65 @@ const SecondContainer = styled.div`
 
 	> div {
 		> div:first-child {
-			top: 58.5rem;
-			left: 4rem;
-			position: absolute;
+			top: 39rem;
+			left: 162rem;
 		}
 
 		> div:nth-child(2) {
-			top: 58.5rem;
-			left: 67rem;
-			position: absolute;
+			top: 30rem;
+			left: 75rem;
 		}
 
 		> div:nth-child(3) {
 			top: 58.5rem;
-			left: 93rem;
+			left: 123rem;
 			position: absolute;
 		}
 
 		> div:nth-child(4) {
 			top: 58.5rem;
-			left: 117.2rem;
+			left: 4rem;
 			position: absolute;
 		}
 
 		> div:nth-child(5) {
-			top: 39rem;
-			left: 12rem;
+			top: 58.5rem;
+			left: 70rem;
+			position: absolute;
 		}
 
 		> div:nth-child(6) {
-			top: 30rem;
-			left: 78rem;
+			top: 58.5rem;
+			left: 95rem;
+			position: absolute;
 		}
 
 		> div:nth-child(7) {
-			top: 21rem;
-			left: 157.8rem;
+			top: 15rem;
+			left: 27rem;
+			position: absolute;
+		}
+
+		> div:nth-child(8) {
+			top: 15rem;
+			left: 114rem;
+			position: absolute;
+		}
+
+		> div:nth-child(9) {
+			top: 56.5rem;
+			left: 43.5rem;
+			position: absolute;
+		}
+
+		> div:nth-child(10) {
+			top: 56.5rem;
+			left: 137.5rem;
+			position: absolute;
 		}
 	}
 `;
-
+// 세번째 이미지 컨테이너
 const ThirdContainer = styled.div`
 	width: 190rem;
 	display: flex;
@@ -277,25 +323,43 @@ const ThirdContainer = styled.div`
 
 		> div:nth-child(2) {
 			top: 30rem;
-			left: 72rem;
+			left: 90.5rem;
 		}
 
 		> div:nth-child(3) {
 			top: 58.5rem;
-			left: 56rem;
+			left: 85.5rem;
 
 			position: absolute;
 		}
 
 		> div:nth-child(4) {
 			top: 58.5rem;
-			left: 105rem;
+			left: 103rem;
 			position: absolute;
 		}
 
 		> div:nth-child(5) {
-			top: 58.5rem;
-			left: 487rem;
+			top: 15rem;
+			left: 34rem;
+			position: absolute;
+		}
+
+		> div:nth-child(6) {
+			top: 15rem;
+			left: 130rem;
+			position: absolute;
+		}
+
+		> div:nth-child(7) {
+			top: 56rem;
+			left: 14rem;
+			position: absolute;
+		}
+
+		> div:nth-child(8) {
+			top: 56rem;
+			left: 100rem;
 			position: absolute;
 		}
 	}
@@ -318,7 +382,7 @@ const YearContainer = styled.div`
 	gap: 30rem;
 	align-items: center;
 
-	opacity: 0; /* 초기에 안 보익 */
+	opacity: 0; /* 초기에 안 보이게 */
 	animation: ${fadeInFromLeft} 1s ease-in-out forwards;
 	animation-delay: 1s;
 
@@ -328,15 +392,18 @@ const YearContainer = styled.div`
 		font-size: 4.2rem;
 		font-weight: 600;
 
+		${'' /* 연도 컴포넌트 위치 설정 */}
+
+		${'' /* 1996 */}
 		> div:first-child {
 			display: flex;
 
 			font-size: 4.2rem;
 			font-weight: 600;
-			left: 7.8rem;
+			left: 6.8rem;
 			position: relative;
 		}
-
+		${'' /* 2000 */}
 		> div:nth-child(2) {
 			display: flex;
 
@@ -345,75 +412,76 @@ const YearContainer = styled.div`
 			left: 48rem;
 			position: relative;
 		}
-
+		${'' /* 2012 */}
 		> div:nth-child(3) {
 			display: flex;
 
 			font-size: 4.2rem;
 			font-weight: 600;
-			left: 81rem;
+			left: 86.5rem;
 			position: relative;
 		}
-
+		${'' /* 2013 */}
 		> div:nth-child(4) {
 			display: flex;
 
 			font-size: 4.2rem;
 			font-weight: 600;
-			left: 108rem;
+			left: 134.5rem;
 			position: relative;
 		}
-
+		${'' /* 2015 */}
 		> div:nth-child(5) {
 			display: flex;
 
 			font-size: 4.2rem;
 			font-weight: 600;
-			left: 127rem;
+			left: 155rem;
 			position: relative;
 		}
-
+		${'' /* 2016 */}
 		> div:nth-child(6) {
 			display: flex;
 
 			font-size: 4.2rem;
 			font-weight: 600;
-			left: 142rem;
+			left: 208rem;
 			position: relative;
 		}
-
+		${'' /* 2017 */}
 		> div:nth-child(7) {
 			display: flex;
 
 			font-size: 4.2rem;
 			font-weight: 600;
-			left: 197rem;
+			left: 226rem;
 			position: relative;
 		}
-
+		${'' /* 2020 */}
 		> div:nth-child(8) {
 			display: flex;
 
 			font-size: 4.2rem;
 			font-weight: 600;
-			left: 210rem;
+			left: 276rem;
 			position: relative;
 		}
+		${'' /* 2022 */}
 		> div:nth-child(9) {
 			display: flex;
 
 			font-size: 4.2rem;
 			font-weight: 600;
-			left: 236rem;
+			left: 291rem;
 			position: relative;
 		}
-
+		${'' /* 2023 */}
 		> div:nth-child(10) {
 			display: flex;
 
 			font-size: 4.2rem;
 			font-weight: 600;
-			left: 244rem;
+			left: 312rem;
 			position: relative;
 		}
 
@@ -422,25 +490,7 @@ const YearContainer = styled.div`
 
 			font-size: 4.2rem;
 			font-weight: 600;
-			left: 251rem;
-			position: relative;
-		}
-
-		> div:nth-child(12) {
-			display: flex;
-
-			font-size: 4.2rem;
-			font-weight: 600;
-			left: 272rem;
-			position: relative;
-		}
-
-		> div:nth-child(13) {
-			display: flex;
-
-			font-size: 4.2rem;
-			font-weight: 600;
-			left: 286rem;
+			left: 303.5rem;
 			position: relative;
 		}
 	}

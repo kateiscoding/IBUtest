@@ -19,33 +19,11 @@ const fadeIn = keyframes`
 function HistoryComponent() {
 	return (
 		<IconContainer>
-			{/* <LaunchIcon>
-				<div>
-					<p>LAUNCHED</p>
-
-					<div>
-						<div>2013</div>
-						<div>570</div>
-					</div>
-				</div>
-			</LaunchIcon>
-			<AwardIcon>
-				<div>
-					<p>
-						Listed on
-						<br />
-						KOSDAQ
-					</p>
-					<div>
-						<img src={kosdoq} alt='kosdaqicon' />
-					</div>
-				</div>
-			</AwardIcon> */}
 			<HistoryCard>
-				<div>
+				<HistoryLineDown>
 					<div />
 					<div />
-				</div>
+				</HistoryLineDown>
 
 				{/* 왼쪽 칸에 선을 넣기 위한 빈 div */}
 
@@ -57,12 +35,87 @@ function HistoryComponent() {
 					<img src={cardImage} alt='card' /> {/* 오른쪽 하단에 이미지 */}
 				</ImageSection>
 			</HistoryCard>
-			<IndustryCard>
-				<p>industry</p>
-			</IndustryCard>
+
+			<HistoryCard2>
+				{/* 오른쪽 칸에 선을 넣기 위한 빈 div */}
+
+				<ImageSection2>
+					<img src={cardImage} alt='card' /> {/* 왼쪽 상단단에 이미지 */}
+				</ImageSection2>
+
+				<HistoryLineUp>
+					<div />
+					<div />
+				</HistoryLineUp>
+				<TextSection2>
+					<p>First oversea subsidiary in USA InBody receives FDA Approval</p>{' '}
+				</TextSection2>
+			</HistoryCard2>
+
+			{/* Left Bottom  */}
+			<HistoryCard3>
+				{/* 오른쪽 칸에 선을 넣기 위한 빈 div */}
+
+				<TextSection>
+					<p>First oversea subsidiary in USA InBody receives FDA Approval</p>{' '}
+				</TextSection>
+
+				<HistoryLineUp>
+					<div />
+					<div />
+				</HistoryLineUp>
+
+				<ImageSection2>
+					<img src={cardImage} alt='card' /> {/* 왼쪽 상단단에 이미지 */}
+				</ImageSection2>
+			</HistoryCard3>
+
+			{/* RIght Top  */}
+			<HistoryCard4>
+				<HistoryLineDown>
+					<div />
+					<div />
+				</HistoryLineDown>
+				<ImageSection>
+					<img src={cardImage} alt='card' /> {/* 오른쪽 하단에 이미지 */}
+				</ImageSection>
+
+				{/* 왼쪽 칸에 선을 넣기 위한 빈 div */}
+
+				<TextSection>
+					<p>Inbody, born in South Korea, provides precise body measurements without complexity.</p>{' '}
+					{/* 오른쪽 상단에 텍스트 */}
+				</TextSection>
+			</HistoryCard4>
 		</IconContainer>
 	);
 }
+
+const HistoryLineUp = styled.div`
+	height: 35.9rem;
+	grid-row: span 2;
+	width: 2.4rem;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+	> div:first-child {
+		width: 0rem;
+		height: 33.5rem;
+		flex-shrink: 0;
+		stroke-width: 3rem;
+		stroke: #fff;
+		border: 0.3rem white solid;
+	}
+
+	> div:last-child {
+		width: 100%;
+		height: 100%;
+		background-color: black;
+		border-radius: 9999%;
+		border: 0.42rem white solid;
+	}
+`;
 
 const HistoryCard = styled.div`
 	width: 43.2rem;
@@ -70,31 +123,46 @@ const HistoryCard = styled.div`
 	display: grid;
 	grid-template-columns: 1fr 2fr; /* 한 칸, 두 칸으로 컬럼 정의 */
 	gap: 2rem 1.2rem;
+`;
+
+const HistoryCard4 = styled.div`
+	width: 43.2rem;
+	height: 35.9rem;
+	display: grid;
+	grid-template-columns: 1fr 2fr; /* 한 칸, 두 칸으로 컬럼 정의 */
+	gap: 2rem 1.2rem;
+`;
+const HistoryCard2 = styled.div`
+	width: 43.2rem;
+	height: 35.9rem;
+	display: grid;
+	grid-template-columns: 1fr 2fr; /* 한 칸, 두 칸으로 컬럼 정의 */
+	gap: 2rem 1.2rem;
+`;
+
+const HistoryLineDown = styled.div`
+	height: 35.9rem;
+	grid-row: span 2;
+	width: 2.4rem;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 
 	> div:first-child {
-		height: 35.9rem;
-		grid-row: span 2;
-		width: 2.4rem;
-		display: flex;
-		flex-direction: column;
-		align-items: center;
+		width: 100%;
+		height: 100%;
+		background-color: black;
+		border-radius: 9999%;
+		border: 0.42rem white solid;
+	}
 
-		> div:first-child {
-			width: 0rem;
-			height: 33.5rem;
-			flex-shrink: 0;
-			stroke-width: 3rem;
-			stroke: #fff;
-			border: 0.3rem white solid;
-		}
-
-		> div:last-child {
-			width: 100%;
-			height: 100%;
-			background-color: black;
-			border-radius: 9999%;
-			border: 0.42rem white solid;
-		}
+	> div:last-child {
+		width: 0rem;
+		height: 33.5rem;
+		flex-shrink: 0;
+		stroke-width: 3rem;
+		stroke: #fff;
+		border: 0.3rem white solid;
 	}
 `;
 
@@ -104,8 +172,7 @@ const TextSection = styled.div`
 	justify-content: center;
 
 	width: 39.6rem;
-	height: 8.7rem;
-
+	height: auto;
 	> p {
 		font-size: 2.4rem;
 		font-style: normal;
@@ -116,12 +183,56 @@ const TextSection = styled.div`
 	}
 `;
 
+const TextSection2 = styled.div`
+	display: flex;
+	justify-content: flex-start;
+	align-items: flex-end;
+	width: 100%;
+	${'' /* padding: 0 1rem; */}
+	text-align: right;
+	flex-direction: column;
+
+	> p {
+		font-size: 2.4rem;
+		font-style: normal;
+		font-weight: 400;
+		line-height: 120%;
+		letter-spacing: -0.06rem;
+		color: white;
+		margin: 0;
+	}
+`;
+
+const HistoryCard3 = styled.div`
+	width: 43.2rem;
+	height: 35.9rem;
+	display: grid;
+	grid-template-columns: 1fr 2fr; /* 한 칸, 두 칸으로 컬럼 정의 */
+	gap: 2rem 1.2rem;
+`;
+
 const ImageSection = styled.div`
 	display: flex;
-	justify-content: flex-end;
+	${'' /* justify-content: flex-end; */}
 	border-radius: 0.5rem;
 	width: 100%;
-	height: 18.8rem;
+	${'' /* height: 18.8rem; */}
+	padding-bottom: 6.4rem;
+	flex-direction: column;
+
+	> div {
+		width: 100%;
+	}
+`;
+
+const ImageSection2 = styled.div`
+	display: flex;
+	${'' /* justify-content: flex-end; */}
+	border-radius: 0.5rem;
+	width: 100%;
+	${'' /* height: 18.8rem; */}
+	padding-top: 6.4rem;
+	flex-direction: column;
 
 	> div {
 		width: 100%;
@@ -265,6 +376,7 @@ const AwardIcon = styled.div`
 const IconContainer = styled.div`
 	${'' /* width: 192rem */}
 	display: flex;
+	gap: 10rem;
 `;
 
 const TextContent = styled.div`
