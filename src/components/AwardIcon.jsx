@@ -36,8 +36,9 @@ const AwardIcon = styled.div`
 	> div {
 		border-radius: 1rem;
 		background-color: rgba(255, 255, 255, 0.3);
-		font-size: 1.935rem;
-		line-height: 2.1rem;
+		font-size: 2rem;
+		font-weight: 600;
+		line-height: 110%;
 		height: 7.4rem;
 		${'' /* width: 14.1rem; */}
 		flex-shrink: 0;
