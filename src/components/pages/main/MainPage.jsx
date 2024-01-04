@@ -38,12 +38,12 @@ function MainPage() {
 			{/* <ImageContainer>
 				<FinalImage src={Final} alt='final-image' />
 			</ImageContainer> */}
-			<FirstComponent />
+			{/* <FirstComponent /> */}
 			{/* <SecondComponent /> */}
 			{/* <HistoryComponentImage /> */}
 			{/* 컴포넌트 10초 단위로 돌리기 */}
-			{/* {currentComponent === 1 && <FirstComponent />}
-			{currentComponent === 2 && <SecondComponent />} */}
+			{currentComponent === 1 && <FirstComponent />}
+			{currentComponent === 2 && <SecondComponent />}
 			{/* {currentComponent === 3 && <ThirdComponent />}
 			{currentComponent === 4 && <FourthComponent />} */}
 			<Earth />

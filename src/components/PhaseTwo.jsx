@@ -265,7 +265,7 @@ function SecondComponent() {
 				</ImageContainer>
 			</HistoryLayout>
 
-			<img src={finalphase2} alt='final' />
+			{/* <img src={finalphase2} alt='final' /> */}
 		</PhaseTwo>
 	);
 }
