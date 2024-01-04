@@ -5,22 +5,18 @@ import { Canvas } from '@react-three/fiber';
 import { Image } from '@react-three/drei';
 import kosdoq from '../assets/svgs/ic_kosdaq.svg';
 
-function AwardComponent() {
+const AwardComponent = ({ text, image }) => {
 	return (
 		<AwardIcon>
 			<div>
-				<p>
-					Listed on
-					<br />
-					KOSDAQ
-				</p>
+				<p>{text}</p>
 				<div>
-					<img src={kosdoq} alt='kosdaqicon' />
+					<img src={image} alt='icon' />
 				</div>
 			</div>
 		</AwardIcon>
 	);
-}
+};
 
 const AwardIcon = styled.div`
 	${'' /* width: 16.1rem; */}
@@ -47,7 +43,7 @@ const AwardIcon = styled.div`
 		display: flex;
 		align-items: center;
 		flex-direction: row;
-
+		white-space: pre-line;
 		> p {
 			display: flex;
 			font-size: 1.9rem;
@@ -55,12 +51,14 @@ const AwardIcon = styled.div`
 			font-weight: 600;
 			line-height: 110%; /* 1.33063rem */
 			letter-spacing: -0.03025rem;
+			white-space: pre-line;
 		}
 
 		> div {
 			position: absolute;
 			width: 5.6rem;
 			height: 5.6rem;
+			display: flex;
 			justify-content: center;
 			align-items: center;
 			gap: 0.625rem;
