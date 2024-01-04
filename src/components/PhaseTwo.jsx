@@ -145,16 +145,18 @@ function SecondComponent() {
 			id: 'container2',
 			components: [
 				{
-					id: 'component2',
+					id: 'component1',
 					component: AwardIcon,
-					text: 'iF Design\nAward',
+					text: '2017 iF \n Design Award',
 					image: IconIf,
+					specialStyle: true,
 				},
 				{
-					id: 'component1',
+					id: 'component2',
 					component: AwardIcon,
 					text: 'Red Dot\nDesign Award',
 					image: IconRedDot,
+					specialStyle: false,
 				},
 			],
 		},
@@ -173,6 +175,67 @@ function SecondComponent() {
 					component: AwardIcon,
 					text: 'Good Design\n Award',
 					image: IconGoodDesign,
+				},
+			],
+		},
+	];
+
+	const launchData = [
+		{
+			id: 'container1',
+			components: [
+				{
+					id: 'component1',
+					component: LaunchIcon,
+					year: '2005',
+					product: '720',
+				},
+			],
+		},
+		{
+			id: 'container2',
+			components: [
+				{
+					id: 'component1',
+					component: LaunchIcon,
+					year: '2020',
+					product: '230',
+				},
+				{
+					id: 'component2',
+					component: LaunchIcon,
+					year: '2013',
+					product: '570',
+				},
+				{
+					id: 'component3',
+					component: LaunchIcon,
+					year: '2014',
+					product: '770',
+				},
+				{
+					id: 'component4',
+					component: LaunchIcon,
+					year: '2016',
+					product: '270',
+				},
+			],
+		},
+
+		{
+			id: 'container3',
+			components: [
+				{
+					id: 'component1',
+					component: LaunchIcon,
+					year: '2022',
+					product: '970',
+				},
+				{
+					id: 'component2',
+					component: LaunchIcon,
+					year: '2022',
+					product: 'BWA',
 				},
 			],
 		},
@@ -215,7 +278,10 @@ function SecondComponent() {
 							{awardsData[0].components.map((data) => (
 								<data.component key={data.id} text={data.text} image={data.image} />
 							))}
-							<LaunchIcon />
+							{/* <LaunchIcon /> */}
+							{launchData[0].components.map((data) => (
+								<data.component key={data.id} year={data.year} product={data.product} />
+							))}
 							{containerData[0].components.map((data) => (
 								<data.component key={data.id} text={data.text} image={data.image} />
 							))}
@@ -229,10 +295,9 @@ function SecondComponent() {
 							{awardsData[1].components.map((data) => (
 								<data.component key={data.id} text={data.text} image={data.image} />
 							))}
-							<LaunchIcon />
-							<LaunchIcon />
-							<LaunchIcon />
-							<LaunchIcon />
+							{launchData[1].components.map((data) => (
+								<data.component key={data.id} year={data.year} product={data.product} />
+							))}
 
 							{containerData[1].components.map((data) => (
 								<data.component key={data.id} text={data.text} image={data.image} />
@@ -249,8 +314,9 @@ function SecondComponent() {
 							{awardsData[2].components.map((data) => (
 								<data.component key={data.id} text={data.text} image={data.image} />
 							))}
-							<LaunchIcon />
-							<LaunchIcon />
+							{launchData[2].components.map((data) => (
+								<data.component key={data.id} year={data.year} product={data.product} />
+							))}
 
 							{containerData[2].components.map((data) => (
 								<data.component key={data.id} text={data.text} image={data.image} />
@@ -405,13 +471,13 @@ const SecondContainer = styled.div`
 
 	> div {
 		> div:first-child {
-			top: 39rem;
-			left: 162rem;
+			top: 38.5rem;
+			left: 162.5rem;
 		}
 
 		> div:nth-child(2) {
-			top: 30rem;
-			left: 75rem;
+			top: 29rem;
+			left: 74.5rem;
 		}
 
 		> div:nth-child(3) {
@@ -473,12 +539,12 @@ const ThirdContainer = styled.div`
 
 	> div {
 		> div:first-child {
-			top: 39rem;
+			top: 38.5rem;
 			left: 5rem;
 		}
 
 		> div:nth-child(2) {
-			top: 30rem;
+			top: 29rem;
 			left: 90.5rem;
 		}
 

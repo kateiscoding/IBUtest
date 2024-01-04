@@ -5,20 +5,20 @@ import { Canvas } from '@react-three/fiber';
 import { Image } from '@react-three/drei';
 import kosdoq from '../assets/svgs/ic_kosdaq.svg';
 
-function LaunchComponent() {
+const LaunchComponent = ({ year, product }) => {
 	return (
 		<LaunchIcon>
 			<div>
 				<p>LAUNCHED</p>
 
 				<div>
-					<div>2013</div>
-					<div>570</div>
+					<div>{year}</div>
+					<div>{product}</div>
 				</div>
 			</div>
 		</LaunchIcon>
 	);
-}
+};
 
 const LaunchIcon = styled.div`
 	border-radius: 0.31rem;
@@ -71,7 +71,7 @@ const LaunchIcon = styled.div`
 				display: flex;
 				border-radius: 0.5rem;
 				padding: 0.2rem 0.8rem;
-				width: 4.9rem;
+				${'' /* width: 4.9rem; */}
 				height: 2.3rem;
 				font-size: 1.85rem;
 				font-weight: 600;

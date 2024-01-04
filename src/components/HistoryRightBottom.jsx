@@ -127,7 +127,7 @@ const ImageSection = styled.div`
 	border-radius: 0.5rem;
 	width: 100%;
 	${'' /* height: 18.8rem; */}
-	padding-bottom: 8.4rem;
+	padding-bottom: 9rem;
 	flex-direction: column;
 
 	> div {
