@@ -16,24 +16,22 @@ const fadeIn = keyframes`
 	opacity: 1;
   }
 `;
-function HistoryLeftBottomComponent() {
+const HistoryLeftBottomComponent = ({ text, image }) => {
 	return (
 		<LeftBottomCard>
-			{/* 오른쪽 칸에 선을 넣기 위한 빈 div */}
-
 			<LeftBottomTextSection>
-				<p>First oversea subsidiary in USA InBody receives FDA Approval</p>{' '}
+				<p>{text}</p>{' '}
 			</LeftBottomTextSection>
 			<HistoryLineUp>
 				<div />
 				<div />
 			</HistoryLineUp>
 			<LeftBottomImageSection>
-				<img src={cardImage} alt='card' /> {/* 왼쪽 상단단에 이미지 */}
+				<img src={image} alt='history' /> {/* 왼쪽 상단단에 이미지 */}
 			</LeftBottomImageSection>
 		</LeftBottomCard>
 	);
-}
+};
 
 const HistoryLineUp = styled.div`
 	height: 35.9rem;
@@ -86,6 +84,7 @@ const LeftBottomTextSection = styled.div`
 		letter-spacing: -0.06rem;
 		color: white;
 		margin: 0;
+		white-space: pre-line;
 	}
 `;
 
@@ -95,7 +94,7 @@ const LeftBottomImageSection = styled.div`
 	border-radius: 0.5rem;
 	width: 100%;
 	${'' /* height: 18.8rem; */}
-	padding-bottom: 6.4rem;
+	padding-bottom: 8.4rem;
 	flex-direction: column;
 
 	> div {
@@ -123,7 +122,7 @@ const TextContent = styled.div`
 		${'' /* margin-top: 16rem; */}
 		display: flex;
 		flex-direction: column;
-		gap: 6.4rem;
+		gap: 8.4rem;
 		${'' /* width: 74rem; */}
 
 		> p:first-child {

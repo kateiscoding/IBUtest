@@ -16,7 +16,8 @@ const fadeIn = keyframes`
 	opacity: 1;
   }
 `;
-function HistoryRightTopComponent() {
+
+const HistoryRightTopComponent = ({ text, image }) => {
 	return (
 		<RightTopCard>
 			<HistoryLineUp>
@@ -27,14 +28,14 @@ function HistoryRightTopComponent() {
 			{/* 왼쪽 칸에 선을 넣기 위한 빈 div */}
 
 			<RightTopImageSection>
-				<img src={cardImage} alt='card' /> {/* 오른쪽 하단에 이미지 */}
+				<img src={image} alt='card' /> {/* 오른쪽 하단에 이미지 */}
 			</RightTopImageSection>
 			<RightTopTextSection>
-				<p>Expansion of the Cheonan Production Factory</p> {/* 오른쪽 상단에 텍스트 */}
+				<p>{text}</p> {/* 오른쪽 상단에 텍스트 */}
 			</RightTopTextSection>
 		</RightTopCard>
 	);
-}
+};
 
 const RightTopCard = styled.div`
 	width: 43.2rem;
@@ -115,7 +116,7 @@ const TextContent = styled.div`
 		${'' /* margin-top: 16rem; */}
 		display: flex;
 		flex-direction: column;
-		gap: 6.4rem;
+		gap: 8.4rem;
 		${'' /* width: 74rem; */}
 
 		> p:first-child {
