@@ -21,36 +21,36 @@ const AwardComponent = ({ text, image }) => {
 const AwardIcon = styled.div`
 	${'' /* width: 16.1rem; */}
 	width: 100%;
-	height: 9rem;
+	height: 9.6rem;
 	display: flex;
 	flex-direction: column;
 	justify-content: flex-end;
 	position: relative;
 
-	padding: 1.6rem 2rem 0rem 0rem;
+	padding: 2rem 2.6rem 0rem 0rem;
 
 	> div {
 		border-radius: 1rem;
 		background-color: rgba(255, 255, 255, 0.3);
-		font-size: 2rem;
-		font-weight: 600;
-		line-height: 110%;
-		height: 7.4rem;
+
+		height: 7.6rem;
 		${'' /* width: 14.1rem; */}
 		flex-shrink: 0;
 		padding: 1.6rem 4rem 1.6rem 1.6rem;
 		color: white;
 		display: flex;
+		flex: 1 0 0;
 		align-items: center;
+		align-self: stretch;
 		flex-direction: row;
 		white-space: pre-line;
 		> p {
 			display: flex;
-			font-size: 1.9rem;
+			font-size: 2rem;
 			font-style: normal;
 			font-weight: 600;
-			line-height: 110%; /* 1.33063rem */
-			letter-spacing: -0.03025rem;
+			line-height: 110%; /* 2.2rem */
+			letter-spacing: -0.05rem;
 			white-space: pre-line;
 		}
 
@@ -61,7 +61,7 @@ const AwardIcon = styled.div`
 			display: flex;
 			justify-content: center;
 			align-items: center;
-			gap: 0.625rem;
+			gap: 1rem;
 			flex-shrink: 0;
 			border-radius: 2.8rem;
 			border: 0.4rem solid #fff;
