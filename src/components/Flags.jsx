@@ -28,20 +28,20 @@ const AnimatedRedLine = styled.div`
 	animation: ${animateRedLine} 2s ease-in-out forwards;
 `;
 
-const Flag = ({ country, population, image }) => {
+const Flag = ({ country, count, image }) => {
 	const flagData = [
 		{
 			id: '1',
 			country: 'China',
-			population: '1967945',
+			count: '1971150',
 			image: InbodyMan,
 		},
-		{ id: '2', country: 'Korea', population: '68348650', image: InbodyMan },
-		{ id: '3', country: 'Australia', population: '1542639', image: InbodyMan },
-		{ id: '4', country: 'Japan', population: '11729889', image: InbodyMan },
-		{ id: '5', country: 'USA', population: '19149075', image: InbodyMan },
-		{ id: '6', country: 'UK', population: '1503711', image: InbodyMan },
-		{ id: '7', country: 'EU', population: '2085720', image: InbodyMan },
+		{ id: '2', country: 'Korea', count: '68558219', image: InbodyMan },
+		{ id: '3', country: 'Australia', count: '1544045', image: InbodyMan },
+		{ id: '4', country: 'Japan', count: '11766100', image: InbodyMan },
+		{ id: '5', country: 'USA', count: '19201343', image: InbodyMan },
+		{ id: '6', country: 'UK', count: '1517974', image: InbodyMan },
+		{ id: '7', country: 'EU', count: '2089108', image: InbodyMan },
 	];
 
 	const gpsData = [
@@ -142,13 +142,10 @@ const Flag = ({ country, population, image }) => {
 					<FlagContent key={`flag-content-${index + 1}`} className={`flag-${index + 1}`}>
 						<p>{flag.country}</p>
 						<div>
-							<CountUp start={1000000} end={flag.population} />
+							<CountUp start={1000000} end={flag.count} />
 						</div>
 					</FlagContent>
-					{/* 
-					<RedLine>
-						<div />
-					</RedLine> */}
+
 					<Gps className={`gps-${index + 1}`}>
 						<img src={flag.image} alt={`gps-${flag.country}`} />
 					</Gps>

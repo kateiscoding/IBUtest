@@ -12,6 +12,21 @@ import HistoryRightBottomComponent from './HistoryRightBottom';
 import HistoryLeftBottomComponent from './HistoryLeftBottom';
 import HistoryRightTopComponent from './HistoryRightTop';
 import HistoryCard from './Components';
+import HistoryImage1 from '../assets/img-history-1.png';
+import HistoryImage2 from '../assets/img-history-2.png';
+import HistoryImage3 from '../assets/img-history-3.png';
+import HistoryImage4 from '../assets/img-history-4.png';
+import HistoryImage5 from '../assets/img-history-5.png';
+import HistoryImage6 from '../assets/img-history-6.png';
+import HistoryImage7 from '../assets/img-history-7.png';
+import HistoryImage8 from '../assets/img-history-8.png';
+import HistoryImage9 from '../assets/img-history-9.png';
+import HistoryImage10 from '../assets/img-history-10.png';
+import IconKosdaq from '../assets/ic-kosdaq.png';
+import IconCes from '../assets/ic-ces.png';
+import IconGoodDesign from '../assets/ic-good.png';
+import IconRedDot from '../assets/ic-reddot.png';
+import IconIf from '../assets/ic-if.png';
 
 const fadeIn = keyframes`
    0% {
@@ -36,6 +51,133 @@ const fadeInFromLeft = keyframes`
 `;
 
 function SecondComponent() {
+	const containerData = [
+		{
+			id: 'container1',
+			components: [
+				{
+					id: 'component1',
+					component: HistoryRightBottomComponent,
+					text: 'InBody from South Korea Accurate body measurements no complexity',
+					image: HistoryImage1,
+				},
+				{
+					id: 'component2',
+					component: HistoryLeftTopComponent,
+					text: 'First oversea subsidiary in USA InBody receives FDA Approval',
+					image: HistoryImage2,
+				},
+			],
+		},
+		{
+			id: 'container2',
+			components: [
+				{
+					id: 'component1',
+					component: HistoryRightBottomComponent,
+					text: 'Corporate office  moves from Beverly Hills to Cerritos, California',
+					image: HistoryImage3,
+				},
+				{
+					id: 'component2',
+					component: HistoryRightBottomComponent,
+					text: 'InBody 770 wins IF Design & Foreign Direct Investment Awards',
+					image: HistoryImage4,
+				},
+				{
+					id: 'component3',
+					component: HistoryLeftTopComponent,
+					text: 'InBody 570, capable of measuring segmental fat, visceral fat released',
+					image: HistoryImage5,
+				},
+				{
+					id: 'component4',
+					component: HistoryLeftTopComponent,
+					text: 'Cloud based data management services launched LookinBody Web',
+					image: HistoryImage6,
+				},
+			],
+		},
+		{
+			id: 'container3',
+			components: [
+				{
+					id: 'component1',
+					component: HistoryLeftBottomComponent,
+					text: "World's First 3MHz,\nISO/IEC27001 Certification",
+					image: HistoryImage7,
+				},
+				{
+					id: 'component2',
+					component: HistoryRightBottomComponent,
+					text: '100 Million Tests Recorded Globally New version of the App released',
+					image: HistoryImage9,
+				},
+				{
+					id: 'component3',
+					component: HistoryRightTopComponent,
+					text: 'Expansion of the Cheonan Production Factory',
+					image: HistoryImage8,
+				},
+				{
+					id: 'component4',
+					component: HistoryRightTopComponent,
+					text: 'InBody Releases New BWA 2.0 Body Water Analyzer',
+					image: HistoryImage10,
+				},
+			],
+		},
+	];
+
+	const awardsData = [
+		{
+			id: 'container1',
+			components: [
+				{
+					id: 'component1',
+					component: AwardIcon,
+					text: 'Listed on \n KOSDAQ',
+					image: IconKosdaq,
+				},
+			],
+		},
+		{
+			id: 'container2',
+			components: [
+				{
+					id: 'component2',
+					component: AwardIcon,
+					text: 'iF Design\nAward',
+					image: IconIf,
+				},
+				{
+					id: 'component1',
+					component: AwardIcon,
+					text: 'Red Dot\nDesign Award',
+					image: IconRedDot,
+				},
+			],
+		},
+
+		{
+			id: 'container3',
+			components: [
+				{
+					id: 'component1',
+					component: AwardIcon,
+					text: 'CES Innovation\nAward',
+					image: IconCes,
+				},
+				{
+					id: 'component2',
+					component: AwardIcon,
+					text: 'Good Design\n Award',
+					image: IconGoodDesign,
+				},
+			],
+		},
+	];
+
 	return (
 		<PhaseTwo>
 			<HistoryLayout>
@@ -70,40 +212,54 @@ function SecondComponent() {
 					</YearContainer>
 					<FirstContainer>
 						<div>
-							<AwardIcon />
+							{awardsData[0].components.map((data) => (
+								<data.component key={data.id} text={data.text} image={data.image} />
+							))}
 							<LaunchIcon />
+							{containerData[0].components.map((data) => (
+								<data.component key={data.id} text={data.text} image={data.image} />
+							))}
+							{/* <HistoryRightBottomComponent />
 
-							<HistoryRightBottomComponent />
-
-							<HistoryLeftTopComponent />
+							<HistoryLeftTopComponent /> */}
 						</div>
 					</FirstContainer>
 					<SecondContainer>
 						<div>
-							<AwardIcon />
-							<AwardIcon />
+							{awardsData[1].components.map((data) => (
+								<data.component key={data.id} text={data.text} image={data.image} />
+							))}
 							<LaunchIcon />
 							<LaunchIcon />
 							<LaunchIcon />
 							<LaunchIcon />
 
-							<HistoryRightBottomComponent />
+							{containerData[1].components.map((data) => (
+								<data.component key={data.id} text={data.text} image={data.image} />
+							))}
+
+							{/* <HistoryRightBottomComponent />
 							<HistoryRightBottomComponent />
 							<HistoryLeftTopComponent />
-							<HistoryLeftTopComponent />
+							<HistoryLeftTopComponent /> */}
 						</div>
 					</SecondContainer>
 					<ThirdContainer>
 						<div>
-							<AwardIcon />
-							<AwardIcon />
+							{awardsData[2].components.map((data) => (
+								<data.component key={data.id} text={data.text} image={data.image} />
+							))}
 							<LaunchIcon />
 							<LaunchIcon />
 
+							{containerData[2].components.map((data) => (
+								<data.component key={data.id} text={data.text} image={data.image} />
+							))}
+							{/* 
 							<HistoryLeftBottomComponent />
 							<HistoryRightBottomComponent />
 							<HistoryRightTopComponent />
-							<HistoryRightTopComponent />
+							<HistoryRightTopComponent /> */}
 						</div>
 					</ThirdContainer>
 				</ImageContainer>
@@ -226,13 +382,13 @@ const FirstContainer = styled.div`
 		}
 
 		> div:nth-child(3) {
-			top: 14.5rem;
+			top: 15rem;
 			left: 10rem;
 			position: absolute;
 		}
 
 		> div:nth-child(4) {
-			top: 56.5rem;
+			top: 56rem;
 			left: 21rem;
 			position: absolute;
 		}
@@ -295,13 +451,13 @@ const SecondContainer = styled.div`
 		}
 
 		> div:nth-child(9) {
-			top: 56.5rem;
-			left: 43.5rem;
+			top: 56rem;
+			left: 43rem;
 			position: absolute;
 		}
 
 		> div:nth-child(10) {
-			top: 56.5rem;
+			top: 56rem;
 			left: 137.5rem;
 			position: absolute;
 		}
@@ -347,7 +503,7 @@ const ThirdContainer = styled.div`
 
 		> div:nth-child(6) {
 			top: 15rem;
-			left: 130rem;
+			left: 129.5rem;
 			position: absolute;
 		}
 
@@ -359,7 +515,7 @@ const ThirdContainer = styled.div`
 
 		> div:nth-child(8) {
 			top: 56rem;
-			left: 100rem;
+			left: 99rem;
 			position: absolute;
 		}
 	}
@@ -527,7 +683,7 @@ const TextContent = styled.div`
 			display: flex;
 			font-weight: 400;
 			line-height: 130%;
-			width: 74rem;
+			width: 70rem;
 
 			animation: ${fadeIn} 1.5s ease-in-out forwards;
 		}
