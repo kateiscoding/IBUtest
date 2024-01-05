@@ -15,6 +15,11 @@ export default class Colors {
 		opacity: '0.2',
 	};
 
+	static white300 = {
+		color: '#FFFFFF',
+		opacity: '0.3',
+	};
+
 	static white600 = {
 		color: '#FFFFFF',
 		opacity: '0.6',
@@ -30,7 +35,7 @@ export default class Colors {
 
 	static gray = '#E4E9F0';
 
-	static gray100 = '#EDEEF3';
+	static gray100 = '#E8E8E8';
 
 	static gray150 = '#D9D9D9';
 

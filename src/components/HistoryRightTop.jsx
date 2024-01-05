@@ -25,13 +25,11 @@ const HistoryRightTopComponent = ({ text, image }) => {
 				<div />
 			</HistoryLineUp>
 
-			{/* 왼쪽 칸에 선을 넣기 위한 빈 div */}
-
 			<RightTopImageSection>
-				<img src={image} alt='card' /> {/* 오른쪽 하단에 이미지 */}
+				<img src={image} alt='card' />
 			</RightTopImageSection>
 			<RightTopTextSection>
-				<p>{text}</p> {/* 오른쪽 상단에 텍스트 */}
+				<p>{text}</p>
 			</RightTopTextSection>
 		</RightTopCard>
 	);
@@ -41,7 +39,7 @@ const RightTopCard = styled.div`
 	width: 43.2rem;
 	height: 35.9rem;
 	display: grid;
-	grid-template-columns: 1fr 2fr; /* 한 칸, 두 칸으로 컬럼 정의 */
+	grid-template-columns: 1fr 2fr;
 	gap: 2rem 1.2rem;
 `;
 
@@ -99,45 +97,6 @@ const RightTopImageSection = styled.div`
 
 	> div {
 		width: 100%;
-	}
-`;
-
-const TextContent = styled.div`
-	color: white;
-	display: flex;
-	${'' /* margin: 33rem 17rem; */}
-	width: 74rem;
-	margin-left: 25rem;
-	flex-direction: column;
-	align-items: flex-start;
-	gap: 5rem;
-
-	> div {
-		${'' /* margin-top: 16rem; */}
-		display: flex;
-		flex-direction: column;
-		gap: 8.4rem;
-		${'' /* width: 74rem; */}
-
-		> p:first-child {
-			font-size: 16rem;
-			color: white;
-			display: flex;
-			font-weight: 700;
-			line-height: 90%;
-		}
-
-		> p:last-child {
-			font-size: 3.3rem;
-			color: white;
-			letter-spacing: -0.05156rem;
-			display: flex;
-			font-weight: 400;
-			line-height: 130%;
-			width: 74rem;
-
-			animation: ${fadeIn} 1.5s ease-in-out forwards;
-		}
 	}
 `;
 

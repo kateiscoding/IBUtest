@@ -27,7 +27,7 @@ function MainPage() {
 		const timer = setTimeout(() => {
 			// 시간이 지난 후에 다음 컴포넌트로 변경
 			setCurrentComponent((prevComponent) => (prevComponent % 2) + 1);
-		}, 10000); // 20초 후에 컴포넌트 변경
+		}, 15000); // 20초 후에 컴포넌트 변경
 
 		return () => clearTimeout(timer);
 	}, [currentComponent]);

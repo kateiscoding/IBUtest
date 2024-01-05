@@ -22,9 +22,8 @@ function FirstComponent() {
 						</div>
 						<b>TOTAL GLOBAL TESTS</b>
 					</div>
-					{/* <p>110,000,378</p> */}
 				</div>
-				<CountUp start={100000000} end={112283900} duration={3} />
+				<CountUp start={100000000} end={112390000} duration={3} />
 			</Counter>
 			<FlagContainer />
 		</PhaseOne>
@@ -34,7 +33,7 @@ function FirstComponent() {
 const PhaseOne = styled.div`
 	gap: 8rem;
 
-	position: relative; /* 추가 */
+	position: relative;
 	background-color: black;
 	display: flex;
 	flex-direction: column;
@@ -45,28 +44,6 @@ const PhaseOne = styled.div`
 	> p {
 		font-size: 18rem;
 		color: white;
-	}
-`;
-
-const ImageContainer = styled.div`
-	width: 100%;
-	display: flex;
-	position: absolute;
-	top: 0;
-	left: 0;
-	z-index: 15;
-	opacity: 0.95;
-	width: 100%;
-	overflow: hidden;
-	max-width: 100%;
-	width: 100%;
-	max-height: 100%;
-
-	display: flex;
-	justify-content: center;
-	align-items: flex-start;
-
-	> img {
 	}
 `;
 
@@ -98,18 +75,6 @@ const Counter = styled.div`
 
 		${
 			'' /* > p {
-			color: #fff;
-
-			text-align: center;
-			font-size: 22.4rem;
-			font-style: normal;
-			font-weight: 600;
-			line-height: 1;
-		} */
-		}
-
-		${
-			'' /* > span {
 			color: #fff;
 
 			text-align: center;
@@ -154,7 +119,7 @@ const Counter = styled.div`
 				border-radius: 0.8rem;
 				justify-content: space-around;
 				align-items: center;
-				${'' /* letterspacing: 10.56; */}
+
 				border-radius: 0.5rem;
 				gap: 0.6rem;
 
@@ -178,27 +143,6 @@ const Counter = styled.div`
 		line-height: 1;
 		width: 129rem;
 	}
-`;
-
-const CountUpStyled = styled.div`
-	color: #fff;
-
-	text-align: center;
-	font-size: 22.4rem;
-	font-style: normal;
-	font-weight: 600;
-	line-height: 1;
-`;
-
-const EarthContainer = styled.div`
-	overflow: hidden;
-	max-width: 100%;
-	width: 100%;
-	max-height: 100%;
-
-	display: flex;
-	justify-content: center;
-	align-items: flex-start;
 `;
 
 export default FirstComponent;

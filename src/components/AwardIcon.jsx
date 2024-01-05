@@ -19,7 +19,6 @@ const AwardComponent = ({ text, image }) => {
 };
 
 const AwardIcon = styled.div`
-	${'' /* width: 16.1rem; */}
 	width: 100%;
 	height: 9.6rem;
 	display: flex;
@@ -34,7 +33,7 @@ const AwardIcon = styled.div`
 		background-color: rgba(255, 255, 255, 0.3);
 
 		height: 7.6rem;
-		${'' /* width: 14.1rem; */}
+
 		flex-shrink: 0;
 		padding: 1.6rem 4rem 1.6rem 1.6rem;
 		color: white;

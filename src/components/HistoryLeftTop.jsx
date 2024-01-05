@@ -6,24 +6,11 @@ import { Image } from '@react-three/drei';
 import kosdoq from '../assets/svgs/ic_kosdaq.svg';
 import cardImage from '../assets/img-history.png';
 
-const fadeIn = keyframes`
-   0% {
-    
-	opacity: 0;
-  }
-  100% {
-    
-	opacity: 1;
-  }
-`;
 const HistoryLeftTopComponent = ({ text, image }) => {
 	return (
 		<LeftTopCard>
-			{/* 오른쪽 칸에 선을 넣기 위한 빈 div */}
-
 			<LeftTopImageSection>
 				<img src={image} alt='history' />
-				{/* 왼쪽 상단단에 이미지 */}
 			</LeftTopImageSection>
 
 			<HistoryLineUp>
@@ -67,7 +54,7 @@ const LeftTopCard = styled.div`
 	width: 43.2rem;
 	height: 35.9rem;
 	display: grid;
-	grid-template-columns: 1fr 2fr; /* 한 칸, 두 칸으로 컬럼 정의 */
+	grid-template-columns: 1fr 2fr;
 	gap: 2rem 1.2rem;
 `;
 
@@ -103,51 +90,6 @@ const LeftTopImageSection = styled.div`
 
 	> div {
 		width: 100%;
-	}
-`;
-
-const IconContainer = styled.div`
-	${'' /* width: 192rem */}
-	display: flex;
-	gap: 10rem;
-`;
-
-const TextContent = styled.div`
-	color: white;
-	display: flex;
-	${'' /* margin: 33rem 17rem; */}
-	width: 74rem;
-	margin-left: 25rem;
-	flex-direction: column;
-	align-items: flex-start;
-	gap: 5rem;
-
-	> div {
-		${'' /* margin-top: 16rem; */}
-		display: flex;
-		flex-direction: column;
-		gap: 8.4rem;
-		${'' /* width: 74rem; */}
-
-		> p:first-child {
-			font-size: 16rem;
-			color: white;
-			display: flex;
-			font-weight: 700;
-			line-height: 90%;
-		}
-
-		> p:last-child {
-			font-size: 3.3rem;
-			color: white;
-			letter-spacing: -0.05156rem;
-			display: flex;
-			font-weight: 400;
-			line-height: 130%;
-			width: 74rem;
-
-			animation: ${fadeIn} 1.5s ease-in-out forwards;
-		}
 	}
 `;
 
