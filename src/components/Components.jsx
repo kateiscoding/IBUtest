@@ -25,22 +25,17 @@ function HistoryComponent() {
 					<div />
 				</HistoryLineDown>
 
-				{/* 왼쪽 칸에 선을 넣기 위한 빈 div */}
-
 				<TextSection>
 					<p>Inbody, born in South Korea, provides precise body measurements without complexity.</p>{' '}
-					{/* 오른쪽 상단에 텍스트 */}
 				</TextSection>
 				<ImageSection>
-					<img src={cardImage} alt='card' /> {/* 오른쪽 하단에 이미지 */}
+					<img src={cardImage} alt='card' />
 				</ImageSection>
 			</HistoryCard>
 
 			<HistoryCard2>
-				{/* 오른쪽 칸에 선을 넣기 위한 빈 div */}
-
 				<ImageSection2>
-					<img src={cardImage} alt='card' /> {/* 왼쪽 상단단에 이미지 */}
+					<img src={cardImage} alt='card' />
 				</ImageSection2>
 
 				<HistoryLineUp>
@@ -54,8 +49,6 @@ function HistoryComponent() {
 
 			{/* Left Bottom  */}
 			<HistoryCard3>
-				{/* 오른쪽 칸에 선을 넣기 위한 빈 div */}
-
 				<TextSection>
 					<p>First oversea subsidiary in USA InBody receives FDA Approval</p>{' '}
 				</TextSection>
@@ -66,7 +59,7 @@ function HistoryComponent() {
 				</HistoryLineUp>
 
 				<ImageSection2>
-					<img src={cardImage} alt='card' /> {/* 왼쪽 상단단에 이미지 */}
+					<img src={cardImage} alt='card' />
 				</ImageSection2>
 			</HistoryCard3>
 
@@ -77,10 +70,8 @@ function HistoryComponent() {
 					<div />
 				</HistoryLineDown>
 				<ImageSection>
-					<img src={cardImage} alt='card' /> {/* 오른쪽 하단에 이미지 */}
+					<img src={cardImage} alt='card' />
 				</ImageSection>
-
-				{/* 왼쪽 칸에 선을 넣기 위한 빈 div */}
 
 				<TextSection>
 					<p>Inbody, born in South Korea, provides precise body measurements without complexity.</p>{' '}
