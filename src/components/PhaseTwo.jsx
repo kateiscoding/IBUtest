@@ -260,14 +260,11 @@ function SecondComponent() {
 						<div>
 							<div>1996</div>
 							<div>2000</div>
-							{/* <div>2009</div> */}
 							<div>2012</div>
 							<div>2013</div>
 							<div>2015</div>
 							<div>2016</div>
 							<div>2017</div>
-							{/* <div>2018</div> */}
-							{/* <div>2019</div> */}
 							<div>2020</div>
 							<div>2022</div>
 							<div>2023</div>
@@ -275,10 +272,11 @@ function SecondComponent() {
 					</YearContainer>
 					<FirstContainer>
 						<div>
+							{/* Award Icon */}
 							{awardsData[0].components.map((data) => (
 								<data.component key={data.id} text={data.text} image={data.image} />
 							))}
-							{/* <LaunchIcon /> */}
+							{/* LaunchIcon */}
 							{launchData[0].components.map((data) => (
 								<data.component key={data.id} year={data.year} product={data.product} />
 							))}
@@ -292,9 +290,11 @@ function SecondComponent() {
 					</FirstContainer>
 					<SecondContainer>
 						<div>
+							{/* Award Icon */}
 							{awardsData[1].components.map((data) => (
 								<data.component key={data.id} text={data.text} image={data.image} />
 							))}
+							{/* LaunchIcon */}
 							{launchData[1].components.map((data) => (
 								<data.component key={data.id} year={data.year} product={data.product} />
 							))}
@@ -302,18 +302,15 @@ function SecondComponent() {
 							{containerData[1].components.map((data) => (
 								<data.component key={data.id} text={data.text} image={data.image} />
 							))}
-
-							{/* <HistoryRightBottomComponent />
-							<HistoryRightBottomComponent />
-							<HistoryLeftTopComponent />
-							<HistoryLeftTopComponent /> */}
 						</div>
 					</SecondContainer>
 					<ThirdContainer>
 						<div>
+							{/* Award Icon */}
 							{awardsData[2].components.map((data) => (
 								<data.component key={data.id} text={data.text} image={data.image} />
 							))}
+							{/* LaunchIcon */}
 							{launchData[2].components.map((data) => (
 								<data.component key={data.id} year={data.year} product={data.product} />
 							))}
@@ -551,7 +548,6 @@ const ThirdContainer = styled.div`
 		> div:nth-child(3) {
 			top: 58.5rem;
 			left: 85.5rem;
-
 			position: absolute;
 		}
 
@@ -619,7 +615,6 @@ const YearContainer = styled.div`
 		${'' /* 1996 */}
 		> div:first-child {
 			display: flex;
-
 			font-size: 4.2rem;
 			font-weight: 600;
 			left: 6.8rem;
@@ -628,7 +623,6 @@ const YearContainer = styled.div`
 		${'' /* 2000 */}
 		> div:nth-child(2) {
 			display: flex;
-
 			font-size: 4.2rem;
 			font-weight: 600;
 			left: 48rem;
@@ -637,7 +631,6 @@ const YearContainer = styled.div`
 		${'' /* 2012 */}
 		> div:nth-child(3) {
 			display: flex;
-
 			font-size: 4.2rem;
 			font-weight: 600;
 			left: 86.5rem;
@@ -646,7 +639,6 @@ const YearContainer = styled.div`
 		${'' /* 2013 */}
 		> div:nth-child(4) {
 			display: flex;
-
 			font-size: 4.2rem;
 			font-weight: 600;
 			left: 134.5rem;
@@ -655,7 +647,6 @@ const YearContainer = styled.div`
 		${'' /* 2015 */}
 		> div:nth-child(5) {
 			display: flex;
-
 			font-size: 4.2rem;
 			font-weight: 600;
 			left: 155rem;
@@ -664,7 +655,6 @@ const YearContainer = styled.div`
 		${'' /* 2016 */}
 		> div:nth-child(6) {
 			display: flex;
-
 			font-size: 4.2rem;
 			font-weight: 600;
 			left: 208rem;
@@ -673,7 +663,6 @@ const YearContainer = styled.div`
 		${'' /* 2017 */}
 		> div:nth-child(7) {
 			display: flex;
-
 			font-size: 4.2rem;
 			font-weight: 600;
 			left: 226rem;
@@ -682,7 +671,6 @@ const YearContainer = styled.div`
 		${'' /* 2020 */}
 		> div:nth-child(8) {
 			display: flex;
-
 			font-size: 4.2rem;
 			font-weight: 600;
 			left: 276rem;
@@ -691,7 +679,6 @@ const YearContainer = styled.div`
 		${'' /* 2022 */}
 		> div:nth-child(9) {
 			display: flex;
-
 			font-size: 4.2rem;
 			font-weight: 600;
 			left: 291rem;
@@ -700,7 +687,6 @@ const YearContainer = styled.div`
 		${'' /* 2023 */}
 		> div:nth-child(10) {
 			display: flex;
-
 			font-size: 4.2rem;
 			font-weight: 600;
 			left: 312rem;

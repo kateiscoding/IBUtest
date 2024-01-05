@@ -341,7 +341,7 @@ const FlagContent = styled.div`
 		backdrop-filter: blur(20px);
 
 		> p {
-			color: var(--bw-white, #fff);
+			color: white;
 			text-align: center;
 			/* H2_80px */
 			font-family: Lexend;
@@ -354,7 +354,7 @@ const FlagContent = styled.div`
 		> div {
 			width: 42.8rem;
 			height: 10rem;
-			color: var(--bw-white, #fff);
+			color: white;
 			text-align: center;
 			/* Body1_60px */
 			font-family: Lexend;

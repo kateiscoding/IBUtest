@@ -4,6 +4,7 @@ import styled, { keyframes } from 'styled-components';
 import { Canvas } from '@react-three/fiber';
 import { Image } from '@react-three/drei';
 import kosdoq from '../assets/svgs/ic_kosdaq.svg';
+import Colors from '../styles/color';
 
 const LaunchComponent = ({ year, product }) => {
 	return (
@@ -20,9 +21,9 @@ const LaunchComponent = ({ year, product }) => {
 	);
 };
 
-const LaunchIcon = styled.div`
-	border-radius: 0.31rem;
-	background-color: #e8e8e8;
+const LaunchIcon = styled.div`d
+	border-radius: 0.8rem;
+	background-color: ${Colors.gray100};
 	width: 12.4rem;
 	height: 6.8rem;
 	flex-shrink: 0;
@@ -38,7 +39,7 @@ const LaunchIcon = styled.div`
 			font-size: 1.8rem;
 			font-style: normal;
 			font-weight: 600;
-			line-height: 110%; /* 1.275rem */
+			line-height: 110%;
 			letter-spacing: -0.029rem;
 		}
 		> div {
@@ -47,17 +48,11 @@ const LaunchIcon = styled.div`
 			font-size: 1.8rem;
 			font-style: normal;
 			font-weight: 600;
-			line-height: 110%; /* 1.275rem */
+			line-height: 110%;
 			letter-spacing: -0.029rem;
 			flex-direction: row;
 			gap: 0.5rem;
 			justify-content: space-around;
-			${'' /* justify-content: space-between; */}
-
-			${
-				'' /* color: var(--BrandCI, #971b2f);
-			color: white; */
-			}
 
 			>div: first-child {
 				color: var(--BrandCI, #971b2f);
