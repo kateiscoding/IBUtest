@@ -29,7 +29,7 @@ align-items: flex-start;  */
 	overflow: hidden;
 	max-width: 100%;
 	width: 100%;
-	max-height: 100%;
+	max-height: 50%;
 	display: flex;
 	top: 54rem;
 	position: absolute;
