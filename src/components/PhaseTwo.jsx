@@ -280,12 +280,11 @@ function SecondComponent() {
 							{launchData[0].components.map((data) => (
 								<data.component key={data.id} year={data.year} product={data.product} />
 							))}
+
+							{/* History Card */}
 							{containerData[0].components.map((data) => (
 								<data.component key={data.id} text={data.text} image={data.image} />
 							))}
-							{/* <HistoryRightBottomComponent />
-
-							<HistoryLeftTopComponent /> */}
 						</div>
 					</FirstContainer>
 					<SecondContainer>
@@ -298,7 +297,7 @@ function SecondComponent() {
 							{launchData[1].components.map((data) => (
 								<data.component key={data.id} year={data.year} product={data.product} />
 							))}
-
+							{/* History Card */}
 							{containerData[1].components.map((data) => (
 								<data.component key={data.id} text={data.text} image={data.image} />
 							))}
@@ -314,15 +313,10 @@ function SecondComponent() {
 							{launchData[2].components.map((data) => (
 								<data.component key={data.id} year={data.year} product={data.product} />
 							))}
-
+							{/* History Card */}
 							{containerData[2].components.map((data) => (
 								<data.component key={data.id} text={data.text} image={data.image} />
 							))}
-							{/* 
-							<HistoryLeftBottomComponent />
-							<HistoryRightBottomComponent />
-							<HistoryRightTopComponent />
-							<HistoryRightTopComponent /> */}
 						</div>
 					</ThirdContainer>
 				</ImageContainer>
@@ -333,81 +327,12 @@ function SecondComponent() {
 	);
 }
 
-// const LaunchIcon = styled.div`
-// 	border-radius: 0.618rem;
-// 	background-color: #e8e8e8;
-// 	width: 12.7rem;
-// 	height: 6.8rem;
-// 	flex-shrink: 0;
-// 	padding: 0.9rem;
-
-// 	>p: first-child {
-// 		color: var(--BrandCI, #971b2f);
-// 		font-size: 1.85rem;
-// 		font-style: normal;
-// 		font-weight: 600;
-// 		line-height: 110%; /* 1.275rem */
-// 		letter-spacing: -0.029rem;
-// 	}
-
-// 	> div {
-// 		display: flex;
-// 		${'' /* gap: 1.3rem; */}
-// 		font-size: 1.85rem;
-// 		font-style: normal;
-// 		font-weight: 600;
-// 		line-height: 110%; /* 1.275rem */
-// 		letter-spacing: -0.029rem;
-// 		flex-direction: row;
-// 		justify-content: space-between;
-
-// 		>div: first-child {
-// 			color: var(--BrandCI, #971b2f);
-// 			display: flex;
-// 			font-size: 1.85rem;
-// 			flex-direction: row;
-// 			align-items: center;
-// 		}
-// 		>div: last-child {
-// 			display: flex;
-// 			border-radius: 0.33488rem;
-// 			width: 4.8rem;
-// 			height: 2.5rem;
-// 			color: white;
-// 			font-size: 1.85rem;
-// 			font-weight: 600;
-// 			line-height: 110;
-// 			flex-shrink: 0;
-// 			background: #971b2f;
-// 		}
-// 	}
-// `;
-
-// const AwardIcon = styled.div`
-// 	border-radius: 1rem;
-// 	background-color: rgba(255, 255, 255, 0.3);
-// 	${'' /* width: 12.7rem; */}
-// 	font-size: 1.935rem;
-// 	line-height: 2.1rem;
-// 	height: 6.8rem;
-// 	flex-shrink: 0;
-// 	padding: 1.6rem 4.5rem 1.6rem 1.6rem;
-// 	color: white;
-// `;
-
 const HistoryLayout = styled.div`
-	${
-		'' /* width: 576rem;
-	display: flex;
-	height: 100%; */
-	}
-
 	width: 576rem;
 	display: flex;
 	height: 100%;
 	${'' /* gap: 10rem; */}
 	flex-direction: row;
-	${'' /* justify-content: center; */}
 	justify-content: space-between;
 `;
 const TextContainer = styled.div`
@@ -583,11 +508,6 @@ const ThirdContainer = styled.div`
 	}
 `;
 
-const FourthContainer = styled.div`
-	${'' /* width: 468rem; */}
-	display: flex;
-`;
-
 const YearContainer = styled.div`
 	top: 50.5rem;
 	position: absolute;
@@ -744,7 +664,6 @@ const TextContent = styled.div`
 
 const PhaseTwo = styled.div`
 	position: relative;
-	${'' /* background-color: black; */}
 	display: flex;
 	flex-direction: column;
 	height: 108rem;
