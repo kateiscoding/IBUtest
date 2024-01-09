@@ -11,7 +11,7 @@
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "@types/three": "^0.159.0",
-    "framer-motion": "^10.17.9",
+    "framer-motion": "^10.17.12",
     "framer-motion-3d": "^10.17.9",
     "react": "^18.2.0",
     "react-countup": "^6.5.0",
