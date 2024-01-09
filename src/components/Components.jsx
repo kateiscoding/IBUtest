@@ -5,6 +5,9 @@ import { Canvas } from '@react-three/fiber';
 import { Image } from '@react-three/drei';
 import kosdoq from '../assets/svgs/ic_kosdaq.svg';
 import cardImage from '../assets/img-history.png';
+import industryImage from '../assets/img-industry.png';
+
+// 삭제 예정 컴포넌트 분리 완료
 
 const fadeIn = keyframes`
    0% {
@@ -19,7 +22,7 @@ const fadeIn = keyframes`
 function HistoryComponent() {
 	return (
 		<IconContainer>
-			<HistoryCard>
+			{/* <HistoryCard>
 				<HistoryLineDown>
 					<div />
 					<div />
@@ -45,10 +48,10 @@ function HistoryComponent() {
 				<TextSection2>
 					<p>First oversea subsidiary in USA InBody receives FDA Approval</p>{' '}
 				</TextSection2>
-			</HistoryCard2>
+			</HistoryCard2> */}
 
 			{/* Left Bottom  */}
-			<HistoryCard3>
+			{/* <HistoryCard3>
 				<TextSection>
 					<p>First oversea subsidiary in USA InBody receives FDA Approval</p>{' '}
 				</TextSection>
@@ -61,10 +64,10 @@ function HistoryComponent() {
 				<ImageSection2>
 					<img src={cardImage} alt='card' />
 				</ImageSection2>
-			</HistoryCard3>
+			</HistoryCard3> */}
 
-			{/* RIght Top  */}
-			<HistoryCard4>
+			{/* Right Top  */}
+			{/* <HistoryCard4>
 				<HistoryLineDown>
 					<div />
 					<div />
@@ -75,13 +78,381 @@ function HistoryComponent() {
 
 				<TextSection>
 					<p>Inbody, born in South Korea, provides precise body measurements without complexity.</p>{' '}
-					{/* 오른쪽 상단에 텍스트 */}
+				
 				</TextSection>
-			</HistoryCard4>
+			</HistoryCard4> */}
+
+			<IndustryCardLargeTopLeft>
+				<div>
+					<div>
+						<div>
+							<p>Title</p>
+							<p>Caption</p>
+						</div>
+					</div>
+				</div>
+				<div>
+					{/* 사진 */}
+					<img src={industryImage} alt='industry-sample' />
+				</div>
+			</IndustryCardLargeTopLeft>
+
+			<IndustryCardLargeBottomRight>
+				<div>
+					<div>
+						<div>
+							<p>Title</p>
+							<p>Caption</p>
+						</div>
+					</div>
+				</div>
+				<div>
+					{/* 사진 */}
+					<img src={industryImage} alt='industry-sample' />
+				</div>
+			</IndustryCardLargeBottomRight>
+
+			<IndustryCardSmallBottomRight>
+				<div>
+					<div>
+						<p>Title</p>
+						<p>Caption</p>
+					</div>
+				</div>
+				<div>
+					{/* 사진 */}
+					<img src={industryImage} alt='industry-sample' />
+				</div>
+			</IndustryCardSmallBottomRight>
+
+			<IndustryCardSmallTopRight>
+				<div>
+					<div>
+						<p>Title</p>
+						<p>Caption</p>
+					</div>
+				</div>
+				<div>
+					{/* 사진 */}
+					<img src={industryImage} alt='industry-sample' />
+				</div>
+			</IndustryCardSmallTopRight>
 		</IconContainer>
 	);
 }
 
+const IndustryCardLargeTopLeft = styled.div`
+	width: 63.8rem;
+	height: 63.8rem;
+
+	${'' /* 일단 해봄 */}
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+	justify-content: flex-end;
+	position: relative;
+
+	> div:nth-child(1) {
+		width: 54rem;
+		height: 54rem;
+		flex-shrink: 0;
+		bottom: 0;
+		right: 0;
+		border-radius: 54rem;
+		display: flex;
+		border: 4px dashed var(--BandCI_dark, #6c1624);
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		position: absolute;
+		z-index: 4;
+
+		> div {
+			border-radius: 18.4rem;
+			border: 2px solid var(--BandCI_dark, #6c1624);
+			background: var(--bwb-07, rgba(63, 63, 63, 0.7));
+			box-shadow: 0px 4px 30px 0px rgba(0, 0, 0, 0.3);
+			backdrop-filter: blur(40px);
+			display: flex;
+			width: 36.8rem;
+			height: 36.8rem;
+			padding: 0.8rem 5.6rem;
+			flex-direction: column;
+			justify-content: center;
+			align-items: flex-start;
+			gap: 3.2rem;
+			flex-shrink: 0;
+			align-items: center;
+
+			> div {
+				display: flex;
+				gap: 3.2rem;
+				flex-direction: column;
+
+				> p:nth-child(1) {
+					color: white;
+					text-align: center;
+					font-size: 4rem;
+					font-style: normal;
+					font-weight: 600;
+					line-height: 100%; /* 4rem */
+					align-self: stretch;
+				}
+
+				> p:nth-child(2) {
+					color: var(--BW-White, #fff);
+					text-align: center;
+
+					font-size: 2.4rem;
+					font-style: normal;
+					font-weight: 400;
+					line-height: 120%; /* 2.88rem */
+					letter-spacing: -0.06rem;
+				}
+			}
+		}
+	}
+
+	> div:nth-child(2) {
+		width: 47.2rem;
+		height: 47.2rem;
+		left: 0;
+		top: 0;
+		flex-shrink: 0;
+		display: flex;
+		z-index: 2;
+		position: absolute;
+	}
+`;
+
+const IndustryCardLargeBottomRight = styled.div`
+	width: 63.8rem;
+	height: 63.8rem;
+
+	${'' /* 일단 해봄 */}
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+	justify-content: flex-end;
+	position: relative;
+
+	> div:nth-child(1) {
+		width: 54rem;
+		height: 54rem;
+		flex-shrink: 0;
+		top: 0;
+		left: 0;
+		border-radius: 54rem;
+		display: flex;
+		border: 4px dashed var(--BandCI_dark, #6c1624);
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		position: absolute;
+		z-index: 4;
+
+		> div {
+			border-radius: 18.4rem;
+			border: 2px solid var(--BandCI_dark, #6c1624);
+			background: var(--bwb-07, rgba(63, 63, 63, 0.7));
+			box-shadow: 0px 4px 30px 0px rgba(0, 0, 0, 0.3);
+			backdrop-filter: blur(40px);
+			display: flex;
+			width: 36.8rem;
+			height: 36.8rem;
+			padding: 0.8rem 5.6rem;
+			flex-direction: column;
+			justify-content: center;
+			align-items: flex-start;
+			gap: 3.2rem;
+			flex-shrink: 0;
+			align-items: center;
+
+			> div {
+				display: flex;
+				gap: 3.2rem;
+				flex-direction: column;
+
+				> p:nth-child(1) {
+					color: white;
+					text-align: center;
+					font-size: 4rem;
+					font-style: normal;
+					font-weight: 600;
+					line-height: 100%; /* 4rem */
+					align-self: stretch;
+				}
+
+				> p:nth-child(2) {
+					color: var(--BW-White, #fff);
+					text-align: center;
+
+					font-size: 2.4rem;
+					font-style: normal;
+					font-weight: 400;
+					line-height: 120%; /* 2.88rem */
+					letter-spacing: -0.06rem;
+				}
+			}
+		}
+	}
+
+	> div:nth-child(2) {
+		width: 47.2rem;
+		height: 47.2rem;
+		right: 0;
+		bottom: 0;
+		flex-shrink: 0;
+		display: flex;
+		z-index: 2;
+		position: absolute;
+	}
+`;
+
+const IndustryCardSmallBottomRight = styled.div`
+	width: 48rem;
+	height: 48rem;
+
+	${'' /* 일단 해봄 */}
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+	justify-content: flex-end;
+	position: relative;
+
+	> div:nth-child(1) {
+		border-radius: 18.4rem;
+		border: 2px solid var(--BandCI_dark, #6c1624);
+		background: var(--bwb-07, rgba(63, 63, 63, 0.7));
+		box-shadow: 0px 4px 30px 0px rgba(0, 0, 0, 0.3);
+		backdrop-filter: blur(40px);
+
+		align-items: center;
+		top: 0;
+		position: absolute;
+
+		display: flex;
+		width: 31.2rem;
+		height: 31.2rem;
+		padding: 0.8rem 5.6rem;
+		flex-direction: column;
+		justify-content: center;
+		z-index: 4;
+		gap: 3.2rem;
+		flex-shrink: 0;
+
+		> div {
+			display: flex;
+			gap: 3.2rem;
+			flex-direction: column;
+
+			> p:nth-child(1) {
+				color: white;
+				text-align: center;
+				font-size: 4rem;
+				font-style: normal;
+				font-weight: 600;
+				line-height: 100%; /* 4rem */
+				align-self: stretch;
+			}
+
+			> p:nth-child(2) {
+				color: var(--BW-White, #fff);
+				text-align: center;
+
+				font-size: 2.4rem;
+				font-style: normal;
+				font-weight: 400;
+				line-height: 120%; /* 2.88rem */
+				letter-spacing: -0.06rem;
+			}
+		}
+	}
+
+	> div:nth-child(2) {
+		width: 40rem;
+		height: 40rem;
+		left: 0;
+		bottom: 0;
+		flex-shrink: 0;
+		display: flex;
+		z-index: 2;
+		position: absolute;
+	}
+`;
+
+const IndustryCardSmallTopRight = styled.div`
+	width: 48rem;
+	height: 48rem;
+
+	${'' /* 일단 해봄 */}
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+	justify-content: flex-end;
+	position: relative;
+
+	> div:nth-child(1) {
+		border-radius: 18.4rem;
+		border: 2px solid var(--BandCI_dark, #6c1624);
+		background: var(--bwb-07, rgba(63, 63, 63, 0.7));
+		box-shadow: 0px 4px 30px 0px rgba(0, 0, 0, 0.3);
+		backdrop-filter: blur(40px);
+
+		align-items: center;
+		bottom: 0;
+		left: 0;
+		position: absolute;
+
+		display: flex;
+		width: 31.2rem;
+		height: 31.2rem;
+		padding: 0.8rem 5.6rem;
+		flex-direction: column;
+		justify-content: center;
+		z-index: 3;
+		gap: 3.2rem;
+		flex-shrink: 0;
+
+		> div {
+			display: flex;
+			gap: 3.2rem;
+			flex-direction: column;
+
+			> p:nth-child(1) {
+				color: white;
+				text-align: center;
+				font-size: 4rem;
+				font-style: normal;
+				font-weight: 600;
+				line-height: 100%; /* 4rem */
+				align-self: stretch;
+			}
+
+			> p:nth-child(2) {
+				color: var(--BW-White, #fff);
+				text-align: center;
+
+				font-size: 2.4rem;
+				font-style: normal;
+				font-weight: 400;
+				line-height: 120%; /* 2.88rem */
+				letter-spacing: -0.06rem;
+			}
+		}
+	}
+
+	> div:nth-child(2) {
+		width: 40rem;
+		height: 40rem;
+		right: 0;
+		top: 0;
+		flex-shrink: 0;
+		display: flex;
+		z-index: 2;
+		position: absolute;
+	}
+`;
 const HistoryLineUp = styled.div`
 	height: 35.9rem;
 	grid-row: span 2;
@@ -230,14 +601,14 @@ const ImageSection2 = styled.div`
 	}
 `;
 
-const IndustryCard = styled.div`
-	width: 100%;
+// const IndustryCard = styled.div`
+// 	width: 100%;
 
-	> img {
-		max-width: 100%;
-		height: auto;
-	}
-`;
+// 	> img {
+// 		max-width: 100%;
+// 		height: auto;
+// 	}
+// `;
 
 const IconContainer = styled.div`
 	${'' /* width: 192rem */}

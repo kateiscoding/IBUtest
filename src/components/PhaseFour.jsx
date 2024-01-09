@@ -7,9 +7,7 @@ import { Image } from '@react-three/drei';
 const fadeIn = keyframes`
    0% {
     
-	opacity: 0;+-
-
-
+	opacity: 0;
 	
   }
 `;

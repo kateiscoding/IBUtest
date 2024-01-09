@@ -26,7 +26,7 @@ function MainPage() {
 	useEffect(() => {
 		const timer = setTimeout(() => {
 			// 시간이 지난 후에 다음 컴포넌트로 변경
-			setCurrentComponent((prevComponent) => (prevComponent % 2) + 1);
+			setCurrentComponent((prevComponent) => (prevComponent % 3) + 1);
 		}, 18000); // 20초 후에 컴포넌트 변경
 
 		return () => clearTimeout(timer);
@@ -46,9 +46,10 @@ function MainPage() {
 			{/* 컴포넌트 10초 단위로 돌리기 */}
 			{currentComponent === 1 && <FirstComponent />}
 			{currentComponent === 2 && <SecondComponent />}
-			{/* {currentComponent === 3 && <ThirdComponent />}
-			{currentComponent === 4 && <FourthComponent />} */}
+			{currentComponent === 3 && <ThirdComponent />}
+			{/* {currentComponent === 4 && <FourthComponent />} */}
 			<Earth />
+			{/* <Earth3D /> */}
 			<InbodyLogo>
 				<img src={InbodyMainLogo} alt='inbody-logo' />
 			</InbodyLogo>
@@ -125,13 +126,12 @@ const Main = styled.main`
 	}
 	gap: 8rem;
 	overflow: hidden;
-	position: relative; /* 추가 */
+	position: relative;
 	background-color: black;
 	display: flex;
 	flex-direction: column;
 	${'' /* height: 108rem; */}
 	align-items: center;
-	${'' /* gap: 5rem; */}
 
 	canvas {
 		position: absolute;
@@ -141,114 +141,6 @@ const Main = styled.main`
 		width: 100%;
 		height: 100%;
 	}
-`;
-
-const Counter = styled.div`
-	${
-		'' /* height: 60rem;
-	width: 100%;
-	display: flex;
-	margin-top: 22rem;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center; */
-	}
-
-	height: 30rem;
-	z-index: 2;
-	width: 100%;
-	display: flex;
-	margin-top: 19rem;
-	flex-direction: column;
-	justify-content: flex-start;
-	align-items: center;
-
-	> div {
-		display: flex;
-		flex-direction: column;
-		width: 129rem;
-		gap: 0.9rem;
-
-		${
-			'' /* > p {
-			color: #fff;
-
-			text-align: center;
-			font-size: 22.4rem;
-			font-style: normal;
-			font-weight: 600;
-			line-height: 1;
-		} */
-		}
-
-		> div {
-			display: flex;
-			gap: 11rem;
-
-			> b {
-				color: #fff;
-				display: flex;
-				text-align: center;
-				font-size: 4.4rem;
-				${'' /* font-style: normal; */}
-				font-weight: 600;
-				${'' /* line-height: normal; */}
-				letter-spacing: 1rem;
-				flex-direction: column;
-				align-items: flex-start;
-				lineheight: 44;
-				${'' /* letterspacing: 10.86; */}
-				wordwrap: 'break-word';
-				justify-content: center;
-			}
-
-			> div {
-				background: #971b2f;
-				width: 20.1rem;
-				height: 6rem;
-				${'' /* font-size: 4.4rem; */}
-				display: flex;
-				padding: 0.8rem 1.6rem;
-				font-weight: bold;
-				line-height: 4rem;
-				display: flex;
-				border-radius: 0.8rem;
-				justify-content: space-around;
-				align-items: center;
-				${'' /* letterspacing: 10.56; */}
-				border-radius: 0.5rem;
-				gap: 0.6rem;
-
-				> span {
-					display: flex;
-					color: black;
-					font-size: 4.1rem;
-					font-weight: 700;
-				}
-			}
-		}
-	}
-	${'' /* Count UP */}
-	> span {
-		color: #fff;
-		display: flex;
-		text-align: center;
-		font-size: 22.4rem;
-		font-style: normal;
-		font-weight: 600;
-		line-height: 1;
-		width: 129rem;
-	}
-`;
-
-const CountUpStyled = styled.div`
-	color: #fff;
-
-	text-align: center;
-	font-size: 22.4rem;
-	font-style: normal;
-	font-weight: 600;
-	line-height: 1;
 `;
 
 export default MainPage;
