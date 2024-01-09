@@ -33,15 +33,15 @@ const Flag = ({ country, count, image }) => {
 		{
 			id: '1',
 			country: 'China',
-			count: '1974557',
+			count: '1975192',
 			image: InbodyMan,
 		},
-		{ id: '2', country: 'Korea', count: '68781096', image: InbodyMan },
-		{ id: '3', country: 'Australia', count: '1547375', image: InbodyMan },
-		{ id: '4', country: 'Japan', count: '11832766', image: InbodyMan },
-		{ id: '5', country: 'USA', count: '19267234', image: InbodyMan },
-		{ id: '6', country: 'UK', count: '1533963', image: InbodyMan },
-		{ id: '7', country: 'EU', count: '2093689', image: InbodyMan },
+		{ id: '2', country: 'Korea', count: '68830950', image: InbodyMan },
+		{ id: '3', country: 'Australia', count: '1547900', image: InbodyMan },
+		{ id: '4', country: 'Japan', count: '11845595', image: InbodyMan },
+		{ id: '5', country: 'USA', count: '19268413', image: InbodyMan },
+		{ id: '6', country: 'UK', count: '1537251', image: InbodyMan },
+		{ id: '7', country: 'EU', count: '2094798', image: InbodyMan },
 	];
 
 	const gpsData = [
