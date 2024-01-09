@@ -327,6 +327,21 @@ function SecondComponent() {
 	);
 }
 
+const PhaseTwo = styled.div`
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	height: 108rem;
+	align-items: center;
+	${'' /* gap: 5rem; */}
+	z-index: 2;
+
+	> img {
+		position: fixed;
+		opacity: 0.2;
+	}
+`;
+
 const HistoryLayout = styled.div`
 	width: 576rem;
 	display: flex;
@@ -335,6 +350,49 @@ const HistoryLayout = styled.div`
 	flex-direction: row;
 	justify-content: space-between;
 `;
+
+// 좌측 텍스트 영역
+const TextContent = styled.div`
+	color: white;
+	display: flex;
+	${'' /* margin: 33rem 17rem; */}
+	width: 74rem;
+	margin-left: 25rem;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: 5rem;
+
+	> div {
+		${'' /* margin-top: 16rem; */}
+		display: flex;
+		flex-direction: column;
+		gap: 6.4rem;
+
+		${'' /* 메인 타이틀 */}
+
+		> p:first-child {
+			font-size: 16rem;
+			color: white;
+			display: flex;
+			font-weight: 700;
+			line-height: 90%;
+		}
+
+		${'' /* 서브 타이틀 */}
+		> p:last-child {
+			font-size: 3.3rem;
+			color: white;
+			letter-spacing: -0.05156rem;
+			display: flex;
+			font-weight: 400;
+			line-height: 130%;
+			width: 70rem;
+
+			animation: ${fadeIn} 1.5s ease-in-out forwards;
+		}
+	}
+`;
+
 const TextContainer = styled.div`
 	width: 108rem;
 	display: flex;
@@ -511,7 +569,7 @@ const ThirdContainer = styled.div`
 const YearContainer = styled.div`
 	top: 50.5rem;
 	position: absolute;
-	width: 457.5rem;
+	width: 466.6rem;
 	height: 6rem;
 	flex-shrink: 0;
 	background: linear-gradient(270deg, #000 0%, rgba(0, 0, 0, 0) 5.8%),
@@ -621,59 +679,6 @@ const YearContainer = styled.div`
 			left: 303.5rem;
 			position: relative;
 		}
-	}
-`;
-const TextContent = styled.div`
-	color: white;
-	display: flex;
-	${'' /* margin: 33rem 17rem; */}
-	width: 74rem;
-	margin-left: 25rem;
-	flex-direction: column;
-	align-items: flex-start;
-	gap: 5rem;
-
-	> div {
-		${'' /* margin-top: 16rem; */}
-		display: flex;
-		flex-direction: column;
-		gap: 6.4rem;
-		${'' /* width: 74rem; */}
-
-		> p:first-child {
-			font-size: 16rem;
-			color: white;
-			display: flex;
-			font-weight: 700;
-			line-height: 90%;
-		}
-
-		> p:last-child {
-			font-size: 3.3rem;
-			color: white;
-			letter-spacing: -0.05156rem;
-			display: flex;
-			font-weight: 400;
-			line-height: 130%;
-			width: 70rem;
-
-			animation: ${fadeIn} 1.5s ease-in-out forwards;
-		}
-	}
-`;
-
-const PhaseTwo = styled.div`
-	position: relative;
-	display: flex;
-	flex-direction: column;
-	height: 108rem;
-	align-items: center;
-	${'' /* gap: 5rem; */}
-	z-index: 2;
-
-	> img {
-		position: fixed;
-		opacity: 0.2;
 	}
 `;
 

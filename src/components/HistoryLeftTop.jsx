@@ -3,8 +3,6 @@ import * as THREE from 'three';
 import styled, { keyframes } from 'styled-components';
 import { Canvas } from '@react-three/fiber';
 import { Image } from '@react-three/drei';
-import kosdoq from '../assets/svgs/ic_kosdaq.svg';
-import cardImage from '../assets/img-history.png';
 
 const HistoryLeftTopComponent = ({ text, image }) => {
 	return (

@@ -33,15 +33,15 @@ const Flag = ({ country, count, image }) => {
 		{
 			id: '1',
 			country: 'China',
-			count: '1971150',
+			count: '1974557',
 			image: InbodyMan,
 		},
-		{ id: '2', country: 'Korea', count: '68558219', image: InbodyMan },
-		{ id: '3', country: 'Australia', count: '1544045', image: InbodyMan },
-		{ id: '4', country: 'Japan', count: '11766100', image: InbodyMan },
-		{ id: '5', country: 'USA', count: '19201343', image: InbodyMan },
-		{ id: '6', country: 'UK', count: '1517974', image: InbodyMan },
-		{ id: '7', country: 'EU', count: '2089108', image: InbodyMan },
+		{ id: '2', country: 'Korea', count: '68781096', image: InbodyMan },
+		{ id: '3', country: 'Australia', count: '1547375', image: InbodyMan },
+		{ id: '4', country: 'Japan', count: '11832766', image: InbodyMan },
+		{ id: '5', country: 'USA', count: '19267234', image: InbodyMan },
+		{ id: '6', country: 'UK', count: '1533963', image: InbodyMan },
+		{ id: '7', country: 'EU', count: '2093689', image: InbodyMan },
 	];
 
 	const gpsData = [
@@ -149,19 +149,6 @@ const Flag = ({ country, count, image }) => {
 					<Gps className={`gps-${index + 1}`}>
 						<img src={flag.image} alt={`gps-${flag.country}`} />
 					</Gps>
-					{/* <Line
-						key={line[index].id}
-						style={{
-							width: line[index].width,
-							height: line[index].height,
-							marginLeft: line[index].marginLeft,
-							top: line[index].top,
-							left: line[index].left,
-							borderLeft: line[index].borderLeft,
-							borderRight: line[index].borderRight,
-							borderTopRightRadius: line[index].borderTopRightRadius,
-						}}
-					/> */}
 
 					<AnimatedRedLine
 						key={line[index].id}
@@ -181,54 +168,8 @@ const Flag = ({ country, count, image }) => {
 		</FlagContainer>
 	);
 };
-const Line = styled.div`
-	width: 53rem;
-	height: 3.6rem;
-	margin-left: 19rem;
-
-	${'' /* transform: rotate(180deg); */}
-	${'' /* transform-origin: 0 0; */}
-	${'' /* border-top-left-radius: 2.4rem; */}
-	border-top-right-radius: 2.4rem;
-	border-bottom-right-radius: 2.4rem;
-	border-bottom-left-radius: 2.4rem;
-	border-left: 4px #6c1624 dotted;
-	border-bottom: 4px #6c1624 dotted;
-`;
-
-const Line2 = styled.div`
-	width: 53rem;
-	height: 3.6rem;
-	margin-left: 19rem;
-
-	${'' /* transform: rotate(180deg); */}
-	${'' /* transform-origin: 0 0; */}
-	${'' /* border-top-left-radius: 2.4rem; */}
-	border-top-right-radius: 2.4rem;
-	border-bottom-right-radius: 2.4rem;
-	border-bottom-left-radius: 2.4rem;
-	border-left: 4px #6c1624 dotted;
-	border-bottom: 4px #6c1624 dotted;
-`;
 
 const FlagContainer = styled.div`
-	${
-		'' /* color: white;
-	display: flex;
-	gap: 10rem; */
-	}
-	${'' /* height: 30rem; */}
-	${
-		'' /* flex-direction: row;
-	justify-content: center;
-	align-items: flex-end;
-	width: 100%;
-
-	position: absolute;
-	top: 45rem;
-	z-index: 2; */
-	}
-
 	color: white;
 	display: flex;
 	${'' /* grid-template-columns: repeat(7, 1fr); */}
@@ -239,22 +180,6 @@ const FlagContainer = styled.div`
 	z-index: 2;
 	${'' /* transform: rotate(-45deg); */}
 	animation: ${animateRedLine} 1s ease-in-out forwards;
-`;
-
-const RedLine = styled.div`
-	display: flex;
-
-	flex-direction: column;
-	align-items: center;
-
-	> div {
-		width: 1px;
-		height: 15rem;
-		border-left: 4px dashed #971b2f;
-
-		flex-shrink: 0;
-		display: flex;
-	}
 `;
 
 // flag 박스 위치 지정
