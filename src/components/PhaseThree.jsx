@@ -5,6 +5,15 @@ import styled, { keyframes } from 'styled-components';
 import { Canvas } from '@react-three/fiber';
 import { Image } from '@react-three/drei';
 import RedLineImage from '../assets/phase3-line.png';
+import IndustryLargeBottomRight from './IndustryLargeBottomRight';
+import IndustryLargeTopLeft from './IndustryLargeTopLeft';
+import IndustrySmallBottomLeft from './IndustrySmallBottomLeft';
+import IndustrySmallTopRight from './IndustrySmallTopRight';
+import PhaseThreeImage from '../assets/finalphase3.png';
+import IndustryImageOne from '../assets/img-industry-1.png';
+import IndustryImageTwo from '../assets/img-industry-2.png';
+import IndustryImageThree from '../assets/img-industry-3.png';
+import IndustryImageFour from '../assets/img-industry-4.png';
 
 const fadeIn = keyframes`
    0% {
@@ -29,21 +38,44 @@ function ThirdComponent() {
 			</TextContainer>
 			<MainContainer>
 				<ContentBox>
-					<p>hi</p>
+					<IndustryLargeTopLeft
+						title='Anti-Aging'
+						caption='Treatment progression'
+						image={IndustryImageOne}
+					/>
+					<IndustrySmallBottomLeft
+						title='Nutrition'
+						caption='Macro guidance'
+						image={IndustryImageTwo}
+					/>
+					<IndustryLargeBottomRight
+						title='Personal Training'
+						caption='Targeted training'
+						image={IndustryImageThree}
+					/>
+					<IndustrySmallTopRight
+						title='Bariatrics'
+						caption='Post op analysis'
+						image={IndustryImageFour}
+					/>
 				</ContentBox>
 			</MainContainer>
 			<RedLineContainer>
 				<img src={RedLineImage} alt='red-line' />
 			</RedLineContainer>
+
+			{/* <img src={PhaseThreeImage} alt='final' /> */}
 		</PhaseThree>
 	);
 }
 
 const RedLineContainer = styled.div`
 	position: absolute;
-	width: 100%;
+	${'' /* width: 100%; */}
 	height: auto;
 	display: flex;
+	z-index: 2;
+
 	> img {
 		width: 100%;
 		display: flex;
@@ -55,7 +87,6 @@ const MainContainer = styled.div`
 	width: 384rem;
 	display: flex;
 	height: 100%;
-
 	animation-delay: 1.5s;
 `;
 
@@ -63,6 +94,26 @@ const ContentBox = styled.div`
 	width: 192rem;
 	height: auto;
 	display: flex;
+
+	> div:first-child {
+		top: 10rem;
+		left: 4rem;
+	}
+
+	> div:nth-child(2) {
+		top: 50rem;
+		left: -3rem;
+	}
+
+	> div:nth-child(3) {
+		top: 5rem;
+		left: -13rem;
+	}
+
+	> div:nth-child(4) {
+		top: 50rem;
+		left: -13rem;
+	}
 `;
 
 const PhaseThree = styled.div`
@@ -76,12 +127,9 @@ const PhaseThree = styled.div`
 	align-items: flex-end;
 	${'' /* gap: 5rem; */}
 
-	${
-		'' /* > p {
-		font-size: 18rem;
-		font-color: white;
-		color: white;
-	} */
+	> img {
+		position: fixed;
+		opacity: 0.2;
 	}
 `;
 
