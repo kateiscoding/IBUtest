@@ -23,7 +23,7 @@ function FirstComponent() {
 						<b>TOTAL GLOBAL TESTS</b>
 					</div>
 				</div>
-				<CountUp start={100000000} end={112714780} duration={3} />
+				<CountUp start={100000000} end={112806020} duration={3} />
 			</Counter>
 			<FlagContainer />
 		</PhaseOne>

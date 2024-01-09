@@ -26,7 +26,7 @@ function MainPage() {
 	useEffect(() => {
 		const timer = setTimeout(() => {
 			// 시간이 지난 후에 다음 컴포넌트로 변경
-			setCurrentComponent((prevComponent) => (prevComponent % 3) + 1);
+			setCurrentComponent((prevComponent) => (prevComponent % 4) + 1);
 		}, 18000); // 20초 후에 컴포넌트 변경
 
 		return () => clearTimeout(timer);
@@ -47,7 +47,7 @@ function MainPage() {
 			{currentComponent === 1 && <FirstComponent />}
 			{currentComponent === 2 && <SecondComponent />}
 			{currentComponent === 3 && <ThirdComponent />}
-			{/* {currentComponent === 4 && <FourthComponent />} */}
+			{currentComponent === 4 && <FourthComponent />}
 			<Earth />
 			{/* <Earth3D /> */}
 			<InbodyLogo>
@@ -93,15 +93,8 @@ const FinalImage = styled.img`
 	display: flex;
 	overflow: hidden;
 	max-width: 100%;
-
 	background-size: cover;
-
-	${'' /* margin-top: -0.4%; */}
 	transform-origin: top;
-
-	${'' /* position: absolute; */}
-	${'' /* margin-top: -0.4%; */}
-
 
 	> img {
 	}

@@ -84,7 +84,7 @@ const IndustryCardSmallTopRight = styled.div`
 	> div:nth-child(2) {
 		width: 40rem;
 		height: 40rem;
-		right: -7rem;
+		right: 0;
 		top: 0;
 		flex-shrink: 0;
 		display: flex;

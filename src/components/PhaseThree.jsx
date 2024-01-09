@@ -1,6 +1,7 @@
 import React, { useRef, useState, useEffect } from 'react';
 import * as THREE from 'three';
 import styled, { keyframes } from 'styled-components';
+import { motion } from 'framer-motion';
 
 import { Canvas } from '@react-three/fiber';
 import { Image } from '@react-three/drei';
@@ -26,6 +27,21 @@ const fadeIn = keyframes`
   }
 `;
 
+// 텍스트 fade in 애니메이션
+const fadeInFromBottom = keyframes`
+  from {
+    opacity: 0;
+    transform: translateY(4rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0); 
+  }
+`;
+
+const popIn = keyframes`
+`;
+
 function ThirdComponent() {
 	return (
 		<PhaseThree>
@@ -38,30 +54,73 @@ function ThirdComponent() {
 			</TextContainer>
 			<MainContainer>
 				<ContentBox>
-					<IndustryLargeTopLeft
-						title='Anti-Aging'
-						caption='Treatment progression'
-						image={IndustryImageOne}
-					/>
-					<IndustrySmallBottomLeft
-						title='Nutrition'
-						caption='Macro guidance'
-						image={IndustryImageTwo}
-					/>
-					<IndustryLargeBottomRight
-						title='Personal Training'
-						caption='Targeted training'
-						image={IndustryImageThree}
-					/>
-					<IndustrySmallTopRight
-						title='Bariatrics'
-						caption='Post op analysis'
-						image={IndustryImageFour}
-					/>
+					<motion.div
+						initial={{ opacity: 0, x: -200, y: -200 }}
+						animate={{
+							opacity: 1,
+							x: 0,
+							y: 0,
+
+							transition: { delay: 2.1, duration: 0.6, ease: 'easeOut' },
+						}}>
+						<IndustryLargeTopLeft
+							title='Anti-Aging'
+							caption='Treatment progression'
+							image={IndustryImageOne}
+						/>
+					</motion.div>
+					<motion.div
+						initial={{ opacity: 0, x: -200, y: +200 }}
+						animate={{
+							opacity: 1,
+							x: 0,
+							y: 0,
+							transition: { delay: 2.1, duration: 0.6, ease: 'easeOut' },
+						}}>
+						<IndustrySmallBottomLeft
+							title='Nutrition'
+							caption='Macro guidance'
+							image={IndustryImageTwo}
+						/>
+					</motion.div>
+
+					<motion.div
+						initial={{ opacity: 0, x: +200, y: +200 }}
+						animate={{
+							opacity: 1,
+							x: 0,
+							y: 0,
+							transition: { delay: 2.1, duration: 0.6, ease: 'easeOut' },
+						}}>
+						<IndustryLargeBottomRight
+							title='Personal Training'
+							caption='Targeted training'
+							image={IndustryImageThree}
+						/>
+					</motion.div>
+
+					<motion.div
+						initial={{ opacity: 0, x: +300, y: -300 }}
+						animate={{
+							opacity: 1,
+							x: 0,
+							y: 0,
+							transition: { delay: 2.1, duration: 0.6, ease: 'easeOut' },
+						}}>
+						<IndustrySmallTopRight
+							title='Bariatrics'
+							caption='Post op analysis'
+							image={IndustryImageFour}
+						/>
+					</motion.div>
 				</ContentBox>
 			</MainContainer>
 			<RedLineContainer>
-				<img src={RedLineImage} alt='red-line' />
+				<motion.div
+					initial={{ opacity: 0 }}
+					animate={{ opacity: 1, transition: { delay: 1.3, duration: 0.3 } }}>
+					<img src={RedLineImage} alt='red-line' />
+				</motion.div>
 			</RedLineContainer>
 
 			{/* <img src={PhaseThreeImage} alt='final' /> */}
@@ -75,7 +134,10 @@ const RedLineContainer = styled.div`
 	height: auto;
 	display: flex;
 	z-index: 2;
-
+	${
+		'' /* animation: ${fadeIn} 0.3s ease-in-out forwards;
+	animation-delay: 1.3s; */
+	}
 	> img {
 		width: 100%;
 		display: flex;
@@ -87,32 +149,42 @@ const MainContainer = styled.div`
 	width: 384rem;
 	display: flex;
 	height: 100%;
-	animation-delay: 1.5s;
+	z-index: 4;
 `;
 
 const ContentBox = styled.div`
 	width: 192rem;
 	height: auto;
 	display: flex;
+	z-index: 5;
+	${
+		'' /* animation-delay: 1.8s;
+	animation: ${fadeIn} 0.3s ease-in-out forwards; */
+	}
 
 	> div:first-child {
 		top: 10rem;
-		left: 4rem;
+		left: -5rem;
+		position: relative;
+		z-index: 5;
 	}
 
 	> div:nth-child(2) {
 		top: 50rem;
-		left: -3rem;
+		left: -19rem;
+		position: relative;
 	}
 
 	> div:nth-child(3) {
 		top: 5rem;
-		left: -13rem;
+		left: -29.5rem;
+		position: relative;
 	}
 
 	> div:nth-child(4) {
 		top: 50rem;
-		left: -13rem;
+		left: -38rem;
+		position: relative;
 	}
 `;
 
@@ -129,7 +201,7 @@ const PhaseThree = styled.div`
 
 	> img {
 		position: fixed;
-		opacity: 0.2;
+		opacity: 0.8;
 	}
 `;
 
@@ -141,7 +213,8 @@ const TextContainer = styled.div`
 	justify-content: center;
 	${'' /* margin-left: 17.5rem; */}
 	align-items: flex-start;
-	animation: ${fadeIn} 1.5s ease-in-out forwards;
+	animation-delay: 0.8s;
+	animation: ${fadeInFromBottom} 0.6s ease-in-out forwards;
 `;
 
 const TextContent = styled.div`

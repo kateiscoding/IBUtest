@@ -85,7 +85,7 @@ const IndustryCardSmallBottomLeft = styled.div`
 	> div:nth-child(2) {
 		width: 40rem;
 		height: 40rem;
-		left: -7rem;
+		left: 0rem;
 		bottom: 0;
 		flex-shrink: 0;
 		display: flex;
