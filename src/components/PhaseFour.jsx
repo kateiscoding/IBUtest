@@ -3,6 +3,7 @@ import * as THREE from 'three';
 import styled, { keyframes } from 'styled-components';
 import { Canvas } from '@react-three/fiber';
 import { Image } from '@react-three/drei';
+import { motion } from 'framer-motion';
 
 const fadeIn = keyframes`
    0% {
@@ -12,19 +13,30 @@ const fadeIn = keyframes`
   }
 `;
 
+const fadeInFromBottom = keyframes`
+  from {
+    opacity: 0;
+    transform: translateY(15rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0); 
+  }
+`;
+
 function FourthComponent() {
 	return (
 		<PhaseFour>
 			<IntroLayout>
 				<FirstComponent>
 					<MainTitle>
-						<p>Dive Deep,</p>
+						<p>Explo re Into your Body. </p>
 					</MainTitle>
 				</FirstComponent>
 				<SecondComponent>
-					<MainTitle>
-						<p>Explore Into your Body.</p>
-					</MainTitle>
+					<SubTitle>
+						<p>Embracing Change, Empowering Health</p>
+					</SubTitle>
 				</SecondComponent>
 			</IntroLayout>
 		</PhaseFour>
@@ -44,26 +56,50 @@ const MainTitle = styled.div`
 		line-height: 100%;
 	}
 `;
+
+const SubTitle = styled.div`
+	display: flex;
+	flex-direction: column;
+
+	> p {
+		display: flex;
+		color: white;
+		font-size: 7rem;
+		font-style: normal;
+		font-weight: 400;
+		line-height: 100%;
+	}
+`;
 const IntroLayout = styled.div`
 	display: flex;
 	width: 576rem;
 	display: flex;
 	height: 100%;
+	gap: 8.8rem;
+
 	margin-top: 20rem;
+	flex-direction: column;
+	align-items: center;
 `;
 
 const FirstComponent = styled.div`
 	display: flex;
-	width: 192rem;
+	${'' /* width: 192rem; */}
+	width: 100%;
 	flex-direction: column;
 	align-items: center;
-	animation: ${fadeIn} 1.5s ease-in-out forwards;
+	animation: ${fadeInFromBottom} 1.5s ease-in-out forwards;
 `;
 
 const SecondComponent = styled.div`
 	display: flex;
-	width: 384rem;
-	animation: ${fadeIn} 3s ease-in-out forwards;
+	${'' /* width: 384rem; */}
+	width: 100%;
+
+	flex-direction: column;
+	align-items: center;
+	z-index: 3;
+	animation: ${fadeIn} 2s ease-in-out forwards;
 `;
 
 const PhaseFour = styled.div`
