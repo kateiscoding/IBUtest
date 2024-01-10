@@ -39,8 +39,44 @@ const fadeInFromBottom = keyframes`
   }
 `;
 
-const popIn = keyframes`
-`;
+const industryData = [
+	{
+		id: 1,
+		component: IndustryLargeTopLeft,
+		title: 'Anti-Aging',
+		caption: 'Treatment progression',
+		image: IndustryImageOne,
+		x: -200,
+		y: -200,
+	},
+	{
+		id: 2,
+		component: IndustrySmallBottomLeft,
+		title: 'Nutrition',
+		caption: 'Macro guidance',
+		image: IndustryImageTwo,
+		x: -200,
+		y: 200,
+	},
+	{
+		id: 3,
+		component: IndustryLargeBottomRight,
+		title: 'Personal Training',
+		caption: 'Targeted training',
+		image: IndustryImageThree,
+		x: 200,
+		y: 200,
+	},
+	{
+		id: 4,
+		component: IndustrySmallTopRight,
+		title: 'Bariatrics',
+		caption: 'Post op analysis',
+		image: IndustryImageFour,
+		x: 300,
+		y: -300,
+	},
+];
 
 function ThirdComponent() {
 	return (
@@ -54,7 +90,7 @@ function ThirdComponent() {
 			</TextContainer>
 			<MainContainer>
 				<ContentBox>
-					<motion.div
+					{/* <motion.div
 						initial={{ opacity: 0, x: -200, y: -200 }}
 						animate={{
 							opacity: 1,
@@ -112,7 +148,19 @@ function ThirdComponent() {
 							caption='Post op analysis'
 							image={IndustryImageFour}
 						/>
-					</motion.div>
+					</motion.div> */}
+					{industryData.map((data, index) => (
+						<AnimatedIndustryCard
+							key={data.id}
+							component={data.component}
+							title={data.title}
+							caption={data.caption}
+							image={data.image}
+							x={data.x}
+							y={data.y}
+							delay={2.1}
+						/>
+					))}
 				</ContentBox>
 			</MainContainer>
 			<RedLineContainer>
@@ -127,6 +175,23 @@ function ThirdComponent() {
 		</PhaseThree>
 	);
 }
+
+const createAnimatedIndustryCard = (Component, title, caption, image, x, y, delay) => (
+	<motion.div
+		initial={{ opacity: 0, x, y }}
+		animate={{
+			opacity: 1,
+			x: 0,
+			y: 0,
+			transition: { delay, duration: 0.6, ease: 'easeOut' },
+		}}>
+		<Component title={title} caption={caption} image={image} />
+	</motion.div>
+);
+
+const AnimatedIndustryCard = ({ component: Component, title, caption, image, x, y, delay }) => (
+	<div>{createAnimatedIndustryCard(Component, title, caption, image, x, y, delay)}</div>
+);
 
 const RedLineContainer = styled.div`
 	position: absolute;
