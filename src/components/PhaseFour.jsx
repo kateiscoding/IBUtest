@@ -6,10 +6,11 @@ import { Image } from '@react-three/drei';
 import { motion } from 'framer-motion';
 
 const fadeIn = keyframes`
-   0% {
-    
-	opacity: 0;
-	
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 `;
 
@@ -30,7 +31,7 @@ function FourthComponent() {
 			<IntroLayout>
 				<FirstComponent>
 					<MainTitle>
-						<p>Explo re Into your Body. </p>
+						<p>Explore Into your Body. </p>
 					</MainTitle>
 				</FirstComponent>
 				<SecondComponent>
@@ -60,6 +61,9 @@ const MainTitle = styled.div`
 const SubTitle = styled.div`
 	display: flex;
 	flex-direction: column;
+	opacity: 0;
+	animation: ${fadeIn} 1.5s ease-in-out forwards;
+	animation-delay: 1.5s;
 
 	> p {
 		display: flex;
@@ -88,7 +92,7 @@ const FirstComponent = styled.div`
 	width: 100%;
 	flex-direction: column;
 	align-items: center;
-	animation: ${fadeInFromBottom} 1.5s ease-in-out forwards;
+	animation: ${fadeInFromBottom} 1.8s ease-in-out forwards;
 `;
 
 const SecondComponent = styled.div`
@@ -99,7 +103,6 @@ const SecondComponent = styled.div`
 	flex-direction: column;
 	align-items: center;
 	z-index: 3;
-	animation: ${fadeIn} 2s ease-in-out forwards;
 `;
 
 const PhaseFour = styled.div`
