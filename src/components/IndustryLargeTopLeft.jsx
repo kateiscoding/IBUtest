@@ -48,7 +48,7 @@ const IndustryCardLargeTopLeft = styled.div`
 		justify-content: center;
 		align-items: center;
 		position: absolute;
-		z-index: 4;
+		${'' /* z-index: 4; */}
 
 		> div {
 			border-radius: 18.4rem;
@@ -66,6 +66,7 @@ const IndustryCardLargeTopLeft = styled.div`
 			gap: 3.2rem;
 			flex-shrink: 0;
 			align-items: center;
+			z-index: 5;
 
 			> div {
 				display: flex;
