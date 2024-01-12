@@ -21,7 +21,7 @@ const LaunchComponent = ({ year, product }) => {
 	);
 };
 
-const LaunchIcon = styled.div`d
+const LaunchIcon = styled.div`
 	border-radius: 0.8rem;
 	background-color: ${Colors.gray100};
 	width: 12.4rem;
