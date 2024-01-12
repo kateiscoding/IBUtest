@@ -1,4 +1,5 @@
 import React, { useRef, useState, useEffect } from 'react';
+import { useSpring, animated } from 'react-spring';
 import * as THREE from 'three';
 import styled, { keyframes } from 'styled-components';
 import { motion } from 'framer-motion';
@@ -36,6 +37,24 @@ const fadeInFromBottom = keyframes`
   to {
     opacity: 1;
     transform: translateY(0); 
+  }
+`;
+
+const scaleUp = keyframes`
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.1);
+  }
+`;
+
+const scaleDown = keyframes`
+  from {
+    transform: scale(1.1);
+  }
+  to {
+    transform: scale(1);
   }
 `;
 
@@ -176,15 +195,60 @@ function ThirdComponent() {
 	);
 }
 
+// const createAnimatedIndustryCard = (Component, title, caption, image, x, y, delay) => (
+// 	<motion.div
+// 		initial={{ opacity: 0, x, y }}
+// 		animate={{
+// 			opacity: 1,
+// 			x: 0,
+// 			y: 0,
+// 			transition: { delay, duration: 0.6, ease: 'easeInOut' },
+// 		}}
+// 		exit={{ opacity: 0, x, y, transition: { duration: 0.3, ease: 'easeInOut' } }}>
+// 		<Component title={title} caption={caption} image={image} />
+// 		<motion.div
+// 			key='scale-up'
+// 			initial={{ transform: 'scale(1)' }}
+// 			animate={{ transform: 'scale(1.1)' }}
+// 			transition={{ delay: 3, duration: 0.5 }}
+// 		/>
+// 		<motion.div
+// 			key='scale-down'
+// 			initial={{ transform: 'scale(1.1)' }}
+// 			animate={{ transform: 'scale(1)' }}
+// 			transition={{ delay: 5, duration: 0.5 }}
+// 		/>
+// 	</motion.div>
+// );
+
+const ScaleUpAndDownAnimation = () => (
+	<>
+		<motion.div
+			key='scale-up'
+			initial={{ transform: 'scale(1)' }}
+			animate={{ transform: 'scale(1.1)' }}
+			transition={{ duration: 0.5 }}
+		/>
+		<motion.div
+			key='scale-down'
+			initial={{ transform: 'scale(1.1)' }}
+			animate={{ transform: 'scale(1)' }}
+			transition={{ duration: 0.5 }}
+		/>
+	</>
+);
+
 const createAnimatedIndustryCard = (Component, title, caption, image, x, y, delay) => (
 	<motion.div
-		initial={{ opacity: 0, x, y }}
+		initial={{ opacity: 0, x, y, scale: 1 }}
 		animate={{
 			opacity: 1,
 			x: 0,
 			y: 0,
-			transition: { delay, duration: 0.6, ease: 'easeOut' },
-		}}>
+			scale: [1, 1.1, 1], // Animate scale: start with 1, scale up to 1.1, then scale back to 1
+		}}
+		transition={{ delay, duration: 0.6, ease: 'easeInOut' }}
+		exit={{ opacity: 0, x, y, transition: { duration: 0.3, ease: 'easeInOut' } }}>
 		<Component title={title} caption={caption} image={image} />
 	</motion.div>
 );
@@ -192,6 +256,12 @@ const createAnimatedIndustryCard = (Component, title, caption, image, x, y, dela
 const AnimatedIndustryCard = ({ component: Component, title, caption, image, x, y, delay }) => (
 	<div>{createAnimatedIndustryCard(Component, title, caption, image, x, y, delay)}</div>
 );
+
+const IndustryCardWrapper = styled(motion.div)`
+	position: relative;
+	overflow: hidden;
+	animation: ${fadeIn} 0.5s ease-in-out;
+`;
 
 const RedLineContainer = styled.div`
 	position: absolute;
@@ -215,6 +285,7 @@ const MainContainer = styled.div`
 	display: flex;
 	height: 100%;
 	z-index: 4;
+	animation: ${fadeIn} 0.3s ease-in-out forwards;
 `;
 
 const ContentBox = styled.div`
