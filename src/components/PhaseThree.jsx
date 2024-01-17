@@ -97,7 +97,184 @@ const industryData = [
 	},
 ];
 
+// const createAnimatedIndustryCard = (Component, title, caption, image, x, y, delay) => (
+// 	<motion.div
+// 		initial={{ opacity: 0, x, y }}
+// 		animate={{
+// 			opacity: 1,
+// 			x: 0,
+// 			y: 0,
+// 			transition: { delay, duration: 0.6, ease: 'easeInOut' },
+// 		}}
+// 		exit={{ opacity: 0, x, y, transition: { duration: 0.3, ease: 'easeInOut' } }}>
+// 		<Component title={title} caption={caption} image={image} />
+// 		<motion.div
+// 			key='scale-up'
+// 			initial={{ transform: 'scale(1)' }}
+// 			animate={{ transform: 'scale(1.1)' }}
+// 			transition={{ delay: 3, duration: 0.5 }}
+// 		/>
+// 		<motion.div
+// 			key='scale-down'
+// 			initial={{ transform: 'scale(1.1)' }}
+// 			animate={{ transform: 'scale(1)' }}
+// 			transition={{ delay: 5, duration: 0.5 }}
+// 		/>
+// 	</motion.div>
+// );
+const ScaleUpAndDownAnimation = ({ onAnimationComplete }) => (
+	<>
+		<motion.div
+			key='scale-up'
+			initial={{ transform: 'scale(1)' }}
+			animate={{ transform: 'scale(1.1)' }}
+			transition={{ duration: 0.5, delay: 1 }}
+		/>
+		<motion.div
+			key='scale-down'
+			initial={{ transform: 'scale(1.1)' }}
+			animate={{ transform: 'scale(1)' }}
+			transition={{ duration: 0.5 }}
+			onAnimationComplete={onAnimationComplete}
+		/>
+	</>
+);
+const createAnimatedIndustryCard = (Component, title, caption, image, x, y, delay) => (
+	<motion.div
+		initial={{ opacity: 0, x, y, scale: 1 }}
+		animate={{
+			opacity: 1,
+			x: 0,
+			y: 0,
+			scale: [1, 1.1, 1],
+		}}
+		transition={{ delay, duration: 0.6, ease: 'easeInOut' }}
+		exit={{ opacity: 0, x, y, transition: { duration: 0.3, ease: 'easeInOut' } }}>
+		<ScaleUpAndDownAnimation />
+		<Component title={title} caption={caption} image={image} />
+	</motion.div>
+);
+
+// const AnimatedIndustryCard = ({ component: Component, title, caption, image, x, y, delay }) => (
+// 	<div>
+// 		{createAnimatedIndustryCard(Component, title, caption, image, x, y, delay)}
+// 		{ScaleUpAndDownAnimation(Component, title, caption, image, x, y, delay)}
+// 	</div>
+// );
+
+// const AnimatedIndustryCard = ({ component: Component, title, caption, image, x, y, delay }) => (
+// 	<motion.div
+// 		initial={{ opacity: 0, x, y }}
+// 		animate={{
+// 			opacity: 1,
+// 			x: 0,
+// 			y: 0,
+// 			// scale: [1, 1.1, 1],
+// 		}}
+// 		transition={{ delay, duration: 0.6, ease: 'easeInOut' }}
+// 		exit={{ opacity: 0, x, y, scale: 1, transition: { duration: 0.3, ease: 'easeInOut' } }}>
+// 		<motion.div
+// 			key='scale-up'
+// 			initial={{ opacity: 0, scale: 1 }}
+// 			animate={{ opacity: 1, scale: 1.1 }}
+// 			transition={{ duration: 5, delay: 1.5 }}
+// 		/>
+// 		<motion.div
+// 			key='scale-down'
+// 			initial={{ opacity: 1, scale: 1.1 }}
+// 			animate={{ opacity: 0, scale: 1 }}
+// 			transition={{ duration: 5, delay: 3.5 }}
+// 		/>
+// 		<Component title={title} caption={caption} image={image} />
+// 	</motion.div>
+// );
+
+// const AnimatedIndustryCard = ({ component: Component, title, caption, image, x, y, delay }) => (
+// 	<motion.div
+// 		initial={{ opacity: 0, x, y, scale: 1 }}
+// 		animate={{
+// 			opacity: 1,
+// 			x: 0,
+// 			y: 0,
+// 			scale: [1, 1.1, 1],
+// 		}}
+// 		transition={{ delay, duration: 0.6, ease: 'easeInOut' }}>
+// 		<motion.div
+// 			key='scale-up-down'
+// 			initial={{ opacity: 0, scale: 1 }}
+// 			animate={[
+// 				{ opacity: 1, scale: 1.1, transition: { duration: 5, delay: 1.5 } },
+// 				{ opacity: 1, scale: 1, transition: { duration: 5, delay: 3.5 } },
+// 			]}
+// 		/>
+// 		<Component title={title} caption={caption} image={image} />
+// 	</motion.div>
+// );
+
+const AnimatedIndustryCard = ({
+	component: Component,
+	title,
+	caption,
+	image,
+	x,
+	y,
+	delay,
+	onAnimationComplete,
+}) => {
+	const [scaleComplete, setScaleComplete] = useState(false);
+
+	const handleScaleComplete = () => {
+		setScaleComplete(true);
+	};
+
+	return (
+		<motion.div
+			initial={{ opacity: 0, x, y, scale: 1 }}
+			animate={{
+				opacity: 1,
+				x: 0,
+				y: 0,
+				scale: scaleComplete ? [1, 1.1, 1] : 1, // Apply scale only after ScaleUpAndDownAnimation completes
+			}}
+			transition={{ delay, duration: 0.6, ease: 'easeInOut' }}
+			exit={{ opacity: 0, x, y, transition: { duration: 0.3, ease: 'easeInOut' } }}>
+			<ScaleUpAndDownAnimation onAnimationComplete={onAnimationComplete} />
+			<Component title={title} caption={caption} image={image} />
+		</motion.div>
+	);
+};
+
+// const AnimatedIndustryCard = ({ component: Component, title, caption, image, x, y, delay }) => (
+// 	<motion.div
+// 		initial={{ opacity: 0, x, y, scale: 1 }}
+// 		animate={{
+// 			opacity: 1,
+// 			x: 0,
+// 			y: 0,
+// 			scale: [1, 1.1, 1],
+// 		}}
+// 		transition={{ delay, duration: 0.6, ease: 'easeInOut' }}>
+// 		<motion.div
+// 			key='scale-up-down'
+// 			initial={{ opacity: 0, scale: 1 }}
+// 			animate={[
+// 				{ opacity: 1, scale: 1.1, transition: { duration: 1, delay: 0.6 } }, // 첫 번째 컴포넌트 scale up
+// 				{ opacity: 1, scale: 1, transition: { duration: 1, delay: 1.6 } }, // 첫 번째 컴포넌트 scale down
+// 				{ opacity: 1, scale: 1.1, transition: { duration: 1, delay: 2.6 } }, // 두 번째 컴포넌트 scale up
+// 				{ opacity: 1, scale: 1, transition: { duration: 1, delay: 3.6 } }, // 두 번째 컴포넌트 scale down
+// 			]}
+// 		/>
+// 		<Component title={title} caption={caption} image={image} />
+// 	</motion.div>
+// );
+
 function ThirdComponent() {
+	const [animationIndex, setAnimationIndex] = useState(0);
+
+	const handleAnimationComplete = () => {
+		setAnimationIndex((prevIndex) => prevIndex + 1);
+	};
+
 	return (
 		<PhaseThree>
 			<TextContainer>
@@ -177,7 +354,8 @@ function ThirdComponent() {
 							image={data.image}
 							x={data.x}
 							y={data.y}
-							delay={2.1}
+							delay={2.1 + index * 1.0}
+							onAnimationComplete={handleAnimationComplete}
 						/>
 					))}
 				</ContentBox>
@@ -194,144 +372,6 @@ function ThirdComponent() {
 		</PhaseThree>
 	);
 }
-
-// const createAnimatedIndustryCard = (Component, title, caption, image, x, y, delay) => (
-// 	<motion.div
-// 		initial={{ opacity: 0, x, y }}
-// 		animate={{
-// 			opacity: 1,
-// 			x: 0,
-// 			y: 0,
-// 			transition: { delay, duration: 0.6, ease: 'easeInOut' },
-// 		}}
-// 		exit={{ opacity: 0, x, y, transition: { duration: 0.3, ease: 'easeInOut' } }}>
-// 		<Component title={title} caption={caption} image={image} />
-// 		<motion.div
-// 			key='scale-up'
-// 			initial={{ transform: 'scale(1)' }}
-// 			animate={{ transform: 'scale(1.1)' }}
-// 			transition={{ delay: 3, duration: 0.5 }}
-// 		/>
-// 		<motion.div
-// 			key='scale-down'
-// 			initial={{ transform: 'scale(1.1)' }}
-// 			animate={{ transform: 'scale(1)' }}
-// 			transition={{ delay: 5, duration: 0.5 }}
-// 		/>
-// 	</motion.div>
-// );
-
-const ScaleUpAndDownAnimation = () => (
-	<>
-		<motion.div
-			key='scale-up'
-			initial={{ transform: 'scale(1)' }}
-			animate={{ transform: 'scale(1.1)' }}
-			transition={{ duration: 0.5 }}
-		/>
-		<motion.div
-			key='scale-down'
-			initial={{ transform: 'scale(1.1)' }}
-			animate={{ transform: 'scale(1)' }}
-			transition={{ duration: 0.5 }}
-		/>
-	</>
-);
-
-const createAnimatedIndustryCard = (Component, title, caption, image, x, y, delay) => (
-	<motion.div
-		initial={{ opacity: 0, x, y, scale: 1 }}
-		animate={{
-			opacity: 1,
-			x: 0,
-			y: 0,
-			scale: [1, 1.1, 1], // Animate scale: start with 1, scale up to 1.1, then scale back to 1
-		}}
-		transition={{ delay, duration: 0.6, ease: 'easeInOut' }}
-		exit={{ opacity: 0, x, y, transition: { duration: 0.3, ease: 'easeInOut' } }}>
-		<Component title={title} caption={caption} image={image} />
-	</motion.div>
-);
-
-// const AnimatedIndustryCard = ({ component: Component, title, caption, image, x, y, delay }) => (
-// 	<div>
-// 		{createAnimatedIndustryCard(Component, title, caption, image, x, y, delay)}
-// 		{ScaleUpAndDownAnimation(Component, title, caption, image, x, y, delay)}
-// 	</div>
-// );
-
-// const AnimatedIndustryCard = ({ component: Component, title, caption, image, x, y, delay }) => (
-// 	<motion.div
-// 		initial={{ opacity: 0, x, y }}
-// 		animate={{
-// 			opacity: 1,
-// 			x: 0,
-// 			y: 0,
-// 			// scale: [1, 1.1, 1],
-// 		}}
-// 		transition={{ delay, duration: 0.6, ease: 'easeInOut' }}
-// 		exit={{ opacity: 0, x, y, scale: 1, transition: { duration: 0.3, ease: 'easeInOut' } }}>
-// 		<motion.div
-// 			key='scale-up'
-// 			initial={{ opacity: 0, scale: 1 }}
-// 			animate={{ opacity: 1, scale: 1.1 }}
-// 			transition={{ duration: 5, delay: 1.5 }}
-// 		/>
-// 		<motion.div
-// 			key='scale-down'
-// 			initial={{ opacity: 1, scale: 1.1 }}
-// 			animate={{ opacity: 0, scale: 1 }}
-// 			transition={{ duration: 5, delay: 3.5 }}
-// 		/>
-// 		<Component title={title} caption={caption} image={image} />
-// 	</motion.div>
-// );
-
-// const AnimatedIndustryCard = ({ component: Component, title, caption, image, x, y, delay }) => (
-// 	<motion.div
-// 		initial={{ opacity: 0, x, y, scale: 1 }}
-// 		animate={{
-// 			opacity: 1,
-// 			x: 0,
-// 			y: 0,
-// 			scale: [1, 1.1, 1],
-// 		}}
-// 		transition={{ delay, duration: 0.6, ease: 'easeInOut' }}>
-// 		<motion.div
-// 			key='scale-up-down'
-// 			initial={{ opacity: 0, scale: 1 }}
-// 			animate={[
-// 				{ opacity: 1, scale: 1.1, transition: { duration: 5, delay: 1.5 } },
-// 				{ opacity: 1, scale: 1, transition: { duration: 5, delay: 3.5 } },
-// 			]}
-// 		/>
-// 		<Component title={title} caption={caption} image={image} />
-// 	</motion.div>
-// );
-
-const AnimatedIndustryCard = ({ component: Component, title, caption, image, x, y, delay }) => (
-	<motion.div
-		initial={{ opacity: 0, x, y, scale: 1 }}
-		animate={{
-			opacity: 1,
-			x: 0,
-			y: 0,
-			scale: [1, 1.1, 1],
-		}}
-		transition={{ delay, duration: 0.6, ease: 'easeInOut' }}>
-		<motion.div
-			key='scale-up-down'
-			initial={{ opacity: 0, scale: 1 }}
-			animate={[
-				{ opacity: 1, scale: 1.1, transition: { duration: 1, delay: 0.6 } }, // 첫 번째 컴포넌트 scale up
-				{ opacity: 1, scale: 1, transition: { duration: 1, delay: 1.6 } }, // 첫 번째 컴포넌트 scale down
-				{ opacity: 1, scale: 1.1, transition: { duration: 1, delay: 2.6 } }, // 두 번째 컴포넌트 scale up
-				{ opacity: 1, scale: 1, transition: { duration: 1, delay: 3.6 } }, // 두 번째 컴포넌트 scale down
-			]}
-		/>
-		<Component title={title} caption={caption} image={image} />
-	</motion.div>
-);
 
 const IndustryCardWrapper = styled(motion.div)`
 	position: relative;
