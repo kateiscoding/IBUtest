@@ -100,7 +100,7 @@ const IndustryCardLargeTopLeft = styled.div`
 	> div:nth-child(2) {
 		width: 47.2rem;
 		height: 47.2rem;
-		left: 1.5rem;
+		left: 2.2rem;
 		top: 0;
 		flex-shrink: 0;
 		display: flex;

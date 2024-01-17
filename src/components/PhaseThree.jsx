@@ -134,38 +134,6 @@ const industryData = [
 // 		/>
 // 	</motion.div>
 // );
-const ScaleUpAndDownAnimation = ({ onAnimationComplete }) => (
-	<>
-		<motion.div
-			key='scale-up'
-			initial={{ transform: 'scale(1)' }}
-			animate={{ transform: 'scale(1.1)' }}
-			transition={{ duration: 0.5, delay: 1 }}
-		/>
-		<motion.div
-			key='scale-down'
-			initial={{ transform: 'scale(1.1)' }}
-			animate={{ transform: 'scale(1)' }}
-			transition={{ duration: 0.5 }}
-			onAnimationComplete={onAnimationComplete}
-		/>
-	</>
-);
-const createAnimatedIndustryCard = (Component, title, caption, image, x, y, delay) => (
-	<motion.div
-		initial={{ opacity: 0, x, y, scale: 1 }}
-		animate={{
-			opacity: 1,
-			x: 0,
-			y: 0,
-			scale: [1, 1.1, 1],
-		}}
-		transition={{ delay, duration: 0.6, ease: 'easeInOut' }}
-		exit={{ opacity: 0, x, y, transition: { duration: 0.3, ease: 'easeInOut' } }}>
-		<ScaleUpAndDownAnimation />
-		<Component title={title} caption={caption} image={image} />
-	</motion.div>
-);
 
 // const AnimatedIndustryCard = ({ component: Component, title, caption, image, x, y, delay }) => (
 // 	<div>
@@ -246,39 +214,21 @@ const AnimatedIndustryCard = ({
 				opacity: 1,
 				x: 0,
 				y: 0,
-				scale: scaleComplete ? [1, 1.1, 1] : 1, // Apply scale only after ScaleUpAndDownAnimation completes
+				scale: scaleComplete ? [1, 1.1, 1] : 1,
 			}}
 			transition={{ delay, duration: 0.6, ease: 'easeInOut' }}
 			exit={{ opacity: 0, x, y, transition: { duration: 0.3, ease: 'easeInOut' } }}>
-			<ScaleUpAndDownAnimation onAnimationComplete={onAnimationComplete} />
-			<Component title={title} caption={caption} image={image} />
+			<Component
+				title={title}
+				caption={caption}
+				image={image}
+				style={{
+					backdropFilter: 'blur(40px)',
+				}}
+			/>
 		</motion.div>
 	);
 };
-
-// const AnimatedIndustryCard = ({ component: Component, title, caption, image, x, y, delay }) => (
-// 	<motion.div
-// 		initial={{ opacity: 0, x, y, scale: 1 }}
-// 		animate={{
-// 			opacity: 1,
-// 			x: 0,
-// 			y: 0,
-// 			scale: [1, 1.1, 1],
-// 		}}
-// 		transition={{ delay, duration: 0.6, ease: 'easeInOut' }}>
-// 		<motion.div
-// 			key='scale-up-down'
-// 			initial={{ opacity: 0, scale: 1 }}
-// 			animate={[
-// 				{ opacity: 1, scale: 1.1, transition: { duration: 1, delay: 0.6 } }, // 첫 번째 컴포넌트 scale up
-// 				{ opacity: 1, scale: 1, transition: { duration: 1, delay: 1.6 } }, // 첫 번째 컴포넌트 scale down
-// 				{ opacity: 1, scale: 1.1, transition: { duration: 1, delay: 2.6 } }, // 두 번째 컴포넌트 scale up
-// 				{ opacity: 1, scale: 1, transition: { duration: 1, delay: 3.6 } }, // 두 번째 컴포넌트 scale down
-// 			]}
-// 		/>
-// 		<Component title={title} caption={caption} image={image} />
-// 	</motion.div>
-// );
 
 function ThirdComponent() {
 	const [animationIndex, setAnimationIndex] = useState(0);
@@ -298,65 +248,6 @@ function ThirdComponent() {
 			</TextContainer>
 			<MainContainer>
 				<ContentBox>
-					{/* <motion.div
-						initial={{ opacity: 0, x: -200, y: -200 }}
-						animate={{
-							opacity: 1,
-							x: 0,
-							y: 0,
-
-							transition: { delay: 2.1, duration: 0.6, ease: 'easeOut' },
-						}}>
-						<IndustryLargeTopLeft
-							title='Anti-Aging'
-							caption='Treatment progression'
-							image={IndustryImageOne}
-						/>
-					</motion.div>
-					<motion.div
-						initial={{ opacity: 0, x: -200, y: +200 }}
-						animate={{
-							opacity: 1,
-							x: 0,
-							y: 0,
-							transition: { delay: 2.1, duration: 0.6, ease: 'easeOut' },
-						}}>
-						<IndustrySmallBottomLeft
-							title='Nutrition'
-							caption='Macro guidance'
-							image={IndustryImageTwo}
-						/>
-					</motion.div>
-
-					<motion.div
-						initial={{ opacity: 0, x: +200, y: +200 }}
-						animate={{
-							opacity: 1,
-							x: 0,
-							y: 0,
-							transition: { delay: 2.1, duration: 0.6, ease: 'easeOut' },
-						}}>
-						<IndustryLargeBottomRight
-							title='Personal Training'
-							caption='Targeted training'
-							image={IndustryImageThree}
-						/>
-					</motion.div>
-
-					<motion.div
-						initial={{ opacity: 0, x: +300, y: -300 }}
-						animate={{
-							opacity: 1,
-							x: 0,
-							y: 0,
-							transition: { delay: 2.1, duration: 0.6, ease: 'easeOut' },
-						}}>
-						<IndustrySmallTopRight
-							title='Bariatrics'
-							caption='Post op analysis'
-							image={IndustryImageFour}
-						/>
-					</motion.div> */}
 					{industryData.map((data, index) => (
 						<AnimatedIndustryCard
 							key={data.id}
@@ -366,7 +257,8 @@ function ThirdComponent() {
 							image={data.image}
 							x={data.x}
 							y={data.y}
-							delay={2.1 + index * 1.0}
+							delay={3 + index * 1.0}
+							duration={5}
 							onAnimationComplete={handleAnimationComplete}
 						/>
 					))}
@@ -379,9 +271,10 @@ function ThirdComponent() {
 					<img src={RedLineImage2} alt='red-line' style={{ width: '100%', height: 'auto' }} />
 				</motion.div> */}
 				<motion.div
-					initial={{ clipPath: 'polygon(0 0, 0 100%, 0 100%, 0 0)', opacity: 0 }}
-					animate={{ clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0 100%)', opacity: 1 }}
-					transition={{ duration: 2, ease: 'easeInOut' }}>
+					initial={{ clipPath: 'polygon(-50% 0, 0 0, 0 100%, -50% 100%)', opacity: 0 }}
+					animate={{ clipPath: 'polygon(-0% 0, 100% 0, 100% 100%, 0 100%)', opacity: 1 }}
+					transition={{ duration: 3.6, ease: 'easeInOut', opacity: { delay: 1.5, duration: 1 } }}>
+					{/* transition={{ duration: 2, ease: [0.42, 0, 0.58, 1] }} */}
 					<RedLineImage
 						src={RedLineImage2}
 						alt='red-line'
@@ -442,6 +335,7 @@ const ContentBox = styled.div`
 	height: auto;
 	display: flex;
 	z-index: 5;
+
 	${
 		'' /* animation-delay: 1.8s;
 	animation: ${fadeIn} 0.3s ease-in-out forwards; */
@@ -470,6 +364,11 @@ const ContentBox = styled.div`
 		top: 50rem;
 		left: -38rem;
 		position: relative;
+	}
+
+	> ${AnimatedIndustryCard} {
+		// 여기에 블러 효과 스타일 추가
+		filter: blur(40px);
 	}
 `;
 
