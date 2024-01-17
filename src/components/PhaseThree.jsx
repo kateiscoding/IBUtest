@@ -6,7 +6,8 @@ import { motion } from 'framer-motion';
 
 import { Canvas } from '@react-three/fiber';
 import { Image } from '@react-three/drei';
-import RedLineImage from '../assets/phase3-line.png';
+// import RedLineImage from '../assets/phase3-line.png';
+import RedLineImage2 from '../assets/svgs/img-earthLine.svg';
 import IndustryLargeBottomRight from './IndustryLargeBottomRight';
 import IndustryLargeTopLeft from './IndustryLargeTopLeft';
 import IndustrySmallBottomLeft from './IndustrySmallBottomLeft';
@@ -25,6 +26,17 @@ const fadeIn = keyframes`
   100% {
     
 	opacity: 1;
+  }
+`;
+
+const fadeInFromLeft = keyframes`
+  from {
+    opacity: 0;
+    clip-path: polygon(0 0, 0 100%, 0 100%, 0 0);
+  }
+  to {
+    opacity: 1;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
   }
 `;
 
@@ -361,10 +373,20 @@ function ThirdComponent() {
 				</ContentBox>
 			</MainContainer>
 			<RedLineContainer>
-				<motion.div
+				{/* <motion.div
 					initial={{ opacity: 0 }}
 					animate={{ opacity: 1, transition: { delay: 1.3, duration: 0.3 } }}>
-					<img src={RedLineImage} alt='red-line' />
+					<img src={RedLineImage2} alt='red-line' style={{ width: '100%', height: 'auto' }} />
+				</motion.div> */}
+				<motion.div
+					initial={{ clipPath: 'polygon(0 0, 0 100%, 0 100%, 0 0)', opacity: 0 }}
+					animate={{ clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0 100%)', opacity: 1 }}
+					transition={{ duration: 2, ease: 'easeInOut' }}>
+					<RedLineImage
+						src={RedLineImage2}
+						alt='red-line'
+						style={{ width: '100%', height: 'auto' }}
+					/>
 				</motion.div>
 			</RedLineContainer>
 
@@ -372,6 +394,11 @@ function ThirdComponent() {
 		</PhaseThree>
 	);
 }
+
+const RedLineImage = styled.img`
+	width: 100%;
+	height: auto;
+`;
 
 const IndustryCardWrapper = styled(motion.div)`
 	position: relative;
@@ -394,6 +421,12 @@ const RedLineContainer = styled.div`
 		display: flex;
 		height: auto;
 	}
+`;
+
+const AnimatedImage = styled(motion.img)`
+	width: 100%;
+	height: auto;
+	animation: ${fadeInFromLeft} 1s ease-in-out;
 `;
 
 const MainContainer = styled.div`
