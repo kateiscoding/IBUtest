@@ -1,6 +1,8 @@
 import React, { useRef, useState, useEffect } from 'react';
+import { ShootingStars } from 'shooting-stars';
 import * as THREE from 'three';
 import styled, { keyframes } from 'styled-components';
+
 import { Canvas } from '@react-three/fiber';
 import { Image } from '@react-three/drei';
 import { motion } from 'framer-motion';
@@ -40,6 +42,14 @@ function FourthComponent() {
 					</SubTitle>
 				</SecondComponent>
 			</IntroLayout>
+			{/* <ShootingStars
+				image='./star.png'
+				height="'10px'"
+				width='10'
+				min-speed='10'
+				max-speed='50'
+				num='10'
+			/> */}
 		</PhaseFour>
 	);
 }
