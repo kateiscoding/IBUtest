@@ -23,6 +23,7 @@ function FirstComponent() {
 						<b>TOTAL GLOBAL TESTS</b>
 					</div>
 				</div>
+				{/* 메인 카운트 업 애니메이션  */}
 				<CountUp start={100000000} end={113487228} duration={3} />
 			</Counter>
 			<FlagContainer />

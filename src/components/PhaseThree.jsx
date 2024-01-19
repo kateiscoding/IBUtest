@@ -13,10 +13,14 @@ import IndustryLargeTopLeft from './IndustryLargeTopLeft';
 import IndustrySmallBottomLeft from './IndustrySmallBottomLeft';
 import IndustrySmallTopRight from './IndustrySmallTopRight';
 import PhaseThreeImage from '../assets/finalphase3.png';
-import IndustryImageOne from '../assets/img-industry-1.png';
-import IndustryImageTwo from '../assets/img-industry-2.png';
-import IndustryImageThree from '../assets/img-industry-3.png';
-import IndustryImageFour from '../assets/img-industry-4.png';
+// import IndustryImageOne from '../assets/img-industry-1.png';
+// import IndustryImageTwo from '../assets/img-industry-2.png';
+// import IndustryImageThree from '../assets/img-industry-3.png';
+// import IndustryImageFour from '../assets/img-industry-4.png';
+import IndustryImageOne from '../assets/img_industry_1.png';
+import IndustryImageTwo from '../assets/img_industry_2.png';
+import IndustryImageThree from '../assets/img_industry_3.png';
+import IndustryImageFour from '../assets/img_industry_4.png';
 
 const fadeIn = keyframes`
    0% {
