@@ -1,10 +1,11 @@
 import './styles/reset.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { useState } from 'react';
 // import { Canvas } from '@react-three/fiber';
 // import { Suspense } from 'react';
 import styled from 'styled-components';
 
-import Main from './pages/main';
+import MainPage from './pages/main';
 import Paths from './constants/path';
 
 const CanvasContainer = styled.div`
@@ -13,13 +14,9 @@ const CanvasContainer = styled.div`
 `;
 
 function App() {
-	return (
-		<Router>
-			<Routes>
-				<Route path={Paths.main} element={<Main />} />
-			</Routes>
-		</Router>
-	);
+	const [showMainPage, setShowMainPage] = useState(true);
+
+	return <div>{showMainPage && <MainPage />}</div>;
 }
 
 export default App;
