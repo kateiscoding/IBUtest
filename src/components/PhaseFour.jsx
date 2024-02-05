@@ -33,7 +33,7 @@ function FourthComponent() {
 			<IntroLayout>
 				<FirstComponent>
 					<MainTitle>
-						<p>Explore Into your Body. </p>
+						<p>Explore Into Your Body. </p>
 					</MainTitle>
 				</FirstComponent>
 				<SecondComponent>
