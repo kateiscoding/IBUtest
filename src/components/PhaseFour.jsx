@@ -33,12 +33,12 @@ function FourthComponent() {
 			<IntroLayout>
 				<FirstComponent>
 					<MainTitle>
-						<p>Explore Into your Body. </p>
+						<p>Celebrating 24 years</p>
 					</MainTitle>
 				</FirstComponent>
 				<SecondComponent>
 					<SubTitle>
-						<p>Embracing Change, Empowering Health</p>
+						<p>with gratitude for your ongoing support!</p>
 					</SubTitle>
 				</SecondComponent>
 			</IntroLayout>
