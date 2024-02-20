@@ -42,6 +42,7 @@ const Flag = ({ country, count, image }) => {
 		{ id: '5', country: 'USA', count: '19785023', image: InbodyMan },
 		{ id: '6', country: 'UK', count: '1666006', image: InbodyMan },
 		{ id: '7', country: 'EU', count: '2133592', image: InbodyMan },
+
 	];
 
 	const gpsData = [
