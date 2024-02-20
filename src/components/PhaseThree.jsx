@@ -13,10 +13,7 @@ import IndustryLargeTopLeft from './IndustryLargeTopLeft';
 import IndustrySmallBottomLeft from './IndustrySmallBottomLeft';
 import IndustrySmallTopRight from './IndustrySmallTopRight';
 import PhaseThreeImage from '../assets/finalphase3.png';
-// import IndustryImageOne from '../assets/img-industry-1.png';
-// import IndustryImageTwo from '../assets/img-industry-2.png';
-// import IndustryImageThree from '../assets/img-industry-3.png';
-// import IndustryImageFour from '../assets/img-industry-4.png';
+
 import IndustryImageOne from '../assets/img_industry_1.png';
 import IndustryImageTwo from '../assets/img_industry_2.png';
 import IndustryImageThree from '../assets/img_industry_3.png';
@@ -113,88 +110,6 @@ const industryData = [
 	},
 ];
 
-// const createAnimatedIndustryCard = (Component, title, caption, image, x, y, delay) => (
-// 	<motion.div
-// 		initial={{ opacity: 0, x, y }}
-// 		animate={{
-// 			opacity: 1,
-// 			x: 0,
-// 			y: 0,
-// 			transition: { delay, duration: 0.6, ease: 'easeInOut' },
-// 		}}
-// 		exit={{ opacity: 0, x, y, transition: { duration: 0.3, ease: 'easeInOut' } }}>
-// 		<Component title={title} caption={caption} image={image} />
-// 		<motion.div
-// 			key='scale-up'
-// 			initial={{ transform: 'scale(1)' }}
-// 			animate={{ transform: 'scale(1.1)' }}
-// 			transition={{ delay: 3, duration: 0.5 }}
-// 		/>
-// 		<motion.div
-// 			key='scale-down'
-// 			initial={{ transform: 'scale(1.1)' }}
-// 			animate={{ transform: 'scale(1)' }}
-// 			transition={{ delay: 5, duration: 0.5 }}
-// 		/>
-// 	</motion.div>
-// );
-
-// const AnimatedIndustryCard = ({ component: Component, title, caption, image, x, y, delay }) => (
-// 	<div>
-// 		{createAnimatedIndustryCard(Component, title, caption, image, x, y, delay)}
-// 		{ScaleUpAndDownAnimation(Component, title, caption, image, x, y, delay)}
-// 	</div>
-// );
-
-// const AnimatedIndustryCard = ({ component: Component, title, caption, image, x, y, delay }) => (
-// 	<motion.div
-// 		initial={{ opacity: 0, x, y }}
-// 		animate={{
-// 			opacity: 1,
-// 			x: 0,
-// 			y: 0,
-// 			// scale: [1, 1.1, 1],
-// 		}}
-// 		transition={{ delay, duration: 0.6, ease: 'easeInOut' }}
-// 		exit={{ opacity: 0, x, y, scale: 1, transition: { duration: 0.3, ease: 'easeInOut' } }}>
-// 		<motion.div
-// 			key='scale-up'
-// 			initial={{ opacity: 0, scale: 1 }}
-// 			animate={{ opacity: 1, scale: 1.1 }}
-// 			transition={{ duration: 5, delay: 1.5 }}
-// 		/>
-// 		<motion.div
-// 			key='scale-down'
-// 			initial={{ opacity: 1, scale: 1.1 }}
-// 			animate={{ opacity: 0, scale: 1 }}
-// 			transition={{ duration: 5, delay: 3.5 }}
-// 		/>
-// 		<Component title={title} caption={caption} image={image} />
-// 	</motion.div>
-// );
-
-// const AnimatedIndustryCard = ({ component: Component, title, caption, image, x, y, delay }) => (
-// 	<motion.div
-// 		initial={{ opacity: 0, x, y, scale: 1 }}
-// 		animate={{
-// 			opacity: 1,
-// 			x: 0,
-// 			y: 0,
-// 			scale: [1, 1.1, 1],
-// 		}}
-// 		transition={{ delay, duration: 0.6, ease: 'easeInOut' }}>
-// 		<motion.div
-// 			key='scale-up-down'
-// 			initial={{ opacity: 0, scale: 1 }}
-// 			animate={[
-// 				{ opacity: 1, scale: 1.1, transition: { duration: 5, delay: 1.5 } },
-// 				{ opacity: 1, scale: 1, transition: { duration: 5, delay: 3.5 } },
-// 			]}
-// 		/>
-// 		<Component title={title} caption={caption} image={image} />
-// 	</motion.div>
-// );
-
 const AnimatedIndustryCard = ({
 	component: Component,
 	title,
@@ -226,9 +141,11 @@ const AnimatedIndustryCard = ({
 				title={title}
 				caption={caption}
 				image={image}
-				style={{
-					backdropFilter: 'blur(40px)',
-				}}
+				style={
+					{
+						// backdropFilter: 'blur(40px)',
+					}
+				}
 			/>
 		</motion.div>
 	);
@@ -301,6 +218,12 @@ const IndustryCardWrapper = styled(motion.div)`
 	position: relative;
 	overflow: hidden;
 	animation: ${fadeIn} 0.5s ease-in-out;
+
+	border-radius: 18.4rem;
+	border: 2px solid var(--BandCI_dark, #6c1624);
+	background: var(--bwb-07, rgba(63, 63, 63, 0.7));
+	box-shadow: 0px 4px 30px 0px rgba(0, 0, 0, 0.3);
+	backdrop-filter: blur(40px);
 `;
 
 const RedLineContainer = styled.div`

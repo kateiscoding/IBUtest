@@ -106,11 +106,6 @@ const IndustryCardLargeBottomRight = styled.div`
 		z-index: 3;
 		position: absolute;
 	}
-
-
-
-
-	
 `;
 
 export default IndustryLargeBottomRight;
