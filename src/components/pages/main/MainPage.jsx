@@ -34,15 +34,11 @@ function MainPage() {
 
 	return (
 		<Main id='canvas-container'>
-			{/* 비교용 이미지  */}
-			{/* <ImageContainer>
-				<FinalImage src={Final} alt='final-image' />
-			</ImageContainer> */}
 			{/* <FirstComponent /> */}
 			{/* <SecondComponent /> */}
 			{/* <ThirdComponent /> */}
 			{/* <FourthComponent /> */}
-			{/* <HistoryComponentImage /> */}
+
 			{/* 컴포넌트 10초 단위로 돌리기 */}
 			{currentComponent === 1 && <FirstComponent />}
 			{currentComponent === 2 && <SecondComponent />}
@@ -53,52 +49,9 @@ function MainPage() {
 			<InbodyLogo>
 				<img src={InbodyMainLogo} alt='inbody-logo' />
 			</InbodyLogo>
-			{/* <MyThreeJSComponent /> */}
-			{/* <ThreeCanvas id='canvas-container' /> */}
-			{/* <Canvas>
-				<Suspense fallback={<div>Loading...</div>}>
-					<ThreeModel />
-				</Suspense>
-			</Canvas> */}
 		</Main>
 	);
 }
-
-const ImageContainer = styled.div`
-	width: 100%;
-	display: flex;
-	position: absolute;
-	top: 0;
-	left: 0;
-	z-index: 15;
-	opacity: 0.95;
-	width: 100%;
-	overflow: hidden;
-	max-width: 100%;
-	width: 100%;
-	max-height: 100%;
-
-	display: flex;
-	justify-content: center;
-	align-items: flex-start;
-
-	> img {
-	}
-`;
-
-const FinalImage = styled.img`
-	display: flex;
-	z-index: 15;
-	opacity: 0.8;
-	display: flex;
-	overflow: hidden;
-	max-width: 100%;
-	background-size: cover;
-	transform-origin: top;
-
-	> img {
-	}
-`;
 
 const InbodyLogo = styled.div`
 	${'' /* width: 100%; */}
@@ -109,14 +62,6 @@ const InbodyLogo = styled.div`
 `;
 
 const Main = styled.main`
-	${
-		'' /* background-color: black;
-	display: flex;
-	flex-direction: column;
-	height: 108rem;
-	align-items: center;
-	${'' /* gap: 8rem; */
-	}
 	gap: 8rem;
 	overflow: hidden;
 	position: relative;

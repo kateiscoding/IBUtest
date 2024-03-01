@@ -168,16 +168,10 @@ function ThirdComponent() {
 				</ContentBox>
 			</MainContainer>
 			<RedLineContainer>
-				{/* <motion.div
-					initial={{ opacity: 0 }}
-					animate={{ opacity: 1, transition: { delay: 1.3, duration: 0.3 } }}>
-					<img src={RedLineImage2} alt='red-line' style={{ width: '100%', height: 'auto' }} />
-				</motion.div> */}
 				<motion.div
 					initial={{ clipPath: 'polygon(-50% 0, 0 0, 0 100%, -50% 100%)', opacity: 0 }}
 					animate={{ clipPath: 'polygon(-0% 0, 100% 0, 100% 100%, 0 100%)', opacity: 1 }}
 					transition={{ duration: 3.6, ease: 'easeInOut', opacity: { delay: 1.5, duration: 1 } }}>
-					{/* transition={{ duration: 2, ease: [0.42, 0, 0.58, 1] }} */}
 					<RedLineImage
 						src={RedLineImage2}
 						alt='red-line'
@@ -185,8 +179,6 @@ function ThirdComponent() {
 					/>
 				</motion.div>
 			</RedLineContainer>
-
-			{/* <img src={PhaseThreeImage} alt='final' /> */}
 		</PhaseThree>
 	);
 }
@@ -196,39 +188,18 @@ const RedLineImage = styled.img`
 	height: auto;
 `;
 
-const IndustryCardWrapper = styled(motion.div)`
-	position: relative;
-	overflow: hidden;
-	animation: ${fadeIn} 0.5s ease-in-out;
-
-	border-radius: 18.4rem;
-	border: 2px solid var(--BandCI_dark, #6c1624);
-	background: var(--bwb-07, rgba(63, 63, 63, 0.7));
-	box-shadow: 0px 4px 30px 0px rgba(0, 0, 0, 0.3);
-	backdrop-filter: blur(40px);
-`;
-
 const RedLineContainer = styled.div`
 	position: absolute;
 	${'' /* width: 100%; */}
 	height: auto;
 	display: flex;
 	z-index: 2;
-	${
-		'' /* animation: ${fadeIn} 0.3s ease-in-out forwards;
-	animation-delay: 1.3s; */
-	}
+
 	> img {
 		width: 100%;
 		display: flex;
 		height: auto;
 	}
-`;
-
-const AnimatedImage = styled(motion.img)`
-	width: 100%;
-	height: auto;
-	animation: ${fadeInFromLeft} 1s ease-in-out;
 `;
 
 const MainContainer = styled.div`
@@ -244,11 +215,6 @@ const ContentBox = styled.div`
 	height: auto;
 	display: flex;
 	z-index: 5;
-
-	${
-		'' /* animation-delay: 1.8s;
-	animation: ${fadeIn} 0.3s ease-in-out forwards; */
-	}
 
 	> div:first-child {
 		top: 10rem;
@@ -276,7 +242,6 @@ const ContentBox = styled.div`
 	}
 
 	> ${AnimatedIndustryCard} {
-		// 여기에 블러 효과 스타일 추가
 		filter: blur(40px);
 	}
 `;

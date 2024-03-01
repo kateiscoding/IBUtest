@@ -3,10 +3,6 @@ import { ShootingStars } from 'shooting-stars';
 import * as THREE from 'three';
 import styled, { keyframes } from 'styled-components';
 
-import { Canvas } from '@react-three/fiber';
-import { Image } from '@react-three/drei';
-import { motion } from 'framer-motion';
-
 const fadeIn = keyframes`
   0% {
     opacity: 0;
