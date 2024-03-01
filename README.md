@@ -1,70 +1,133 @@
-# Getting Started with Create React App
+## inbody380580
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+---
 
-## Available Scripts
+### 🖥️ Project Introduction
 
-In the project directory, you can run:
+InBody Universe
 
-### `npm start`
+### 📌 Dev Timeline
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+24.12.19 - 24.01.18
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### 🔎 1. How to start
 
-### `npm test`
+---
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+#### 1. Clone
 
-### `npm run build`
+```
+$ git clone https://github.com/kateiscoding/IBUtest.git
+$ cd inbodyuniverse
+$ npm install
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+#### 2. Run
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```
+$ npm start
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### ⚙️ 2. Techical Stack
 
-### `npm run eject`
+---
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+<img src="https://img.shields.io/badge/visualstudiocode-007ACC?style=for-the-badge&logo=visualstudiocode&logoColor=white"> <img src="https://img.shields.io/badge/javascript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=white"> <img src="https://img.shields.io/badge/react-61DAFB?style=for-the-badge&logo=react&logoColor=white"> <img src="https://img.shields.io/badge/prettier-F7B93E?style=for-the-badge&logo=prettier&logoColor=white"> <img src="https://img.shields.io/badge/eslint-4B32C3?style=for-the-badge&logo=eslint&logoColor=white"> <img src="https://img.shields.io/badge/styledcomponents-DB7093?style=for-the-badge&logo=styledcomponents&logoColor=white">
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### 📂 3. Directories
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+---
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+```
 
-## Learn More
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+#### 4. Branch Convention
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```
+Feature/[기능요약]
 
-### Code Splitting
+- 맨 첫글자 F만 대문자로, 기능요약은 소문자로 작성해주세요
+- 기능요약은 영어로 작성해주세요
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+ex) Feature/modal-publishing
+```
 
-### Analyzing the Bundle Size
+#### 5. Commit Convention
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+```
+<태그>: <제목>
 
-### Making a Progressive Web App
+- : 뒤에만 띄어쓰기가 있습니다
+- 제목은 한영 혼용이 가능합니다 (가급적 영어로)
+- 태그의 첫글자는 소문자로 작성해주세요
+- 태그는 아래에 적힌 것들만 사용해주세요
+- 검사 예외 조건 (자동 생성, 최초 커밋)
+ - Merge branch*, Merge pull request*, initial*
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+feat: 새로운 기능 추가, 기능 로직 변경
+fix: 버그 수정
+refactor: 코드 리팩토링 (기능 변화 X)
+style: 코드 포맷팅, 코드 변경이 없는 경우
+chore: 빌드 업무 수정, 패키지 매니저 수정
+docs: 문서 수정, 주석
+test : Test 관련한 코드의 추가, 수정
+! : 급한 변경 사항인 경우에 추가 (접두사, () 뒤 / 콜론 이전)
+() : 추가 요약 정보가 필요할 경우 (접두사 뒤 / !, 콜론 이전)
+BREAKING CHANGE : 급한 변경 footer에 추가
+```
 
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```
+inbodyuniverse
+├─ .eslintrc
+├─ .git
+├─ .gitignore
+├─ .prettierrc
+├─ package-lock.json
+├─ package.json
+├─ public
+├─ README.md
+├─ setting.json
+└─ src
+   ├─ App.js
+   ├─ assets
+   │  ├─ svgs
+   ├─ components
+   │  ├─ AwardIcon.jsx
+   │  ├─ Components.jsx
+   │  ├─ Earth3d.jsx
+   │  ├─ EarthImage.jsx
+   │  ├─ Flags.jsx
+   │  ├─ HistoryLeftBottom.jsx
+   │  ├─ HistoryLeftTop.jsx
+   │  ├─ HistoryRightBottom.jsx
+   │  ├─ HistoryRightTop.jsx
+   │  ├─ IndustryLargeBottomRight.jsx
+   │  ├─ IndustryLargeTopLeft.jsx
+   │  ├─ IndustrySmallBottomLeft.jsx
+   │  ├─ IndustrySmallTopRight.jsx
+   │  ├─ LaunchIcon.jsx
+   │  ├─ layout
+   │  │  └─ DefaultLayout.jsx
+   │  ├─ MyThreeJSComponent.jsx
+   │  ├─ pages
+   │  │  └─ main
+   │  │     └─ MainPage.jsx
+   │  ├─ PhaseFour.jsx
+   │  ├─ PhaseOne.jsx
+   │  ├─ PhaseThree.jsx
+   │  ├─ PhaseTwo.jsx
+   │  └─ shared
+   │     └─ earth
+   │        └─ index.js
+   ├─ constants
+   │  └─ path.js
+   ├─ index.js
+   ├─ pages
+   │  └─ main.js
+   └─ styles
+      ├─ color.js
+      ├─ fonts.js
+      ├─ reset.css
+      └─ shadow.js
+```
