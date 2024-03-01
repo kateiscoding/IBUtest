@@ -1,4 +1,4 @@
-## inbody380580
+## inbodyuniverse
 
 ---
 
@@ -37,45 +37,6 @@ $ npm start
 ### 📂 3. Directories
 
 ---
-
-```
-
-```
-
-#### 4. Branch Convention
-
-```
-Feature/[기능요약]
-
-- 맨 첫글자 F만 대문자로, 기능요약은 소문자로 작성해주세요
-- 기능요약은 영어로 작성해주세요
-
-ex) Feature/modal-publishing
-```
-
-#### 5. Commit Convention
-
-```
-<태그>: <제목>
-
-- : 뒤에만 띄어쓰기가 있습니다
-- 제목은 한영 혼용이 가능합니다 (가급적 영어로)
-- 태그의 첫글자는 소문자로 작성해주세요
-- 태그는 아래에 적힌 것들만 사용해주세요
-- 검사 예외 조건 (자동 생성, 최초 커밋)
- - Merge branch*, Merge pull request*, initial*
-
-feat: 새로운 기능 추가, 기능 로직 변경
-fix: 버그 수정
-refactor: 코드 리팩토링 (기능 변화 X)
-style: 코드 포맷팅, 코드 변경이 없는 경우
-chore: 빌드 업무 수정, 패키지 매니저 수정
-docs: 문서 수정, 주석
-test : Test 관련한 코드의 추가, 수정
-! : 급한 변경 사항인 경우에 추가 (접두사, () 뒤 / 콜론 이전)
-() : 추가 요약 정보가 필요할 경우 (접두사 뒤 / !, 콜론 이전)
-BREAKING CHANGE : 급한 변경 footer에 추가
-```
 
 ```
 inbodyuniverse
@@ -130,4 +91,39 @@ inbodyuniverse
       ├─ fonts.js
       ├─ reset.css
       └─ shadow.js
+```
+
+#### 4. Branch Convention
+
+```
+Feature/[기능요약]
+
+- 맨 첫글자 F만 대문자로, 기능요약은 소문자로 작성해주세요
+- 기능요약은 영어로 작성해주세요
+
+ex) Feature/modal-publishing
+```
+
+#### 5. Commit Convention
+
+```
+<태그>: <제목>
+
+- : 뒤에만 띄어쓰기가 있습니다
+- 제목은 한영 혼용이 가능합니다 (가급적 영어로)
+- 태그의 첫글자는 소문자로 작성해주세요
+- 태그는 아래에 적힌 것들만 사용해주세요
+- 검사 예외 조건 (자동 생성, 최초 커밋)
+ - Merge branch*, Merge pull request*, initial*
+
+feat: 새로운 기능 추가, 기능 로직 변경
+fix: 버그 수정
+refactor: 코드 리팩토링 (기능 변화 X)
+style: 코드 포맷팅, 코드 변경이 없는 경우
+chore: 빌드 업무 수정, 패키지 매니저 수정
+docs: 문서 수정, 주석
+test : Test 관련한 코드의 추가, 수정
+! : 급한 변경 사항인 경우에 추가 (접두사, () 뒤 / 콜론 이전)
+() : 추가 요약 정보가 필요할 경우 (접두사 뒤 / !, 콜론 이전)
+BREAKING CHANGE : 급한 변경 footer에 추가
 ```

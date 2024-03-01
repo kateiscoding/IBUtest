@@ -12,12 +12,10 @@ import FlagContainer from '../../Flags';
 import MyThreeJSComponent from '../../MyThreeJSComponent';
 import InbodyMainLogo from '../../../assets/img-logo.png';
 import LiveDot from '../../../assets/icon-rec.png';
-import Final from '../../../assets/final.png';
 import FirstComponent from '../../PhaseOne';
 import SecondComponent from '../../PhaseTwo';
 import ThirdComponent from '../../PhaseThree';
 import FourthComponent from '../../PhaseFour';
-import HistoryComponentImage from '../../Components';
 import Earth from '../../EarthImage';
 
 function MainPage() {
