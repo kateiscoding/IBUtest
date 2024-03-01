@@ -42,14 +42,6 @@ function FourthComponent() {
 					</SubTitle>
 				</SecondComponent>
 			</IntroLayout>
-			{/* <ShootingStars
-				image='./star.png'
-				height="'10px'"
-				width='10'
-				min-speed='10'
-				max-speed='50'
-				num='10'
-			/> */}
 		</PhaseFour>
 	);
 }

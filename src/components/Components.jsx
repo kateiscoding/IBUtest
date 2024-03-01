@@ -22,66 +22,6 @@ const fadeIn = keyframes`
 function HistoryComponent() {
 	return (
 		<IconContainer>
-			{/* <HistoryCard>
-				<HistoryLineDown>
-					<div />
-					<div />
-				</HistoryLineDown>
-
-				<TextSection>
-					<p>Inbody, born in South Korea, provides precise body measurements without complexity.</p>{' '}
-				</TextSection>
-				<ImageSection>
-					<img src={cardImage} alt='card' />
-				</ImageSection>
-			</HistoryCard>
-
-			<HistoryCard2>
-				<ImageSection2>
-					<img src={cardImage} alt='card' />
-				</ImageSection2>
-
-				<HistoryLineUp>
-					<div />
-					<div />
-				</HistoryLineUp>
-				<TextSection2>
-					<p>First oversea subsidiary in USA InBody receives FDA Approval</p>{' '}
-				</TextSection2>
-			</HistoryCard2> */}
-
-			{/* Left Bottom  */}
-			{/* <HistoryCard3>
-				<TextSection>
-					<p>First oversea subsidiary in USA InBody receives FDA Approval</p>{' '}
-				</TextSection>
-
-				<HistoryLineUp>
-					<div />
-					<div />
-				</HistoryLineUp>
-
-				<ImageSection2>
-					<img src={cardImage} alt='card' />
-				</ImageSection2>
-			</HistoryCard3> */}
-
-			{/* Right Top  */}
-			{/* <HistoryCard4>
-				<HistoryLineDown>
-					<div />
-					<div />
-				</HistoryLineDown>
-				<ImageSection>
-					<img src={cardImage} alt='card' />
-				</ImageSection>
-
-				<TextSection>
-					<p>Inbody, born in South Korea, provides precise body measurements without complexity.</p>{' '}
-				
-				</TextSection>
-			</HistoryCard4> */}
-
 			<IndustryCardLargeTopLeft>
 				<div>
 					<div>
@@ -600,15 +540,6 @@ const ImageSection2 = styled.div`
 		width: 100%;
 	}
 `;
-
-// const IndustryCard = styled.div`
-// 	width: 100%;
-
-// 	> img {
-// 		max-width: 100%;
-// 		height: auto;
-// 	}
-// `;
 
 const IconContainer = styled.div`
 	${'' /* width: 192rem */}

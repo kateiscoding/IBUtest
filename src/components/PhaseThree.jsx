@@ -53,24 +53,6 @@ const fadeInFromBottom = keyframes`
   }
 `;
 
-const scaleUp = keyframes`
-  from {
-    transform: scale(1);
-  }
-  to {
-    transform: scale(1.1);
-  }
-`;
-
-const scaleDown = keyframes`
-  from {
-    transform: scale(1.1);
-  }
-  to {
-    transform: scale(1);
-  }
-`;
-
 const industryData = [
 	{
 		id: 1,
