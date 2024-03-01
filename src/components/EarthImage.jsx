@@ -53,11 +53,8 @@ const EarthImageComponent = styled.img`
 	transform-origin: top;
 	flex-direction: column;
 	align-items: center;
-	${'' /* position: absolute; */}
-	${'' /* margin-top: -0.4%; */}
 
-
-> img {
+	> img {
 	}
 `;
 

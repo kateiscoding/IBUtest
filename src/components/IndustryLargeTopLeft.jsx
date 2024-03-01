@@ -27,8 +27,6 @@ function IndustryLargeTopLeft({ title, caption, image }) {
 const IndustryCardLargeTopLeft = styled.div`
 	width: 63.8rem;
 	height: 63.8rem;
-
-	${'' /* 일단 해봄 */}
 	display: flex;
 	flex-direction: column;
 	align-items: flex-end;

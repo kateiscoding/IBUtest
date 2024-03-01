@@ -28,21 +28,21 @@ const AnimatedRedLine = styled.div`
 	animation: ${animateRedLine} 2s ease-in-out forwards;
 `;
 
+// 국가별 데이터
 const Flag = ({ country, count, image }) => {
 	const flagData = [
 		{
 			id: '1',
 			country: 'China',
-			count: '1996781',
+			count: '2005302',
 			image: InbodyMan,
 		},
-		{ id: '2', country: 'Korea', count: '70572764', image: InbodyMan },
-		{ id: '3', country: 'Australia', count: '1590215', image: InbodyMan },
-		{ id: '4', country: 'Japan', count: '12441275', image: InbodyMan },
-		{ id: '5', country: 'USA', count: '19785023', image: InbodyMan },
-		{ id: '6', country: 'UK', count: '1666006', image: InbodyMan },
-		{ id: '7', country: 'EU', count: '2133592', image: InbodyMan },
-
+		{ id: '2', country: 'Korea', count: '71048981', image: InbodyMan },
+		{ id: '3', country: 'Australia', count: '1598091', image: InbodyMan },
+		{ id: '4', country: 'Japan', count: '12579919', image: InbodyMan },
+		{ id: '5', country: 'USA', count: '19916882', image: InbodyMan },
+		{ id: '6', country: 'UK', count: '1698445', image: InbodyMan },
+		{ id: '7', country: 'EU', count: '2144241', image: InbodyMan },
 	];
 
 	const gpsData = [
@@ -225,8 +225,6 @@ const Flagbox = styled.div`
 		top: 76.8rem;
 		left: 219rem;
 	}
-
-	${'' /* gap: 5rem; */}
 `;
 
 // flag 스타일 지정

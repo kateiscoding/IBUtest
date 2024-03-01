@@ -23,8 +23,6 @@ function IndustrySmallTopRight({ title, caption, image }) {
 const IndustryCardSmallTopRight = styled.div`
 	width: 48rem;
 	height: 48rem;
-
-	${'' /* 일단 해봄 */}
 	display: flex;
 	flex-direction: column;
 	align-items: flex-end;
