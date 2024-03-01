@@ -3,7 +3,6 @@ import * as THREE from 'three';
 import styled, { keyframes } from 'styled-components';
 import { Canvas } from '@react-three/fiber';
 import { Image } from '@react-three/drei';
-import industryImage from '../assets/img-industry.png';
 
 function IndustryLargeBottomRight({ title, caption, image }) {
 	return (

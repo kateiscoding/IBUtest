@@ -11,7 +11,6 @@ const LaunchComponent = ({ year, product }) => {
 		<LaunchIcon>
 			<div>
 				<p>LAUNCHED</p>
-
 				<div>
 					<div>{year}</div>
 					<div>{product}</div>
@@ -66,7 +65,6 @@ const LaunchIcon = styled.div`
 				display: flex;
 				border-radius: 0.5rem;
 				padding: 0.2rem 0.8rem;
-				${'' /* width: 4.9rem; */}
 				height: 2.3rem;
 				font-size: 1.85rem;
 				font-weight: 600;
