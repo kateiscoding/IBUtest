@@ -255,7 +255,6 @@ const PhaseThree = styled.div`
 	flex-direction: row;
 	height: 108rem;
 	align-items: flex-end;
-	${'' /* gap: 5rem; */}
 
 	> img {
 		position: fixed;
@@ -269,7 +268,6 @@ const TextContainer = styled.div`
 	height: 100%;
 	flex-direction: column;
 	justify-content: center;
-	${'' /* margin-left: 17.5rem; */}
 	align-items: flex-start;
 	animation-delay: 0.8s;
 	animation: ${fadeInFromBottom} 0.6s ease-in-out forwards;
@@ -278,7 +276,6 @@ const TextContainer = styled.div`
 const TextContent = styled.div`
 	color: white;
 	display: flex;
-	${'' /* margin: 33rem 17rem; */}
 	width: 74rem;
 	margin-left: 25rem;
 	flex-direction: column;
@@ -286,11 +283,9 @@ const TextContent = styled.div`
 	gap: 5rem;
 
 	> div {
-		${'' /* margin-top: 16rem; */}
 		display: flex;
 		flex-direction: column;
 		gap: 6.4rem;
-		${'' /* width: 74rem; */}
 
 		> p:first-child {
 			font-size: 16rem;
