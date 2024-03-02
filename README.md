@@ -4,11 +4,11 @@
 
 ### 🖥️ Project Introduction
 
-InBody Universe
+InBody Universe is a Large Screen Display Interactive Website for the showroom
 
 ### 📌 Dev Timeline
 
-24.12.19 - 24.01.18
+23.12.19 - 24.01.18
 
 ### 🔎 1. How to start
 

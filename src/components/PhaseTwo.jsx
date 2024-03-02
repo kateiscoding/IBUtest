@@ -39,11 +39,11 @@ const fadeIn = keyframes`
 const fadeInFromLeft = keyframes`
   from {
     opacity: 0;
-    transform: translateX(-20px); /* 시작 시 왼쪽으로 이동 */
+    transform: translateX(-20px);
   }
   to {
     opacity: 1;
-    transform: translateX(0); /* 최종 위치 */
+    transform: translateX(0);
   }
 `;
 
@@ -318,8 +318,6 @@ function SecondComponent() {
 					</ThirdContainer>
 				</ImageContainer>
 			</HistoryLayout>
-
-			{/* <img src={finalphase2} alt='final' /> */}
 		</PhaseTwo>
 	);
 }
