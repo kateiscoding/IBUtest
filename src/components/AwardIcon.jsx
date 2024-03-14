@@ -25,15 +25,12 @@ const AwardIcon = styled.div`
 	flex-direction: column;
 	justify-content: flex-end;
 	position: relative;
-
 	padding: 2rem 2.6rem 0rem 0rem;
 
 	> div {
 		border-radius: 1rem;
 		background-color: rgba(255, 255, 255, 0.3);
-
 		height: 7.6rem;
-
 		flex-shrink: 0;
 		padding: 1.6rem 4rem 1.6rem 1.6rem;
 		color: white;

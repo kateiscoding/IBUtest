@@ -34,32 +34,21 @@ function MainPage() {
 
 	return (
 		<Main id='canvas-container'>
-			{/* 비교용 이미지  */}
-			{/* <ImageContainer>
-				<FinalImage src={Final} alt='final-image' />
-			</ImageContainer> */}
 			{/* <FirstComponent /> */}
 			{/* <SecondComponent /> */}
 			{/* <ThirdComponent /> */}
 			{/* <FourthComponent /> */}
-			{/* <HistoryComponentImage /> */}
+
 			{/* 컴포넌트 10초 단위로 돌리기 */}
 			{currentComponent === 1 && <FirstComponent />}
 			{currentComponent === 2 && <SecondComponent />}
 			{currentComponent === 3 && <ThirdComponent />}
 			{currentComponent === 4 && <FourthComponent />}
 			<Earth />
-			{/* <Earth3D /> */}
+
 			<InbodyLogo>
 				<img src={InbodyMainLogo} alt='inbody-logo' />
 			</InbodyLogo>
-			{/* <MyThreeJSComponent /> */}
-			{/* <ThreeCanvas id='canvas-container' /> */}
-			{/* <Canvas>
-				<Suspense fallback={<div>Loading...</div>}>
-					<ThreeModel />
-				</Suspense>
-			</Canvas> */}
 		</Main>
 	);
 }
@@ -109,21 +98,12 @@ const InbodyLogo = styled.div`
 `;
 
 const Main = styled.main`
-	${
-		'' /* background-color: black;
-	display: flex;
-	flex-direction: column;
-	height: 108rem;
-	align-items: center;
-	${'' /* gap: 8rem; */
-	}
 	gap: 8rem;
 	overflow: hidden;
 	position: relative;
 	background-color: black;
 	display: flex;
 	flex-direction: column;
-	${'' /* height: 108rem; */}
 	align-items: center;
 
 	canvas {
