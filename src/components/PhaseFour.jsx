@@ -3,10 +3,6 @@ import { ShootingStars } from 'shooting-stars';
 import * as THREE from 'three';
 import styled, { keyframes } from 'styled-components';
 
-import { Canvas } from '@react-three/fiber';
-import { Image } from '@react-three/drei';
-import { motion } from 'framer-motion';
-
 const fadeIn = keyframes`
   0% {
     opacity: 0;
@@ -33,23 +29,15 @@ function FourthComponent() {
 			<IntroLayout>
 				<FirstComponent>
 					<MainTitle>
-						<p>Explore Into Your Body. </p>
+						<p>Celebrating 24 years</p>
 					</MainTitle>
 				</FirstComponent>
 				<SecondComponent>
 					<SubTitle>
-						<p>Embracing Change, Empowering Health</p>
+						<p>with gratitude for your ongoing support!</p>
 					</SubTitle>
 				</SecondComponent>
 			</IntroLayout>
-			{/* <ShootingStars
-				image='./star.png'
-				height="'10px'"
-				width='10'
-				min-speed='10'
-				max-speed='50'
-				num='10'
-			/> */}
 		</PhaseFour>
 	);
 }

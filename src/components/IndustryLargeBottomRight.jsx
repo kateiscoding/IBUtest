@@ -3,7 +3,6 @@ import * as THREE from 'three';
 import styled, { keyframes } from 'styled-components';
 import { Canvas } from '@react-three/fiber';
 import { Image } from '@react-three/drei';
-import industryImage from '../assets/img-industry.png';
 
 function IndustryLargeBottomRight({ title, caption, image }) {
 	return (
@@ -27,8 +26,6 @@ function IndustryLargeBottomRight({ title, caption, image }) {
 const IndustryCardLargeBottomRight = styled.div`
 	width: 63.8rem;
 	height: 63.8rem;
-
-	${'' /* 일단 해봄 */}
 	display: flex;
 	flex-direction: column;
 	align-items: flex-end;

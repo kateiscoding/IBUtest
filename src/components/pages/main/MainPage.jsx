@@ -12,12 +12,10 @@ import FlagContainer from '../../Flags';
 import MyThreeJSComponent from '../../MyThreeJSComponent';
 import InbodyMainLogo from '../../../assets/img-logo.png';
 import LiveDot from '../../../assets/icon-rec.png';
-import Final from '../../../assets/final.png';
 import FirstComponent from '../../PhaseOne';
 import SecondComponent from '../../PhaseTwo';
 import ThirdComponent from '../../PhaseThree';
 import FourthComponent from '../../PhaseFour';
-import HistoryComponentImage from '../../Components';
 import Earth from '../../EarthImage';
 
 function MainPage() {
@@ -52,42 +50,6 @@ function MainPage() {
 		</Main>
 	);
 }
-
-const ImageContainer = styled.div`
-	width: 100%;
-	display: flex;
-	position: absolute;
-	top: 0;
-	left: 0;
-	z-index: 15;
-	opacity: 0.95;
-	width: 100%;
-	overflow: hidden;
-	max-width: 100%;
-	width: 100%;
-	max-height: 100%;
-
-	display: flex;
-	justify-content: center;
-	align-items: flex-start;
-
-	> img {
-	}
-`;
-
-const FinalImage = styled.img`
-	display: flex;
-	z-index: 15;
-	opacity: 0.8;
-	display: flex;
-	overflow: hidden;
-	max-width: 100%;
-	background-size: cover;
-	transform-origin: top;
-
-	> img {
-	}
-`;
 
 const InbodyLogo = styled.div`
 	${'' /* width: 100%; */}

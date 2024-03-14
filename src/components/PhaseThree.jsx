@@ -13,10 +13,7 @@ import IndustryLargeTopLeft from './IndustryLargeTopLeft';
 import IndustrySmallBottomLeft from './IndustrySmallBottomLeft';
 import IndustrySmallTopRight from './IndustrySmallTopRight';
 import PhaseThreeImage from '../assets/finalphase3.png';
-// import IndustryImageOne from '../assets/img-industry-1.png';
-// import IndustryImageTwo from '../assets/img-industry-2.png';
-// import IndustryImageThree from '../assets/img-industry-3.png';
-// import IndustryImageFour from '../assets/img-industry-4.png';
+
 import IndustryImageOne from '../assets/img_industry_1.png';
 import IndustryImageTwo from '../assets/img_industry_2.png';
 import IndustryImageThree from '../assets/img_industry_3.png';
@@ -53,24 +50,6 @@ const fadeInFromBottom = keyframes`
   to {
     opacity: 1;
     transform: translateY(0); 
-  }
-`;
-
-const scaleUp = keyframes`
-  from {
-    transform: scale(1);
-  }
-  to {
-    transform: scale(1.1);
-  }
-`;
-
-const scaleDown = keyframes`
-  from {
-    transform: scale(1.1);
-  }
-  to {
-    transform: scale(1);
   }
 `;
 
@@ -189,16 +168,10 @@ function ThirdComponent() {
 				</ContentBox>
 			</MainContainer>
 			<RedLineContainer>
-				{/* <motion.div
-					initial={{ opacity: 0 }}
-					animate={{ opacity: 1, transition: { delay: 1.3, duration: 0.3 } }}>
-					<img src={RedLineImage2} alt='red-line' style={{ width: '100%', height: 'auto' }} />
-				</motion.div> */}
 				<motion.div
 					initial={{ clipPath: 'polygon(-50% 0, 0 0, 0 100%, -50% 100%)', opacity: 0 }}
 					animate={{ clipPath: 'polygon(-0% 0, 100% 0, 100% 100%, 0 100%)', opacity: 1 }}
 					transition={{ duration: 3.6, ease: 'easeInOut', opacity: { delay: 1.5, duration: 1 } }}>
-					{/* transition={{ duration: 2, ease: [0.42, 0, 0.58, 1] }} */}
 					<RedLineImage
 						src={RedLineImage2}
 						alt='red-line'
@@ -206,8 +179,6 @@ function ThirdComponent() {
 					/>
 				</motion.div>
 			</RedLineContainer>
-
-			{/* <img src={PhaseThreeImage} alt='final' /> */}
 		</PhaseThree>
 	);
 }
@@ -217,33 +188,18 @@ const RedLineImage = styled.img`
 	height: auto;
 `;
 
-const IndustryCardWrapper = styled(motion.div)`
-	position: relative;
-	overflow: hidden;
-	animation: ${fadeIn} 0.5s ease-in-out;
-`;
-
 const RedLineContainer = styled.div`
 	position: absolute;
 	${'' /* width: 100%; */}
 	height: auto;
 	display: flex;
 	z-index: 2;
-	${
-		'' /* animation: ${fadeIn} 0.3s ease-in-out forwards;
-	animation-delay: 1.3s; */
-	}
+
 	> img {
 		width: 100%;
 		display: flex;
 		height: auto;
 	}
-`;
-
-const AnimatedImage = styled(motion.img)`
-	width: 100%;
-	height: auto;
-	animation: ${fadeInFromLeft} 1s ease-in-out;
 `;
 
 const MainContainer = styled.div`
@@ -259,11 +215,6 @@ const ContentBox = styled.div`
 	height: auto;
 	display: flex;
 	z-index: 5;
-
-	${
-		'' /* animation-delay: 1.8s;
-	animation: ${fadeIn} 0.3s ease-in-out forwards; */
-	}
 
 	> div:first-child {
 		top: 10rem;
@@ -291,7 +242,6 @@ const ContentBox = styled.div`
 	}
 
 	> ${AnimatedIndustryCard} {
-		// 여기에 블러 효과 스타일 추가
 		filter: blur(40px);
 	}
 `;
@@ -305,7 +255,6 @@ const PhaseThree = styled.div`
 	flex-direction: row;
 	height: 108rem;
 	align-items: flex-end;
-	${'' /* gap: 5rem; */}
 
 	> img {
 		position: fixed;
@@ -319,7 +268,6 @@ const TextContainer = styled.div`
 	height: 100%;
 	flex-direction: column;
 	justify-content: center;
-	${'' /* margin-left: 17.5rem; */}
 	align-items: flex-start;
 	animation-delay: 0.8s;
 	animation: ${fadeInFromBottom} 0.6s ease-in-out forwards;
@@ -328,7 +276,6 @@ const TextContainer = styled.div`
 const TextContent = styled.div`
 	color: white;
 	display: flex;
-	${'' /* margin: 33rem 17rem; */}
 	width: 74rem;
 	margin-left: 25rem;
 	flex-direction: column;
@@ -336,11 +283,9 @@ const TextContent = styled.div`
 	gap: 5rem;
 
 	> div {
-		${'' /* margin-top: 16rem; */}
 		display: flex;
 		flex-direction: column;
 		gap: 6.4rem;
-		${'' /* width: 74rem; */}
 
 		> p:first-child {
 			font-size: 16rem;

@@ -15,17 +15,6 @@ function Earth() {
 }
 
 const EarthContainer = styled.div`
-	${
-		'' /* overflow: hidden;
-max-width: 100%;
-width: 100%;
-max-height: 100%;
-position: absolute;
-display: flex;
-justify-content: center;
-align-items: flex-start;  */
-	}
-
 	overflow: hidden;
 	max-width: 100%;
 	width: 100%;
@@ -53,11 +42,8 @@ const EarthImageComponent = styled.img`
 	transform-origin: top;
 	flex-direction: column;
 	align-items: center;
-	${'' /* position: absolute; */}
-	${'' /* margin-top: -0.4%; */}
 
-
-> img {
+	> img {
 	}
 `;
 

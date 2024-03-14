@@ -3,15 +3,12 @@ import * as THREE from 'three';
 import styled, { keyframes } from 'styled-components';
 import { Canvas } from '@react-three/fiber';
 import { Image } from '@react-three/drei';
-// import IconContainer from './Components';
 import LaunchIcon from './LaunchIcon';
 import AwardIcon from './AwardIcon';
-import finalphase2 from '../assets/phase2-final.png';
 import HistoryLeftTopComponent from './HistoryLeftTop';
 import HistoryRightBottomComponent from './HistoryRightBottom';
 import HistoryLeftBottomComponent from './HistoryLeftBottom';
 import HistoryRightTopComponent from './HistoryRightTop';
-import HistoryCard from './Components';
 import HistoryImage1 from '../assets/img-history-1.png';
 import HistoryImage2 from '../assets/img-history-2.png';
 import HistoryImage3 from '../assets/img-history-3.png';
@@ -42,11 +39,11 @@ const fadeIn = keyframes`
 const fadeInFromLeft = keyframes`
   from {
     opacity: 0;
-    transform: translateX(-20px); /* 시작 시 왼쪽으로 이동 */
+    transform: translateX(-20px);
   }
   to {
     opacity: 1;
-    transform: translateX(0); /* 최종 위치 */
+    transform: translateX(0);
   }
 `;
 
@@ -321,8 +318,6 @@ function SecondComponent() {
 					</ThirdContainer>
 				</ImageContainer>
 			</HistoryLayout>
-
-			{/* <img src={finalphase2} alt='final' /> */}
 		</PhaseTwo>
 	);
 }

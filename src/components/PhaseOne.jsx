@@ -24,7 +24,7 @@ function FirstComponent() {
 					</div>
 				</div>
 				{/* 메인 카운트 업 애니메이션  */}
-				<CountUp start={100000000} end={115078251} duration={3} />
+				<CountUp start={100000000} end={117223775} duration={3} />
 			</Counter>
 			<FlagContainer />
 		</PhaseOne>
@@ -49,16 +49,6 @@ const PhaseOne = styled.div`
 `;
 
 const Counter = styled.div`
-	${
-		'' /* height: 60rem;
-	width: 100%;
-	display: flex;
-	margin-top: 22rem;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center; */
-	}
-
 	height: 30rem;
 	z-index: 2;
 	width: 100%;
@@ -73,18 +63,6 @@ const Counter = styled.div`
 		flex-direction: column;
 		width: 129rem;
 		gap: 0.9rem;
-
-		${
-			'' /* > p {
-			color: #fff;
-
-			text-align: center;
-			font-size: 22.4rem;
-			font-style: normal;
-			font-weight: 600;
-			line-height: 1;
-		} */
-		}
 
 		> div {
 			display: flex;
