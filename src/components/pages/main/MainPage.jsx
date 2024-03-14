@@ -43,7 +43,7 @@ function MainPage() {
 			{currentComponent === 3 && <ThirdComponent />}
 			{currentComponent === 4 && <FourthComponent />}
 			<Earth />
-			{/* <Earth3D /> */}
+
 			<InbodyLogo>
 				<img src={InbodyMainLogo} alt='inbody-logo' />
 			</InbodyLogo>
@@ -66,7 +66,6 @@ const Main = styled.main`
 	background-color: black;
 	display: flex;
 	flex-direction: column;
-	${'' /* height: 108rem; */}
 	align-items: center;
 
 	canvas {
