@@ -54,7 +54,6 @@ const LeftBottomCard = styled.div`
 	height: 35.9rem;
 	display: grid;
 	grid-template-columns: 1fr 2fr;
-
 	gap: 2rem 1.2rem;
 `;
 
@@ -63,7 +62,6 @@ const LeftBottomTextSection = styled.div`
 	justify-content: flex-start;
 	align-items: flex-end;
 	width: 100%;
-
 	text-align: right;
 	flex-direction: column;
 
@@ -81,10 +79,8 @@ const LeftBottomTextSection = styled.div`
 
 const LeftBottomImageSection = styled.div`
 	display: flex;
-	${'' /* justify-content: flex-end; */}
 	border-radius: 0.5rem;
 	width: 100%;
-
 	padding-bottom: 9rem;
 	flex-direction: column;
 

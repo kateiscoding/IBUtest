@@ -4,9 +4,6 @@ import styled from 'styled-components';
 import { Canvas } from '@react-three/fiber';
 import { Image } from '@react-three/drei';
 import CountUp from 'react-countup';
-// import StarfieldAnimation from 'react-starfield-animation';
-// import EarthImage from '../../../assets/earth-image-2.png';
-
 import FlagContainer from './Flags';
 import LiveDot from '../assets/icon-rec.png';
 
@@ -33,14 +30,12 @@ function FirstComponent() {
 
 const PhaseOne = styled.div`
 	gap: 8rem;
-
 	position: relative;
 	background-color: black;
 	display: flex;
 	flex-direction: column;
 	height: 108rem;
 	align-items: center;
-	${'' /* gap: 5rem; */}
 
 	> p {
 		font-size: 18rem;
@@ -73,14 +68,11 @@ const Counter = styled.div`
 				display: flex;
 				text-align: center;
 				font-size: 4.4rem;
-				${'' /* font-style: normal; */}
 				font-weight: 600;
-				${'' /* line-height: normal; */}
 				letter-spacing: 1rem;
 				flex-direction: column;
 				align-items: flex-start;
 				lineheight: 44;
-				${'' /* letterspacing: 10.86; */}
 				wordwrap: 'break-word';
 				justify-content: center;
 			}
@@ -89,7 +81,6 @@ const Counter = styled.div`
 				background: #971b2f;
 				width: 20.1rem;
 				height: 6rem;
-				${'' /* font-size: 4.4rem; */}
 				display: flex;
 				padding: 0.8rem 1.6rem;
 				font-weight: bold;
@@ -98,7 +89,6 @@ const Counter = styled.div`
 				border-radius: 0.8rem;
 				justify-content: space-around;
 				align-items: center;
-
 				border-radius: 0.5rem;
 				gap: 0.6rem;
 

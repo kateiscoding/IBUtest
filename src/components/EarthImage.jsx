@@ -34,17 +34,11 @@ const EarthImageComponent = styled.img`
 	display: flex;
 	overflow: hidden;
 	max-width: 100%;
-	${'' /* position: absolute; */}
 	background-size: cover;
-
 	transform: scaleX(1.65) scaleY(0.9);
-	${'' /* margin-top: -0.4%; */}
 	transform-origin: top;
 	flex-direction: column;
 	align-items: center;
-
-	> img {
-	}
 `;
 
 export default Earth;

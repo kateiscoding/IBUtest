@@ -45,7 +45,7 @@ const AwardIcon = styled.div`
 			font-size: 2rem;
 			font-style: normal;
 			font-weight: 600;
-			line-height: 110%; /* 2.2rem */
+			line-height: 110%;
 			letter-spacing: -0.05rem;
 			white-space: pre-line;
 		}
@@ -61,7 +61,6 @@ const AwardIcon = styled.div`
 			flex-shrink: 0;
 			border-radius: 2.8rem;
 			border: 0.4rem solid #fff;
-			${'' /* position: absolute; */}
 			top: 0;
 			right: 0;
 			background: var(--BrandCI, #971b2f);

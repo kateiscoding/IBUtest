@@ -24,7 +24,6 @@ function IndustrySmallBottomLeft({ title, caption, image }) {
 const IndustryCardSmallBottomLeft = styled.div`
 	width: 48rem;
 	height: 48rem;
-
 	display: flex;
 	flex-direction: column;
 	align-items: flex-end;
@@ -37,11 +36,9 @@ const IndustryCardSmallBottomLeft = styled.div`
 		background: var(--bwb-07, rgba(63, 63, 63, 0.7));
 		box-shadow: 0px 4px 30px 0px rgba(0, 0, 0, 0.3);
 		backdrop-filter: blur(40px);
-
 		align-items: center;
 		top: 0;
 		position: absolute;
-
 		display: flex;
 		width: 31.2rem;
 		height: 31.2rem;
@@ -63,18 +60,17 @@ const IndustryCardSmallBottomLeft = styled.div`
 				font-size: 4rem;
 				font-style: normal;
 				font-weight: 600;
-				line-height: 100%; /* 4rem */
+				line-height: 100%;
 				align-self: stretch;
 			}
 
 			> p:nth-child(2) {
 				color: var(--BW-White, #fff);
 				text-align: center;
-
 				font-size: 2.4rem;
 				font-style: normal;
 				font-weight: 400;
-				line-height: 120%; /* 2.88rem */
+				line-height: 120%;
 				letter-spacing: -0.06rem;
 			}
 		}

@@ -328,7 +328,6 @@ const PhaseTwo = styled.div`
 	flex-direction: column;
 	height: 108rem;
 	align-items: center;
-	${'' /* gap: 5rem; */}
 	z-index: 2;
 
 	> img {
@@ -341,7 +340,6 @@ const HistoryLayout = styled.div`
 	width: 576rem;
 	display: flex;
 	height: 100%;
-	${'' /* gap: 10rem; */}
 	flex-direction: row;
 	justify-content: space-between;
 `;
@@ -350,7 +348,6 @@ const HistoryLayout = styled.div`
 const TextContent = styled.div`
 	color: white;
 	display: flex;
-	${'' /* margin: 33rem 17rem; */}
 	width: 74rem;
 	margin-left: 25rem;
 	flex-direction: column;
@@ -358,7 +355,6 @@ const TextContent = styled.div`
 	gap: 5rem;
 
 	> div {
-		${'' /* margin-top: 16rem; */}
 		display: flex;
 		flex-direction: column;
 		gap: 6.4rem;
@@ -393,7 +389,6 @@ const TextContainer = styled.div`
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	${'' /* margin-left: 17.5rem; */}
 	align-items: flex-start;
 `;
 
@@ -440,7 +435,6 @@ const SecondContainer = styled.div`
 	width: 190rem;
 	display: flex;
 	opacity: 0;
-	${'' /* position: relative; */}
 	animation: ${fadeInFromLeft} 1s ease-in-out forwards;
 	animation-delay: 2.5s;
 

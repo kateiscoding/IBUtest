@@ -45,7 +45,6 @@ const IndustryCardLargeTopLeft = styled.div`
 		justify-content: center;
 		align-items: center;
 		position: absolute;
-		${'' /* z-index: 4; */}
 
 		> div {
 			border-radius: 18.4rem;
@@ -76,7 +75,7 @@ const IndustryCardLargeTopLeft = styled.div`
 					font-size: 4rem;
 					font-style: normal;
 					font-weight: 600;
-					line-height: 100%; /* 4rem */
+					line-height: 100%;
 					align-self: stretch;
 				}
 
@@ -87,7 +86,7 @@ const IndustryCardLargeTopLeft = styled.div`
 					font-size: 2.4rem;
 					font-style: normal;
 					font-weight: 400;
-					line-height: 120%; /* 2.88rem */
+					line-height: 120%;
 					letter-spacing: -0.06rem;
 				}
 			}
