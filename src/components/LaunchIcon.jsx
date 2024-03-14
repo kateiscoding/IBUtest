@@ -43,7 +43,6 @@ const LaunchIcon = styled.div`
 		}
 		> div {
 			display: flex;
-			${'' /* gap: 0.8rem; */}
 			font-size: 1.8rem;
 			font-style: normal;
 			font-weight: 600;

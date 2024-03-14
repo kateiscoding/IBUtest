@@ -35,12 +35,10 @@ const IndustryCardSmallTopRight = styled.div`
 		background: var(--bwb-07, rgba(63, 63, 63, 0.7));
 		box-shadow: 0px 4px 30px 0px rgba(0, 0, 0, 0.3);
 		backdrop-filter: blur(40px);
-
 		align-items: center;
 		bottom: 0;
 		left: 0;
 		position: absolute;
-
 		display: flex;
 		width: 31.2rem;
 		height: 31.2rem;
@@ -62,7 +60,7 @@ const IndustryCardSmallTopRight = styled.div`
 				font-size: 4rem;
 				font-style: normal;
 				font-weight: 600;
-				line-height: 100%; /* 4rem */
+				line-height: 100%;
 				align-self: stretch;
 			}
 
@@ -73,7 +71,7 @@ const IndustryCardSmallTopRight = styled.div`
 				font-size: 2.4rem;
 				font-style: normal;
 				font-weight: 400;
-				line-height: 120%; /* 2.88rem */
+				line-height: 120%;
 				letter-spacing: -0.06rem;
 			}
 		}

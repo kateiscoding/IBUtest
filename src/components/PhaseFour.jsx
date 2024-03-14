@@ -86,7 +86,6 @@ const IntroLayout = styled.div`
 
 const FirstComponent = styled.div`
 	display: flex;
-	${'' /* width: 192rem; */}
 	width: 100%;
 	flex-direction: column;
 	align-items: center;
@@ -95,9 +94,7 @@ const FirstComponent = styled.div`
 
 const SecondComponent = styled.div`
 	display: flex;
-	${'' /* width: 384rem; */}
 	width: 100%;
-
 	flex-direction: column;
 	align-items: center;
 	z-index: 3;
@@ -105,14 +102,12 @@ const SecondComponent = styled.div`
 
 const PhaseFour = styled.div`
 	gap: 8rem;
-
 	position: relative;
 	background-color: black;
 	display: flex;
 	flex-direction: column;
 	height: 108rem;
 	align-items: center;
-	${'' /* gap: 5rem; */}
 
 	> p {
 		font-size: 18rem;

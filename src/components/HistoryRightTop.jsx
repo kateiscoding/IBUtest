@@ -75,10 +75,8 @@ const RightTopTextSection = styled.div`
 
 const RightTopImageSection = styled.div`
 	display: flex;
-	${'' /* justify-content: flex-end; */}
 	border-radius: 0.5rem;
 	width: 100%;
-	${'' /* height: 18.8rem; */}
 	padding-top: 14.4rem;
 	flex-direction: column;
 

@@ -190,7 +190,6 @@ const RedLineImage = styled.img`
 
 const RedLineContainer = styled.div`
 	position: absolute;
-	${'' /* width: 100%; */}
 	height: auto;
 	display: flex;
 	z-index: 2;
@@ -248,7 +247,6 @@ const ContentBox = styled.div`
 
 const PhaseThree = styled.div`
 	gap: 8rem;
-
 	position: relative;
 	background-color: black;
 	display: flex;

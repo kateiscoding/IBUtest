@@ -44,7 +44,6 @@ const Flag = ({ country, count, image }) => {
 		{ id: '5', country: 'USA', count: '20047487', image: InbodyMan },
 		{ id: '6', country: 'UK', count: '1731690', image: InbodyMan },
 		{ id: '7', country: 'EU', count: '2154157', image: InbodyMan },
-
 	];
 
 	const gpsData = [
@@ -175,13 +174,9 @@ const Flag = ({ country, count, image }) => {
 const FlagContainer = styled.div`
 	color: white;
 	display: flex;
-	${'' /* grid-template-columns: repeat(7, 1fr); */}
 	justify-items: center;
 	position: absolute;
-	${'' /* top: 60rem; */}
-	${'' /* gap: 5rem; */}
 	z-index: 2;
-	${'' /* transform: rotate(-45deg); */}
 	animation: ${animateRedLine} 1s ease-in-out forwards;
 `;
 
@@ -193,37 +188,30 @@ const Flagbox = styled.div`
 	position: absolute;
 
 	&.flag-1 {
-		${'' /* top: 12em; */}
 		top: 76.8rem;
 		left: -263rem;
 	}
 	&.flag-2 {
-		${'' /* top: -8rem; */}
 		top: 48.7rem;
 		left: -229rem;
 	}
 	&.flag-3 {
-		${'' /* top: -17.8rem; */}
 		top: 36.9rem;
 		left: -185rem;
 	}
 	&.flag-4 {
-		${'' /* top: -26.8rem; */}
 		top: 27.3rem;
 		left: -140rem;
 	}
 	&.flag-5 {
-		${'' /* top: -33rem; */}
 		top: 27.3rem;
 		left: 109rem;
 	}
 	&.flag-6 {
-		${'' /* top: -10rem; */}
 		top: 51rem;
 		left: 169rem;
 	}
 	&.flag-7 {
-		${'' /* top: 20rem; */}
 		top: 76.8rem;
 		left: 219rem;
 	}
@@ -274,7 +262,7 @@ const FlagContent = styled.div`
 			font-size: 8rem;
 			font-style: normal;
 			font-weight: 700;
-			line-height: 100%; /* 5rem */
+			line-height: 100%;
 		}
 
 		> div {
@@ -288,7 +276,7 @@ const FlagContent = styled.div`
 			font-style: normal;
 			font-weight: 400;
 			border-radius: 0.8rem;
-			line-height: 100%; /* 3.75rem */
+			line-height: 100%;
 		}
 	}
 
