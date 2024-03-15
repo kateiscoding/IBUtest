@@ -1,8 +1,6 @@
 import './styles/reset.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { useState } from 'react';
-// import { Canvas } from '@react-three/fiber';
-// import { Suspense } from 'react';
 import styled from 'styled-components';
 
 import MainPage from './pages/main';
