@@ -21,7 +21,7 @@ function FirstComponent() {
 					</div>
 				</div>
 				{/* 메인 카운트 업 애니메이션  */}
-				<CountUp start={100000000} end={124536088} duration={3} />
+				<CountUp start={100000000} end={134760350} duration={3} />
 			</Counter>
 			<FlagContainer />
 		</PhaseOne>
