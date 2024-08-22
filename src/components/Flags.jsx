@@ -31,18 +31,18 @@ const AnimatedRedLine = styled.div`
 // 국가별 데이터
 const Flag = ({ country, count, image }) => {
 	const flagData = [
-		{
+				{
 			id: '1',
 			country: 'China',
-			count: '2089944',
+			count: '2204800',
 			image: InbodyMan,
 		},
-		{ id: '2', country: 'Korea', count: '74675119', image: InbodyMan },
-		{ id: '3', country: 'Australia', count: '1655217', image: InbodyMan },
-		{ id: '4', country: 'Japan', count: '13650010', image: InbodyMan },
-		{ id: '5', country: 'USA', count: '20966603', image: InbodyMan },
-		{ id: '6', country: 'UK', count: '1947330', image: InbodyMan },
-		{ id: '7', country: 'EU', count: '2221688', image: InbodyMan },
+		{ id: '2', country: 'Korea', count: '79637390', image: InbodyMan },
+		{ id: '3', country: 'Australia', count: '1741688', image: InbodyMan },
+		{ id: '4', country: 'Japan', count: '15330975', image: InbodyMan },
+		{ id: '5', country: 'USA', count: '22657105', image: InbodyMan },
+		{ id: '6', country: 'UK', count: '2260083', image: InbodyMan },
+		{ id: '7', country: 'EU', count: '2309651', image: InbodyMan },
 	];
 
 	const gpsData = [
